@@ -23,7 +23,7 @@ Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```sh
 uv sync --locked
-uv run python validate_fixtures.py examples/*
+uv run python validate_fixtures.py examples/* fixtures/*
 uv run python -m unittest discover -s tests -v
 ```
 
@@ -35,6 +35,7 @@ environment and run the same Python commands without `uv run`.
 ```text
 schemas/                      # versioned contracts; resolved offline
 examples/<neutral-case-id>/
+fixtures/<neutral-case-id>/    # same per-case layout
   reviewer/input.json         # ONLY reviewer-visible request data
   reviewer/prefix.json        # ATIF historical input; continuation only
   environment/blobs/<sha256>  # runner-owned UTF-8 snapshot content
@@ -52,10 +53,17 @@ of the defective case after a completed file read. They are format examples,
 not an independently reviewed or frozen evaluation corpus. Category labels,
 case relationships, expected paths, and reproducer outcomes stay private.
 
+The independent Python query-override pair lives in `fixtures/case-0004`
+(defective) and `case-0005` (corrected), with private labels and provenance.
+Run `uv run python -m reference_checks.query_overrides <case-id>`: `case-0004`
+exits 1 (six failing probes); `case-0005` exits 0 (14/14 pass).
+[Raw blinded preflight records](reviews/query-overrides/round-01/manifest.json)
+remain evaluator-only; independent annotation and licensing approval are pending.
+
 The design follows the parent project's
 [`code-review-eval-scope.md`](../code-review-eval-scope.md) and
 [`code-review-eval-categories.md`](../code-review-eval-categories.md).
 The repository remains usable independently; those documents are design
 inputs, not runtime dependencies.
 
-No commits, remote, live service access, or reviewer execution are configured.
+No production reviewer runner or live code-hosting write integration is configured.

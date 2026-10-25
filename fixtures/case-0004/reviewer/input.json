@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0004",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "src/request_url.py",
+          "sha256": "ad6f3e276c3bf9169532af84fab8fc861890e9d48b724915079fbe74f67442c9"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "src/request_url.py",
+          "sha256": "1ee56f6c58b507f8b5a0c079fb8b1ca08547f3cee583c265c9240e2b7e300129"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add optional query overrides to request_url for a catalogue client. Inputs are an absolute URL and an optional dict of string keys to string or None values. A non-None override replaces all values for its key; None leaves existing values unchanged and must not add a missing key. Unmentioned keys retain all values, including repeated and blank values. Empty-string overrides are meaningful. Inputs must not be mutated; URL components other than the query must be preserved. Query encoding may be normalized. The catalogue endpoint reads the first occurrence of singleton fields such as sort. Review the change for actionable defects.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/request_url.py\n+++ b/src/request_url.py\n@@ -1,8 +1,16 @@\n from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit\n \n \n-def request_url(link: str) -> str:\n-    \"\"\"Normalize the query of an absolute catalogue link.\"\"\"\n+def request_url(link: str, overrides: dict[str, str | None] | None = None) -> str:\n+    \"\"\"Build a catalogue URL.\n+\n+    Non-None overrides replace all values for their key; None leaves it alone.\n+    Unmentioned keys retain every value, including blanks and repetitions.\n+    Inputs are not mutated; components other than the query are preserved.\n+    \"\"\"\n     parts = urlsplit(link)\n     fields = parse_qsl(parts.query, keep_blank_values=True)\n+    for key, value in (overrides or {}).items():\n+        if value is not None:\n+            fields.append((key, value))\n     return urlunsplit(parts._replace(query=urlencode(fields)))\n",
+        "sha256": "3b09c0e8672696aeab662021b9c44991172dd12bdd0982d3d5333890dfef803a"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "src/request_url.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit\n\n\ndef request_url(link: str, overrides: dict[str, str | None] | None = None) -> str:\n    \"\"\"Build a catalogue URL.\n\n    Non-None overrides replace all values for their key; None leaves it alone.\n    Unmentioned keys retain every value, including blanks and repetitions.\n    Inputs are not mutated; components other than the query are preserved.\n    \"\"\"\n    parts = urlsplit(link)\n    fields = parse_qsl(parts.query, keep_blank_values=True)\n    for key, value in (overrides or {}).items():\n        if value is not None:\n            fields.append((key, value))\n    return urlunsplit(parts._replace(query=urlencode(fields)))\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

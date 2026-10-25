@@ -1,0 +1,16 @@
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+
+def request_url(link: str, overrides: dict[str, str | None] | None = None) -> str:
+    """Build a catalogue URL.
+
+    Non-None overrides replace all values for their key; None leaves it alone.
+    Unmentioned keys retain every value, including blanks and repetitions.
+    Inputs are not mutated; components other than the query are preserved.
+    """
+    parts = urlsplit(link)
+    fields = parse_qsl(parts.query, keep_blank_values=True)
+    for key, value in (overrides or {}).items():
+        if value is not None:
+            fields.append((key, value))
+    return urlunsplit(parts._replace(query=urlencode(fields)))

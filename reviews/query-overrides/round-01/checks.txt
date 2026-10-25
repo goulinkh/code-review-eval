@@ -1,0 +1,99 @@
+Final repository validation command:
+uv run --locked --group demo python validate_fixtures.py examples/* fixtures/*
+uv run --locked --group demo python -m unittest discover -s tests -v
+git diff --check
+
+Validated 5 fixture(s). No reviewer was executed.
+test_both_diff_layouts_render_with_full_context (test_demo.DemoTests.test_both_diff_layouts_render_with_full_context) ... ok
+test_default_view_reads_snapshots_but_not_private_labels_or_executes_code (test_demo.DemoTests.test_default_view_reads_snapshots_but_not_private_labels_or_executes_code) ... ok
+test_every_case_can_be_explored_without_replaying_history (test_demo.DemoTests.test_every_case_can_be_explored_without_replaying_history) ... ok
+test_probe_button_runs_only_the_trusted_pair_not_the_selected_case (test_demo.DemoTests.test_probe_button_runs_only_the_trusted_pair_not_the_selected_case) ... ok
+test_reveal_loads_the_selected_private_reference (test_demo.DemoTests.test_reveal_loads_the_selected_private_reference) ... ok
+test_validation_button_validates_the_whole_dataset_without_execution (test_demo.DemoTests.test_validation_button_validates_the_whole_dataset_without_execution) ... ok
+test_absent_empty_and_unchanged_files_are_renderable (test_fixture_explorer.FixtureExplorerTests.test_absent_empty_and_unchanged_files_are_renderable) ... ok
+test_full_context_toggle_reveals_omitted_unchanged_lines_in_both_layouts (test_fixture_explorer.FixtureExplorerTests.test_full_context_toggle_reveals_omitted_unchanged_lines_in_both_layouts) ... ok
+test_inventory_distinguishes_added_deleted_modified_and_unchanged (test_fixture_explorer.FixtureExplorerTests.test_inventory_distinguishes_added_deleted_modified_and_unchanged) ... ok
+test_line_counts_include_insertions_deletions_and_both_sides_of_replacements (test_fixture_explorer.FixtureExplorerTests.test_line_counts_include_insertions_deletions_and_both_sides_of_replacements) ... ok
+test_snapshot_read_checks_integrity_and_never_executes_the_source (test_fixture_explorer.FixtureExplorerTests.test_snapshot_read_checks_integrity_and_never_executes_the_source) ... ok
+test_snapshot_read_rejects_non_digest_blob_names (test_fixture_explorer.FixtureExplorerTests.test_snapshot_read_rejects_non_digest_blob_names) ... ok
+test_split_diff_has_line_numbers_highlights_and_escapes_source_and_path (test_fixture_explorer.FixtureExplorerTests.test_split_diff_has_line_numbers_highlights_and_escapes_source_and_path) ... ok
+test_unified_diff_handles_additions_deletions_and_header_like_source (test_fixture_explorer.FixtureExplorerTests.test_unified_diff_handles_additions_deletions_and_header_like_source) ... ok
+test_unified_diff_has_correct_line_numbers_and_colored_rows (test_fixture_explorer.FixtureExplorerTests.test_unified_diff_has_correct_line_numbers_and_colored_rows) ... ok
+test_all_examples_validate_offline (test_fixtures.FixtureTests.test_all_examples_validate_offline) ... ok
+test_artifact_symlinks_are_rejected (test_fixtures.FixtureTests.test_artifact_symlinks_are_rejected) ... ok
+test_call_and_result_associations_are_preserved (test_fixtures.FixtureTests.test_call_and_result_associations_are_preserved) ... ok
+test_call_ids_are_globally_unique (test_fixtures.FixtureTests.test_call_ids_are_globally_unique) ... ok
+test_checkpoint_snapshots_are_pinned (test_fixtures.FixtureTests.test_checkpoint_snapshots_are_pinned) ... ok
+test_closed_reviewer_schema_rejects_private_labels (test_fixtures.FixtureTests.test_closed_reviewer_schema_rejects_private_labels) ... ok
+test_context_paths_are_canonical (test_fixtures.FixtureTests.test_context_paths_are_canonical) ... ok
+test_continuation_expectations_are_required (test_fixtures.FixtureTests.test_continuation_expectations_are_required) ... ok
+test_declared_tool_is_required (test_fixtures.FixtureTests.test_declared_tool_is_required) ... ok
+test_diff_must_agree_with_owned_snapshots (test_fixtures.FixtureTests.test_diff_must_agree_with_owned_snapshots) ... ok
+test_duplicate_result_is_rejected (test_fixtures.FixtureTests.test_duplicate_result_is_rejected) ... ok
+test_failed_read_consumes_attempts_and_visible_output_bytes (test_fixtures.FixtureTests.test_failed_read_consumes_attempts_and_visible_output_bytes) ... ok
+test_file_level_findings_are_valid (test_fixtures.FixtureTests.test_file_level_findings_are_valid) ... ok
+test_finding_ranges_use_real_snapshot_coordinates (test_fixtures.FixtureTests.test_finding_ranges_use_real_snapshot_coordinates) ... ok
+test_fixed_context_does_not_allow_tools (test_fixtures.FixtureTests.test_fixed_context_does_not_allow_tools) ... ok
+test_fresh_usage_is_not_inherited (test_fixtures.FixtureTests.test_fresh_usage_is_not_inherited) ... ok
+test_historical_steps_are_marked_copied (test_fixtures.FixtureTests.test_historical_steps_are_marked_copied) ... ok
+test_in_flight_checkpoint_is_rejected (test_fixtures.FixtureTests.test_in_flight_checkpoint_is_rejected) ... ok
+test_inherited_elapsed_time_cannot_exclude_recorded_calls (test_fixtures.FixtureTests.test_inherited_elapsed_time_cannot_exclude_recorded_calls) ... ok
+test_inherited_usage_must_match_history (test_fixtures.FixtureTests.test_inherited_usage_must_match_history) ... ok
+test_input_is_bound_to_private_expectations (test_fixtures.FixtureTests.test_input_is_bound_to_private_expectations) ... ok
+test_native_roles_are_not_invented_atif_roles (test_fixtures.FixtureTests.test_native_roles_are_not_invented_atif_roles) ... ok
+test_negative_remaining_budget_is_rejected (test_fixtures.FixtureTests.test_negative_remaining_budget_is_rejected) ... ok
+test_one_shell_can_contain_two_read_attempts (test_fixtures.FixtureTests.test_one_shell_can_contain_two_read_attempts) ... ok
+test_ordering_constraints_cannot_cycle (test_fixtures.FixtureTests.test_ordering_constraints_cannot_cycle) ... ok
+test_prefix_evidence_does_not_need_a_redundant_call (test_fixtures.FixtureTests.test_prefix_evidence_does_not_need_a_redundant_call) ... ok
+test_prefix_hash_is_checked (test_fixtures.FixtureTests.test_prefix_hash_is_checked) ... ok
+test_private_and_public_identifiers_must_agree (test_fixtures.FixtureTests.test_private_and_public_identifiers_must_agree) ... ok
+test_private_artifact_cannot_be_added_to_reviewer_directory (test_fixtures.FixtureTests.test_private_artifact_cannot_be_added_to_reviewer_directory) ... ok
+test_read_bytes_must_match_snapshot (test_fixtures.FixtureTests.test_read_bytes_must_match_snapshot) ... ok
+test_read_content_must_have_been_visible (test_fixtures.FixtureTests.test_read_content_must_have_been_visible) ... ok
+test_read_snapshot_must_match_requested_revision (test_fixtures.FixtureTests.test_read_snapshot_must_match_requested_revision) ... ok
+test_reasoning_is_not_checkpoint_data (test_fixtures.FixtureTests.test_reasoning_is_not_checkpoint_data) ... ok
+test_related_checkpoints_cannot_cross_partitions (test_fixtures.FixtureTests.test_related_checkpoints_cannot_cross_partitions) ... ok
+test_required_suffix_evidence_must_fit_remaining_budget (test_fixtures.FixtureTests.test_required_suffix_evidence_must_fit_remaining_budget) ... ok
+test_source_blob_integrity (test_fixtures.FixtureTests.test_source_blob_integrity) ... ok
+test_step_ids_are_sequential (test_fixtures.FixtureTests.test_step_ids_are_sequential) ... ok
+test_strict_json_rejects_duplicate_keys_and_nan (test_fixtures.FixtureTests.test_strict_json_rejects_duplicate_keys_and_nan) ... ok
+test_success_requires_available_manifest_entry (test_fixtures.FixtureTests.test_success_requires_available_manifest_entry) ... ok
+test_successful_result_requires_success_exit_status (test_fixtures.FixtureTests.test_successful_result_requires_success_exit_status) ... ok
+test_unknown_diff_is_not_an_empty_diff (test_fixtures.FixtureTests.test_unknown_diff_is_not_an_empty_diff) ... ok
+test_unknown_tokens_cannot_satisfy_a_finite_cap (test_fixtures.FixtureTests.test_unknown_tokens_cannot_satisfy_a_finite_cap) ... ok
+test_unsupported_runtime_state_is_not_silently_accepted (test_fixtures.FixtureTests.test_unsupported_runtime_state_is_not_silently_accepted) ... ok
+test_whole_path_budget_does_not_reset (test_fixtures.FixtureTests.test_whole_path_budget_does_not_reset) ... ok
+test_automated_review_does_not_claim_human_approval_or_budget_enforcement (test_query_override_review.QueryOverrideReviewRecordTests.test_automated_review_does_not_claim_human_approval_or_budget_enforcement) ... ok
+test_blinded_prompts_contain_only_the_bound_reviewer_request (test_query_override_review.QueryOverrideReviewRecordTests.test_blinded_prompts_contain_only_the_bound_reviewer_request) ... ok
+test_exact_system_prompt_and_raw_responses_are_hash_bound (test_query_override_review.QueryOverrideReviewRecordTests.test_exact_system_prompt_and_raw_responses_are_hash_bound) ... ok
+test_both_heads_preserve_the_base_without_overrides (test_query_overrides.QueryOverridePairTests.test_both_heads_preserve_the_base_without_overrides) ... ok
+test_checker_accepts_different_cross_key_order (test_query_overrides.QueryOverridePairTests.test_checker_accepts_different_cross_key_order) ... ok
+test_complete_head_is_supplied_without_private_material (test_query_overrides.QueryOverridePairTests.test_complete_head_is_supplied_without_private_material) ... ok
+test_correction_matches_an_independent_multimap_oracle (test_query_overrides.QueryOverridePairTests.test_correction_matches_an_independent_multimap_oracle) ... ok
+test_correction_passes_the_identical_contract (test_query_overrides.QueryOverridePairTests.test_correction_passes_the_identical_contract) ... ok
+test_first_value_consumer_observes_the_requested_sort_only_after_correction (test_query_overrides.QueryOverridePairTests.test_first_value_consumer_observes_the_requested_sort_only_after_correction) ... ok
+test_intentional_defect_fails_exactly_the_collision_probes (test_query_overrides.QueryOverridePairTests.test_intentional_defect_fails_exactly_the_collision_probes) ... ok
+test_pair_validates_with_private_relationships (test_query_overrides.QueryOverridePairTests.test_pair_validates_with_private_relationships) ... ok
+
+----------------------------------------------------------------------
+Ran 70 tests in 5.042s
+
+OK
+
+
+Raw shared reference checks (expected exits asserted):
+FAIL existing-single: expected query {'sort': ['new']}, got {'sort': ['old', 'new']}
+FAIL existing-repeated: expected query {'sort': ['new'], 'tag': ['a', 'b']}, got {'sort': ['old', 'older', 'new'], 'tag': ['a', 'b']}
+FAIL empty-override: expected query {'sort': ['']}, got {'sort': ['old', '']}
+FAIL encoded-key: expected query {'sort': ['new'], 'tag': ['a']}, got {'sort': ['old', 'older', 'new'], 'tag': ['a']}
+FAIL several-overrides: expected query {'sort': ['new'], 'page': ['2'], 'tag': ['a', 'b'], 'keep': ['']}, got {'sort': ['old', 'new'], 'page': ['1', '2'], 'tag': ['a', 'b'], 'keep': ['']}
+FAIL case-sensitive-keys: expected query {'SORT': ['upper'], 'sort': ['new']}, got {'SORT': ['upper'], 'sort': ['old', 'new']}
+case-0004: 8/14 contract probes passed.
+case-0004: exit 1, expected 1
+case-0005: 14/14 contract probes passed.
+case-0005: exit 0, expected 0
+
+
+Disputed corrected-review example:
+request_url('https://h/c?sort=name&q=a&q=b', {'sort': 'price', 'q': 'x'})
+Actual query: sort=price&q=x
