@@ -1,403 +1,289 @@
-# Schema entity relationship diagrams
+# Fixture diagrams
 
-Entity relationship diagrams for the fixture contracts in `schemas/`:
+These six Mermaid diagrams explain the fixture format to an audience. Each
+diagram covers a different level of detail.
 
-| Schema | Document | Root entity |
-|---|---|---|
-| `reviewer-input.schema.json` | `reviewer/input.json` | `REVIEWER_INPUT` |
-| `atif-prefix.schema.json` | `reviewer/prefix.json` (continuation only) | `ATIF_PREFIX` |
-| `expectations.schema.json` | `private/expectations.json` | `EXPECTATIONS` |
-| `common.schema.json` | Shared `$defs` only | — |
-
-**Notation.**
-
-- A solid line (`--`) means the JSON Schema nests the child object inside the
-  parent.
-- A dotted line (`..`) means one value refers to another by ID, path, or hash.
-  The schemas do not check these references. `validate_fixtures.py` checks
-  them.
-- `PK` marks an identifier that the validator requires to be unique within its
-  scope.
-- `FK` marks a value that must match an identifier elsewhere.
-- Attribute types `path` and `sha256` are the common canonical relative path
-  and 64-character lowercase hex digest. `enum` lists the allowed values in the
-  comment.
-- A box without attributes is either a container object with only child
-  entities, such as `BUDGETS`, or an entity from another diagram.
-
-Mermaid cannot express fixed cardinalities. `snapshots` always has exactly two
-members (`base` and `head`). `budgets` always has exactly three `LIMITS`
-(`whole_path`, `inherited` and `remaining`).
-
-## Overview: documents in one fixture
+## 1. System architecture — What is a fixture?
 
 ```mermaid
-erDiagram
-    FIXTURE_DIRECTORY ||--|| REVIEWER_INPUT : "reviewer/input.json"
-    FIXTURE_DIRECTORY ||--o| ATIF_PREFIX : "reviewer/prefix.json"
-    FIXTURE_DIRECTORY ||--|| EXPECTATIONS : "private/expectations.json"
-    FIXTURE_DIRECTORY ||--o{ BLOB : "environment/blobs/{sha256}"
+flowchart TD
+    fixture["Evaluation Fixture"]
 
-    EXPECTATIONS ||..|| REVIEWER_INPUT : "input_sha256 + case_id, revision"
-    REVIEWER_INPUT ||..o| ATIF_PREFIX : "start.prefix.sha256"
-    REVIEWER_INPUT }o..o{ BLOB : "snapshot file sha256"
-    EXPECTATIONS }o..o{ EXPECTATIONS : "dataset.related_cases"
+    subgraph reviewer_data["Reviewer-facing data"]
+        input_json["reviewer/input.json<br/>Review task + repository state"]
+        prefix_json["reviewer/prefix.json<br/>Previous conversation (optional)"]
+    end
 
-    FIXTURE_DIRECTORY {
-        string case_dir "examples/case-NNNN"
-    }
-    REVIEWER_INPUT {
-        string schema_version "const 1.0.0"
-        string case_id PK
-        string revision PK
-    }
-    ATIF_PREFIX {
-        string schema_version "const ATIF-v1.7"
-        string session_id
-    }
-    EXPECTATIONS {
-        string schema_version "const 1.0.0"
-        string case_id PK,FK
-        string revision FK
-        sha256 input_sha256 FK
-    }
-    BLOB {
-        sha256 name PK "file name = sha256(bytes)"
-        bytes content "UTF-8, empty or ends in newline"
-    }
+    subgraph source_content["Source content"]
+        blobs["environment/blobs/<br/>Content-addressed files"]
+    end
+
+    subgraph private_data["Private evaluation data"]
+        expectations_json["private/expectations.json<br/>Expected findings + evaluation rules"]
+    end
+
+    agent["Code Review Agent"]
+    file_service["Tool / File Service"]
+    grader["Private Grader"]
+
+    fixture --> input_json
+    fixture --> prefix_json
+    fixture --> blobs
+    fixture --> expectations_json
+    input_json --> agent
+    prefix_json -->|Continuation only| agent
+    blobs --> file_service
+    file_service -->|Permitted file reads| agent
+    agent -->|Review output| grader
+    expectations_json --> grader
+
+    classDef start_point fill:#334155,stroke:#334155,color:#ffffff
+    classDef public fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef storage fill:#fef3c7,stroke:#d97706,color:#92400e
+    classDef private fill:#fee2e2,stroke:#dc2626,color:#991b1b
+    classDef actor fill:#dcfce7,stroke:#16a34a,color:#166534
+
+    class fixture start_point
+    class input_json,prefix_json public
+    class blobs storage
+    class expectations_json,grader private
+    class agent,file_service actor
 ```
 
-## Reviewer input (`reviewer-input.schema.json`)
+## 2. Evaluation lifecycle — How does a review run?
 
 ```mermaid
-erDiagram
-    REVIEWER_INPUT ||--|| PROTOCOL : protocol
-    REVIEWER_INPUT ||--|{ SNAPSHOT : "snapshots.base / .head"
-    SNAPSHOT ||--o{ SNAPSHOT_FILE : files
-    REVIEWER_INPUT ||--|| CHANGE : change
-    CHANGE ||--|| DIFF : diff
-    DIFF ||--o| INLINE_TEXT : "artifact (if available)"
-    REVIEWER_INPUT ||--o{ CONTEXT_ENTRY : context_manifest
-    REVIEWER_INPUT ||--o{ TOOL : "tools (none if fixed-context)"
-    REVIEWER_INPUT ||--|| ENVIRONMENT : environment
-    REVIEWER_INPUT ||--|| START : start
-    REVIEWER_INPUT ||--|| BUDGETS : budgets
-    BUDGETS ||--|{ LIMITS : "whole_path, inherited, remaining"
+flowchart TD
+    begin_eval(["Start Evaluation"])
+    load_input["Load reviewer/input.json"]
+    start_mode{"Start mode?"}
+    fresh["Fresh<br/>New conversation"]
+    continuation["Continuation<br/>Restore prefix.json"]
+    protocol{"Review protocol?"}
+    fixed_context["Fixed-context<br/>Use supplied context"]
+    tool_enabled["Tool-enabled<br/>Access permitted files"]
+    budgets["Enforce remaining budgets"]
+    analyze["Reviewer analyzes code change"]
+    findings["Produce review findings"]
+    grader["Private grader evaluates output"]
+    expectations_json["expectations.json"]
+    result(["Evaluation result"])
 
-    CONTEXT_ENTRY }o..|| SNAPSHOT : snapshot_id
-    CONTEXT_ENTRY }o..o| SNAPSHOT_FILE : "path (absent if missing)"
-    START }o..o{ SNAPSHOT : "snapshots.base/head (continuation)"
-    START |o..o| ATIF_PREFIX : "prefix.sha256"
-    SNAPSHOT_FILE }o..|| BLOB : sha256
+    begin_eval --> load_input
+    load_input --> start_mode
+    start_mode -->|fresh| fresh
+    start_mode -->|continuation| continuation
+    fresh --> protocol
+    continuation --> protocol
+    protocol -->|fixed-context| fixed_context
+    protocol -->|tool-enabled| tool_enabled
+    fixed_context --> budgets
+    tool_enabled --> budgets
+    budgets --> analyze
+    analyze --> findings
+    findings --> grader
+    expectations_json -->|Private rubric| grader
+    grader --> result
 
-    REVIEWER_INPUT {
-        string schema_version "const 1.0.0"
-        string case_id PK "case-NNNN"
-        string revision PK
-        string repository "single fixture alias"
-        string content_capture "const approved-fixture-content"
-    }
-    PROTOCOL {
-        enum name "fixed-context | tool-enabled"
-        string version "const 1.0.0"
-    }
-    SNAPSHOT {
-        string side "object key: base | head"
-        string id PK "must not be base or head"
-    }
-    SNAPSHOT_FILE {
-        path path PK "unique per snapshot"
-        sha256 sha256 FK "BLOB name"
-    }
-    CHANGE {
-        string description
-    }
-    DIFF {
-        enum status "available | unavailable"
-        string format "const unified, if available"
-        string reason "if unavailable"
-    }
-    INLINE_TEXT {
-        string content "canonical unified diff"
-        sha256 sha256 "sha256(content)"
-    }
-    CONTEXT_ENTRY {
-        string snapshot_id PK,FK
-        path path PK,FK
-        enum delivery "initial | tool"
-        enum availability "available | missing | error"
-        string content "only initial + available"
-        string error_message "only missing | error"
-        int exit_code "min 1, only missing | error"
-    }
-    TOOL {
-        string name PK
-        enum kind "shell | repository-read"
-        enum_set operations "repository.read, discovery"
-    }
-    ENVIRONMENT {
-        string cwd "const ."
-        string LANG "optional"
-        string LC_ALL "optional"
-        string TZ "optional"
-        null runtime_state "const null"
-    }
-    START {
-        enum mode "fresh | continuation"
-        string checkpoint_id "continuation only"
-        string prefix_file "const prefix.json"
-        sha256 prefix_sha256 FK "sha256(prefix.json bytes)"
-        string snapshots_base FK "SNAPSHOT.id"
-        string snapshots_head FK "SNAPSHOT.id"
-    }
-    LIMITS {
-        string role "whole_path | inherited | remaining"
-        int tool_calls
-        int shell_invocations
-        int repository_read_attempts
-        int returned_bytes
-        int wall_time_ms
-        int model_tokens "nullable"
-    }
+    classDef terminal fill:#334155,stroke:#334155,color:#ffffff
+    classDef process fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef decision fill:#fef3c7,stroke:#d97706,color:#92400e
+    classDef agent fill:#dcfce7,stroke:#16a34a,color:#166534
+    classDef private fill:#fee2e2,stroke:#dc2626,color:#991b1b
+
+    class begin_eval,result terminal
+    class load_input,fresh,continuation,fixed_context,tool_enabled,budgets process
+    class start_mode,protocol decision
+    class analyze,findings agent
+    class grader,expectations_json private
 ```
 
-## ATIF continuation prefix (`atif-prefix.schema.json`)
+## 3. Fresh vs. continuation — Two starting modes
 
 ```mermaid
-erDiagram
-    ATIF_PREFIX ||--|| AGENT : agent
-    ATIF_PREFIX ||--|{ STEP : steps
-    STEP ||--o{ TOOL_CALL : "tool_calls (agent steps)"
-    STEP ||--o| OBSERVATION : "observation (iff tool_calls)"
-    OBSERVATION ||--|{ TOOL_RESULT : results
-    TOOL_RESULT ||--|| EXECUTION_META : "extra.code_review_eval"
-    EXECUTION_META ||--o{ REPOSITORY_READ : repository_reads
+flowchart TD
+    subgraph fresh_review["FRESH REVIEW"]
+        fresh_input["reviewer/input.json"]
+        empty_conversation["Empty conversation"]
+        no_inherited["No inherited actions"]
+    end
 
-    TOOL_RESULT ||..|| TOOL_CALL : "source_call_id (same step)"
-    TOOL_CALL }o..|| TOOL : function_name
-    REPOSITORY_READ }o..o| CONTEXT_ENTRY : "repository, snapshot, path"
-    REPOSITORY_READ }o..o| SNAPSHOT : resolved_snapshot_id
+    subgraph continuation_review["CONTINUATION REVIEW"]
+        continuation_input["reviewer/input.json<br/>+ reviewer/prefix.json"]
+        restore_history["Restore conversation history"]
+        restore_tools["Restore previous tool calls<br/>and observations"]
+        apply_budgets["Apply inherited usage<br/>and remaining budgets"]
+        resume["Resume at checkpoint"]
+    end
 
-    ATIF_PREFIX {
-        string schema_version "const ATIF-v1.7"
-        string session_id
-    }
-    AGENT {
-        string name
-        string version
-        string model_name "optional"
-    }
-    STEP {
-        int step_id PK "sequential from 1"
-        enum source "system | user | agent"
-        string message
-        bool is_copied_context "const true"
-    }
-    TOOL_CALL {
-        string tool_call_id PK "unique across prefix"
-        string function_name FK "TOOL.name"
-        object arguments "open object"
-    }
-    TOOL_RESULT {
-        string source_call_id FK "TOOL_CALL.tool_call_id"
-        string content "visible stdout"
-    }
-    EXECUTION_META {
-        enum status "completed | failed | timed-out | blocked"
-        int exit_code "nullable"
-        string stderr
-        int duration_ms
-    }
-    REPOSITORY_READ {
-        string operation "const repository.read"
-        string repository
-        string requested_revision "base | head | snapshot id"
-        string resolved_snapshot_id FK "nullable"
-        path path
-        enum status "completed | missing | error | incomplete | blocked"
-        int returned_bytes
-        sha256 content_sha256 "nullable"
-    }
+    begin_review(["Start reviewing"])
+
+    fresh_input --> empty_conversation
+    empty_conversation --> no_inherited
+    no_inherited --> begin_review
+    continuation_input --> restore_history
+    restore_history --> restore_tools
+    restore_tools --> apply_budgets
+    apply_budgets --> resume
+    resume --> begin_review
+
+    classDef fresh fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef continuation fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+    classDef complete fill:#dcfce7,stroke:#16a34a,color:#166534
+
+    class fresh_input,empty_conversation,no_inherited fresh
+    class continuation_input,restore_history,restore_tools,apply_budgets,resume continuation
+    class begin_review complete
 ```
 
-`tool_result` and `repository_read` are defined in `common.schema.json`.
+## 4. Real case walkthrough — `case-0003`
 
-## Private expectations (`expectations.schema.json`)
+This diagram walks through the most instructive example: a code change, a
+previously completed file read, and no remaining tool calls.
 
 ```mermaid
-erDiagram
-    EXPECTATIONS ||--|| DATASET : dataset
-    DATASET ||--o{ RELATED_CASE : related_cases
-    EXPECTATIONS ||--|| LABELS : labels
-    EXPECTATIONS ||--|| PROVENANCE : provenance
-    PROVENANCE ||--o{ PROVENANCE_SOURCE : "sources (iff derived)"
-    PROVENANCE ||--|| VERIFICATION : verification
-    EXPECTATIONS ||--|| EXPECTATION_SET : expectations
-    EXPECTATION_SET ||--o{ REQUIRED_FINDING : required_findings
-    REQUIRED_FINDING ||--|{ LOCATION : locations
-    REQUIRED_FINDING ||--|{ EVIDENCE : evidence
-    EXPECTATION_SET ||--o{ NON_FINDING : non_findings
-    EXPECTATION_SET ||--|| CONTEXT_EXPECTATION : context
-    EXPECTATION_SET ||--|| RETRIEVAL : retrieval
-    RETRIEVAL ||--o{ RETRIEVAL_REQUIREMENT : requirements
-    RETRIEVAL_REQUIREMENT ||--|{ SOURCE : acceptable_sources
-    RETRIEVAL ||--|| SOFT_BUDGET : soft_budget
-    EXPECTATION_SET ||--o| CONTINUATION_EXPECTATION : "continuation (null if fresh)"
-    CONTINUATION_EXPECTATION ||--o{ REMAINING_ACTION : required_remaining_actions
-    CONTINUATION_EXPECTATION ||--o{ ORDER_CONSTRAINT : essential_order
-    EXPECTATION_SET ||--|| INSTRUCTION_HANDLING : instruction_handling
+flowchart TD
+    case_node["case-0003"]
 
-    EXPECTATIONS ||..|| REVIEWER_INPUT : "input_sha256, case_id, revision"
-    RELATED_CASE }o..o| EXPECTATIONS : "case_id (other case)"
-    ORDER_CONSTRAINT }o..o{ REMAINING_ACTION : "before / after"
-    ORDER_CONSTRAINT }o..o{ RETRIEVAL_REQUIREMENT : "before / after"
-    LOCATION }o..|| SNAPSHOT_FILE : "side + path"
-    SOURCE }o..|| CONTEXT_ENTRY : "must be available"
+    subgraph code_change["CODE CHANGE"]
+        base_snapshot["Base snapshot: s-01<br/>return used #lt; limit"]
+        head_snapshot["Head snapshot: s-02<br/>return used #lt;= limit"]
+    end
 
-    EXPECTATIONS {
-        string schema_version "const 1.0.0"
-        string case_id PK,FK "case-NNNN"
-        string revision FK
-        sha256 input_sha256 FK "sha256(input.json bytes)"
-    }
-    DATASET {
-        string id
-        string version
-        enum partition "development | held-out"
-        string group_id
-    }
-    RELATED_CASE {
-        string case_id FK
-        enum relationship "defect-fix | adversarial-variant | checkpoint | semantic-variant"
-    }
-    LABELS {
-        string_set languages "min 1"
-        enum primary_concern "one of 7 concern categories"
-        enum_set secondary_concerns "same 7 categories"
-        enum change_outcome "defective | clean | undetermined"
-    }
-    PROVENANCE {
-        enum kind "original | derived"
-        string licence
-        string permission
-    }
-    PROVENANCE_SOURCE {
-        string repository
-        string fix_revision
-        string parent_revision
-        path_list paths "min 1"
-        enum synthesis "faithful-reduction | inspired-mutation"
-        string changes
-    }
-    VERIFICATION {
-        enum status "pending | independently-reviewed"
-        string notes
-    }
-    EXPECTATION_SET {
-        string final_review_behavior
-    }
-    REQUIRED_FINDING {
-        string id PK "unique across expectation IDs"
-        string explanation
-        enum severity "critical | high | medium | low"
-        string severity_rationale
-        string discoverable_because
-    }
-    LOCATION {
-        path path FK
-        enum side "base | head"
-        int lines_start "lines nullable, min 1"
-        int lines_end "lines_start <= lines_end"
-    }
-    EVIDENCE {
-        enum kind "manual-scenario | reproducer"
-        string description
-    }
-    NON_FINDING {
-        string id PK
-        string allegation
-        string reason
-    }
-    CONTEXT_EXPECTATION {
-        enum condition "self-contained | project-dependent | insufficient"
-        string expected_behavior
-    }
-    RETRIEVAL_REQUIREMENT {
-        string id PK
-        enum evidence_origin "available-evidence | new-suffix"
-        string rationale
-    }
-    SOURCE {
-        string repository FK
-        string snapshot_id FK
-        path path FK
-    }
-    SOFT_BUDGET {
-        int repository_read_attempts
-        int returned_bytes
-        int repeated_reads
-    }
-    CONTINUATION_EXPECTATION {
-        string_list forbidden_actions
-        string_list acceptable_alternatives
-    }
-    REMAINING_ACTION {
-        string id PK
-        string description
-    }
-    ORDER_CONSTRAINT {
-        string before FK "action, requirement or final_review"
-        string after FK "action, requirement or final_review"
-    }
-    INSTRUCTION_HANDLING {
-        string expected_behavior
-    }
+    subgraph recorded_prefix["RECORDED PREFIX"]
+        user_request["User requests code review"]
+        agent_uses_tool["Agent calls shell tool"]
+        read_file["Read src/quota.py at head"]
+        tool_result["Tool returns file content<br/>51 bytes"]
+        checkpoint["Checkpoint reached"]
+    end
+
+    subgraph remaining_budget["REMAINING BUDGET"]
+        whole_path["Whole path: 1 tool call"]
+        inherited["Inherited: 1 tool call"]
+        remaining["Remaining: 0 tool calls"]
+    end
+
+    subgraph reviewer_continues["REVIEWER CONTINUES"]
+        analyze["Analyze existing file content"]
+        identify["Identify boundary-condition defect"]
+        report["Report actionable finding"]
+    end
+
+    grader["Private grader checks<br/>finding-01<br/>src/quota.py, line 2"]
+
+    case_node --> base_snapshot
+    base_snapshot -->|One-line change| head_snapshot
+    head_snapshot -->|Change under review| user_request
+    user_request --> agent_uses_tool
+    agent_uses_tool --> read_file
+    read_file --> tool_result
+    tool_result --> checkpoint
+    checkpoint --> inherited
+    whole_path --> remaining
+    inherited --> remaining
+    remaining -->|No additional tool calls| analyze
+    analyze --> identify
+    identify --> report
+    report --> grader
+
+    classDef code fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef history fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+    classDef budget fill:#fef3c7,stroke:#d97706,color:#92400e
+    classDef review fill:#dcfce7,stroke:#16a34a,color:#166534
+    classDef grader fill:#fee2e2,stroke:#dc2626,color:#991b1b
+
+    class base_snapshot,head_snapshot code
+    class user_request,agent_uses_tool,read_file,tool_result,checkpoint history
+    class whole_path,inherited,remaining budget
+    class analyze,identify,report review
+    class grader grader
 ```
 
-`source` and `location` are defined in `common.schema.json`.
+## 5. SHA-256 integrity — How documents are linked
 
-## Shared definitions (`common.schema.json`)
+```mermaid
+flowchart LR
+    source_file["Source file<br/>src/quota.py"]
+    blob["Blob storage<br/>SHA-256 filename"]
+    snapshot_entry["Snapshot file entry<br/>path + SHA-256"]
+    prefix_json["prefix.json<br/>Exact bytes"]
+    prefix_hash["start.prefix.sha256"]
+    input_json["input.json<br/>Exact bytes"]
+    input_hash["expectations.input_sha256"]
+    expectations_json["expectations.json"]
 
-| `$def` | Entity in diagrams | Used by |
-|---|---|---|
-| `path` | `path` attribute type | input, prefix, expectations |
-| `checksum` | `sha256` attribute type | input, prefix, expectations (pattern also inlined) |
-| `case_id` | `case_id` attributes | input, expectations |
-| `snapshot` | `SNAPSHOT`, `SNAPSHOT_FILE` | input |
-| `inline_text` | `INLINE_TEXT` | input |
-| `environment` | `ENVIRONMENT` | input |
-| `limits` | `LIMITS` | input |
-| `tool_result` | `TOOL_RESULT`, `EXECUTION_META` | prefix |
-| `repository_read` | `REPOSITORY_READ` | prefix (via `tool_result`) |
-| `location` | `LOCATION` | expectations |
-| `source` | `SOURCE` | expectations |
+    source_file -->|Hash content| blob
+    blob -->|Referenced by hash| snapshot_entry
+    snapshot_entry -->|Included in| input_json
+    prefix_json -->|Hash exact bytes| prefix_hash
+    prefix_hash -->|Stored in| input_json
+    input_json -->|Hash exact bytes| input_hash
+    input_hash -->|Stored in| expectations_json
 
-## Validator-enforced relationships
+    classDef source fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef hash fill:#fef3c7,stroke:#d97706,color:#92400e
+    classDef docs fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+    classDef private fill:#fee2e2,stroke:#dc2626,color:#991b1b
 
-The schemas cannot express the dotted relationships. `validate_fixtures.py`
-checks them:
+    class source_file,blob source
+    class snapshot_entry,prefix_hash,input_hash hash
+    class prefix_json,input_json docs
+    class expectations_json private
+```
 
-- `EXPECTATIONS.input_sha256` must equal the SHA-256 of the exact bytes in
-  `reviewer/input.json`. `case_id`, `revision` and `schema_version` must match
-  across the two documents.
-- `START.prefix.sha256` must equal the SHA-256 of the exact bytes in
-  `reviewer/prefix.json`. The prefix file must exist exactly when
-  `start.mode` is `continuation`. `EXPECTATION_SET.continuation` must be
-  non-null in the same condition.
-- Every `SNAPSHOT_FILE.sha256` must name a blob whose content hashes to that
-  value.
-- Each `CONTEXT_ENTRY.snapshot_id` must refer to a snapshot. An `available`
-  path must exist in that snapshot, and a `missing` path must not. An `error`
-  path may or may not exist.
-- `TOOL_CALL.function_name` must name a declared `TOOL`. Each call must have
-  exactly one `TOOL_RESULT` on the same step.
-- A completed `REPOSITORY_READ` must match an available `CONTEXT_ENTRY`. Its
-  byte count and hash must match the snapshot file.
-- `LOCATION` (`side`, `path`, line range) must fall within the selected
-  snapshot's file.
-- Each `SOURCE` must identify an available `CONTEXT_ENTRY`.
-- `ORDER_CONSTRAINT.before` and `ORDER_CONSTRAINT.after` must refer to a
-  `REMAINING_ACTION` ID, a `RETRIEVAL_REQUIREMENT` ID, or the reserved ID
-  `final_review`. The constraints must not form a cycle.
-- Each `RELATED_CASE` that is validated with its target must share the
-  target's dataset `id`, `version`, `partition` and `group_id`.
+## 6. Expectations — What does the grader evaluate?
+
+```mermaid
+flowchart TD
+    expectations_root["private/expectations.json"]
+    dataset["Dataset metadata<br/>Labels, provenance, related cases"]
+    evaluation["Evaluation expectations"]
+    required_findings["Required findings"]
+    non_findings["Non-findings"]
+    retrieval["Retrieval requirements"]
+    behavior["Review behavior"]
+    continuation_rules["Continuation rules"]
+    locations["Locations<br/>Base/head, path, lines"]
+    evidence["Evidence<br/>Reproduction scenarios"]
+    sources["Acceptable sources<br/>Snapshot + file"]
+    remaining_actions["Required remaining actions"]
+    forbidden_actions["Forbidden actions"]
+    action_order["Essential action order"]
+    grading["Private grading process"]
+
+    expectations_root --> dataset
+    expectations_root --> evaluation
+    evaluation --> required_findings
+    evaluation --> non_findings
+    evaluation --> retrieval
+    evaluation --> behavior
+    evaluation --> continuation_rules
+    required_findings --> locations
+    required_findings --> evidence
+    retrieval --> sources
+    continuation_rules --> remaining_actions
+    continuation_rules --> forbidden_actions
+    continuation_rules --> action_order
+    dataset --> grading
+    evaluation --> grading
+
+    classDef start_point fill:#334155,stroke:#334155,color:#ffffff
+    classDef group fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    classDef detail fill:#f3e8ff,stroke:#9333ea,color:#6b21a8
+    classDef grade fill:#dcfce7,stroke:#16a34a,color:#166534
+
+    class expectations_root start_point
+    class dataset,evaluation,required_findings,non_findings,retrieval,behavior,continuation_rules group
+    class locations,evidence,sources,remaining_actions,forbidden_actions,action_order detail
+    class grading grade
+```
+
+## Presenting the diagrams
+
+For a live demo, present them in the order 1 → 2 → 4 → 3 → 5 → 6. That moves
+from the overall architecture to a real example before introducing the more
+technical aspects of the schemas.
+
+To export SVG or PNG files for a presentation, paste each diagram into the
+[Mermaid Live Editor](https://mermaid.live/).

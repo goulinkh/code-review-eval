@@ -7,3 +7,11 @@ dependencies = ["jsonschema>=4.23,<5"]
 
 [tool.uv]
 package = false
+
+[tool.marimo.display]
+theme = "dark"
+
+[dependency-groups]
+demo = [
+    "marimo>=0.25,<0.26",
+]

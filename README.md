@@ -30,6 +30,62 @@ uv run python -m unittest discover -s tests -v
 Alternatively install the dependency from `pyproject.toml` in your own virtual
 environment and run the same Python commands without `uv run`.
 
+## Team demo (marimo)
+
+The evaluator-only [`demo.py`](demo.py) notebook provides an interactive,
+offline walkthrough and visual fixture explorer. Choose a case and file to
+browse line-numbered **side-by-side or unified diffs**, with additions,
+deletions, and character-level changes highlighted. Toggle full context, inspect
+the base/head source, or switch tabs to the supplied patch, initial reviewer
+context, access manifest, and raw request. The reconstructed snapshot view is
+evaluator-only; it does not enlarge the reviewer's allowed context.
+
+From this repository's root (`code-review-eval/`):
+
+```sh
+uv sync --locked --group demo
+uv run --locked --group demo marimo run demo.py
+```
+
+Use `marimo edit demo.py` instead of `marimo run demo.py` to edit the
+notebook. Marimo is optional; core validation needs only the normal dependencies.
+After setup, no model, API key, live service, or network access is needed.
+For future additions, see the [demo extension handbook](docs/demo-handbook.md).
+
+Suggested five-minute presentation:
+
+1. Explain the `reviewer/`, `environment/`, and `private/` boundary.
+2. Inspect the default `fixtures/case-0004` request and visual file diff.
+   Try both diff layouts and the reviewer-context tabs. Ask the team what finding
+   they would report before revealing the reference.
+3. Reveal the private rubric, then run the trusted defect/fix pair: the existing
+   author checker reports **8/14** probes passed for `case-0004` and **14/14**
+   for `case-0005`. These are contract probes, not reviewer/model scores.
+4. Select `examples/case-0003` and inspect the historical ATIF prefix and
+   inherited/remaining budgets. Historical commands are displayed, never replayed.
+5. Validate all five artifacts together and close with the pending work:
+   independent annotation/licensing review, a frozen corpus, adapters, an
+   isolated runner, and semantic grading.
+
+Snapshot execution is opt-in and restricted to the existing two trusted authored
+cases; it is not sandboxed. Structural validation does not execute snapshots.
+The notebook and any exports are evaluator-only presentation material, **never
+reviewer context**. Labels remain provisional; this is one authored pair, not
+broad corpus coverage or an independently verified clean dataset.
+
+Notebook checks and a static export of the default view:
+
+```sh
+uv run --locked --group demo marimo check --strict demo.py
+uv run --locked --group demo python -m unittest discover -s tests -v
+uv run --locked --group demo marimo export html demo.py --no-include-code -o /tmp/code-review-eval-demo.html
+```
+
+The HTML export is a noninteractive fallback: it shows the default view, without
+revealed labels or probe/validation results. Run the live notebook to switch
+cases, files, diff layouts, and full context. Notebook tests are skipped when
+marimo is not installed; the pure-Python diff renderer is tested with core dependencies.
+
 ## Layout and trust boundary
 
 ```text
