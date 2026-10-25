@@ -1,7 +1,10 @@
-# Code review evaluation fixtures
+# Code review evaluation
 
-A standalone Git repository inside the hackathon checkout. This first increment
-defines fixture contracts, not a reviewer, runner, sandbox, or grader.
+A standalone Git repository with versioned fixtures and a thin benchmark layer
+on [Harbor](https://github.com/harbor-framework/harbor). Harbor runs Pi, OpenCode,
+and future custom agents in sandboxed environments. This layer exports tasks,
+captures MLflow lifecycle traces, retains reviews, and produces per-case reports.
+Finding quality is human-adjudicated; no model judge is included.
 
 ## Standards first
 
@@ -19,7 +22,8 @@ Agents should start with [AGENTS.md](AGENTS.md) for task-specific loading and va
 
 ## Validate
 
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
+Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/). Evaluation runs also
+require Docker with Compose; fixture validation and unit tests do not.
 
 ```sh
 uv sync --locked
@@ -29,6 +33,28 @@ uv run python -m unittest discover -s tests -v
 
 Alternatively install the dependency from `pyproject.toml` in your own virtual
 environment and run the same Python commands without `uv run`.
+
+## Run an evaluation
+
+```sh
+uv run python run_eval.py run fixtures/* \
+  --recorded recorded_reviews/smoke --output runs/recorded-smoke
+```
+
+Open `runs/recorded-smoke/report.md`; quality remains pending until a human edits
+its per-case `adjudication.json` forms and runs:
+
+```sh
+uv run python run_eval.py adjudicate runs/recorded-smoke
+uv run mlflow ui --backend-store-uri "sqlite:///$(pwd)/mlflow.db"
+```
+
+Use `--agent pi --model provider/model` or `--agent opencode --model provider/model`
+for Harbor's built-in integrations, or `--agent my_module:MyAgent` for a custom
+Harbor agent. See [runner usage](docs/runner.md) for human matching, retained
+artifacts, and capability/budget limitations. Only fresh fixed-context fixtures
+are exported; native agents retain their tools, so this is not a controlled
+no-tools baseline.
 
 ## Team demo (marimo)
 
@@ -64,8 +90,8 @@ Suggested five-minute presentation:
 4. Select `examples/case-0003` and inspect the historical ATIF prefix and
    inherited/remaining budgets. Historical commands are displayed, never replayed.
 5. Validate all five artifacts together and close with the pending work:
-   independent annotation/licensing review, a frozen corpus, adapters, an
-   isolated runner, and semantic grading.
+   independent annotation/licensing review, a frozen corpus, an isolated
+   tool-enabled runner, and broader evaluation coverage.
 
 Snapshot execution is opt-in and restricted to the existing two trusted authored
 cases; it is not sandboxed. Structural validation does not execute snapshots.
@@ -100,9 +126,10 @@ fixtures/<neutral-case-id>/    # same per-case layout
 
 **Never expose the whole fixture directory to a reviewer.** Fixed-context
 adapters receive the reviewer documents and inline initial context only.
-Tool-enabled adapters additionally serve declared whole-file reads from
-`environment/` through an isolated read-only boundary. Merely naming a
-directory `private/` is not isolation; this repository implements no sandbox.
+A future tool-enabled integration must serve declared whole-file reads through
+an enforced boundary. The current layer exports only public input into native
+Harbor tasks; Harbor owns Docker isolation. Never mount the original fixture
+checkout or evaluator output into an agent environment.
 
 The three examples show a fresh defective/corrected pair and a continuation
 of the defective case after a completed file read. They are format examples,
@@ -122,4 +149,5 @@ The design follows the parent project's
 The repository remains usable independently; those documents are design
 inputs, not runtime dependencies.
 
-No production reviewer runner or live code-hosting write integration is configured.
+No production reviewer or live code-hosting write integration is configured.
+Model calls are opt-in; the recorded Harbor agent runs without model access.

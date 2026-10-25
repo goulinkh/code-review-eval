@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "findings": [
+    {
+      "text": "Appending an override leaves existing values before it. For sort=old with sort=new the endpoint still reads old, so the override is ignored.",
+      "path": "src/request_url.py",
+      "side": "head",
+      "lines": {"start": 13, "end": 15},
+      "severity": "medium"
+    },
+    {
+      "text": "Blank query values are always discarded by this function.",
+      "path": "src/request_url.py",
+      "side": "head"
+    }
+  ]
+}

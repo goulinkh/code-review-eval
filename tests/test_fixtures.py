@@ -55,7 +55,7 @@ class FixtureTests(unittest.TestCase):
 
     def test_all_examples_validate_offline(self):
         self.assertEqual(validate_dataset(sorted((self.root / "examples").iterdir())), 3)
-        self.assertEqual(len(VALIDATORS), 4)
+        self.assertEqual(len(VALIDATORS), 5)
 
     def test_closed_reviewer_schema_rejects_private_labels(self):
         self.public["expectations"] = self.private["expectations"]

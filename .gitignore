@@ -2,3 +2,9 @@
 __pycache__/
 __marimo__/
 *.py[cod]
+
+# Evaluator-only artifacts and local MLflow storage
+runs/
+mlflow.db*
+mlruns/
+mlartifacts/

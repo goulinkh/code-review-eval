@@ -30,6 +30,17 @@ particular, ATIF records interaction evidence; it does not restore environment
 state, define private semantic finding labels, or subtract checkpoint usage
 from whole-path limits.
 
+## Harbor runtime bridge
+
+The [evaluation layer](../runner.md) uses Harbor **0.25.0** for execution and
+exports native Harbor tasks from these source fixtures. Source fixtures remain
+benchmark-specific, not Harbor tasks themselves. Only reviewer-visible input is
+exported; private expectations stay outside tasks and image build contexts.
+Execution uses Harbor's existing built-in/custom-agent interfaces rather than a
+second agent registry or process runner. This runtime choice does not widen the
+restricted ATIF-v1.7 prefix profile below. Generated native Harbor trajectories
+retain their own version; unsupported prefixes must not be silently relabelled.
+
 ## Pinned ATIF reference
 
 Harbor commit: `fdba28fc411e47e8765420a1a063b4918fce3def`.

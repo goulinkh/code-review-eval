@@ -239,9 +239,15 @@ checkpoints must stay in the same partition.
 
 ## Deferred work
 
-No reviewer output schema, adapters, execution runner, grader, live posting,
-CLI sandbox, or tracing backend is implemented here. The initial fixed-context
-protocol can use these contracts without building a review loop.
+The [thin Harbor layer](runner.md) exports fresh fixed-context fixtures as native
+Harbor tasks. Harbor owns agent integration (including Pi/OpenCode/custom agents),
+sandbox execution and artifact collection; this layer adds a separate
+[review output schema](../schemas/review.schema.json), MLflow lifecycle traces,
+per-case reports and human-adjudication import. Source fixture schemas and the
+restricted ATIF prefix profile are unchanged. Native agent tools are not fully
+restricted to this protocol; reports disclose that enforcement gap. Tool-enabled
+and continuation fixture execution remain unsupported. There is no model judge
+or live posting integration.
 
 REPL execution is a post-initial protocol. It will need a real sandbox,
 versioned interpreter/semantics, session identity, hashed restorable runtime

@@ -32,9 +32,11 @@ From the repository root:
 
 ```sh
 uv sync --locked
-uv run python validate_fixtures.py examples/*
+uv run python validate_fixtures.py examples/* fixtures/*
 uv run python -m unittest discover -s tests -v
 ```
 
-Report which checks ran and any that could not run. This repository defines
-contracts and validation; it does not implement a reviewer, runner, or sandbox.
+Report which checks ran and any that could not run. The thin Harbor integration
+is documented in [runner usage](docs/runner.md). Unit tests use stub lifecycle
+events, never paid model calls. Harbor owns agent execution and sandbox lifecycle;
+do not introduce a parallel agent registry, process runner, or container runtime.
