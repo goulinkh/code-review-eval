@@ -1,0 +1,401 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:code-review-eval:schema:reviewer-input:1.0.0",
+  "title": "Reviewer-visible fixture input",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "case_id": {
+      "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/case_id"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "enum": [
+            "fixed-context",
+            "tool-enabled"
+          ]
+        },
+        "version": {
+          "const": "1.0.0"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "repository": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshots": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/snapshot"
+        },
+        "head": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/snapshot"
+        }
+      },
+      "required": [
+        "base",
+        "head"
+      ],
+      "additionalProperties": false
+    },
+    "change": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "diff": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "const": "available"
+                },
+                "format": {
+                  "const": "unified"
+                },
+                "artifact": {
+                  "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/inline_text"
+                }
+              },
+              "required": [
+                "status",
+                "format",
+                "artifact"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "const": "unavailable"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "description",
+        "diff"
+      ],
+      "additionalProperties": false
+    },
+    "context_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/path"
+          },
+          "delivery": {
+            "enum": [
+              "initial",
+              "tool"
+            ]
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "missing",
+              "error"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "error_message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_code": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "snapshot_id",
+          "path",
+          "delivery",
+          "availability"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "availability": {
+                  "const": "available"
+                }
+              }
+            },
+            "then": {
+              "allOf": [
+                {
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "error_message"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "exit_code"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "delivery": {
+                        "const": "initial"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "content"
+                    ]
+                  },
+                  "else": {
+                    "not": {
+                      "required": [
+                        "content"
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "else": {
+              "required": [
+                "error_message",
+                "exit_code"
+              ],
+              "not": {
+                "required": [
+                  "content"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "shell",
+              "repository-read"
+            ]
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "repository.read",
+                "discovery"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "name",
+          "kind",
+          "operations"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "environment": {
+      "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/environment"
+    },
+    "start": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "const": "fresh"
+            }
+          },
+          "required": [
+            "mode"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "const": "continuation"
+            },
+            "checkpoint_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "prefix": {
+              "type": "object",
+              "properties": {
+                "file": {
+                  "const": "prefix.json"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "file",
+                "sha256"
+              ],
+              "additionalProperties": false
+            },
+            "snapshots": {
+              "type": "object",
+              "properties": {
+                "base": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "head": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "base",
+                "head"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "mode",
+            "checkpoint_id",
+            "prefix",
+            "snapshots"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "budgets": {
+      "type": "object",
+      "properties": {
+        "whole_path": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/limits"
+        },
+        "inherited": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/limits"
+        },
+        "remaining": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/limits"
+        }
+      },
+      "required": [
+        "whole_path",
+        "inherited",
+        "remaining"
+      ],
+      "additionalProperties": false
+    },
+    "content_capture": {
+      "const": "approved-fixture-content"
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "revision",
+    "protocol",
+    "repository",
+    "snapshots",
+    "change",
+    "context_manifest",
+    "tools",
+    "environment",
+    "start",
+    "budgets",
+    "content_capture"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "protocol": {
+            "properties": {
+              "name": {
+                "const": "fixed-context"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "tools": {
+            "maxItems": 0
+          },
+          "context_manifest": {
+            "items": {
+              "properties": {
+                "delivery": {
+                  "const": "initial"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

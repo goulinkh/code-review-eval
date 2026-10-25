@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:code-review-eval:schema:atif-prefix:1.0.0",
+  "title": "Code-review checkpoint profile of Harbor ATIF-v1.7 (not the full ATIF schema)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "ATIF-v1.7"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source": {
+            "enum": [
+              "system",
+              "user",
+              "agent"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "is_copied_context": {
+            "const": true
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tool_call_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "function_name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "arguments": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "tool_call_id",
+                "function_name",
+                "arguments"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "observation": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/tool_result"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "results"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "step_id",
+          "source",
+          "message",
+          "is_copied_context"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "tool_calls"
+              ]
+            },
+            "then": {
+              "required": [
+                "observation"
+              ],
+              "properties": {
+                "source": {
+                  "const": "agent"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "observation"
+              ]
+            },
+            "then": {
+              "required": [
+                "tool_calls"
+              ],
+              "properties": {
+                "source": {
+                  "const": "agent"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "agent",
+    "steps"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "session-03",
+  "agent": {
+    "name": "fixture-author",
+    "version": "1",
+    "model_name": "unknown"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "user",
+      "message": "Update quota handling. used counts completed operations; limit is the maximum permitted. allowed decides whether one more operation may start. Review for actionable defects.",
+      "is_copied_context": true
+    },
+    {
+      "step_id": 2,
+      "source": "agent",
+      "message": "I will inspect the changed file.",
+      "is_copied_context": true,
+      "tool_calls": [
+        {
+          "tool_call_id": "call-01",
+          "function_name": "shell",
+          "arguments": {
+            "command": "lp repository file fixture-project --path src/quota.py --branch head --text"
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call-01",
+            "content": "def allowed(used, limit):\n    return used <= limit\n",
+            "extra": {
+              "code_review_eval": {
+                "status": "completed",
+                "exit_code": 0,
+                "stderr": "",
+                "duration_ms": 10,
+                "repository_reads": [
+                  {
+                    "operation": "repository.read",
+                    "repository": "fixture-project",
+                    "requested_revision": "head",
+                    "resolved_snapshot_id": "s-02",
+                    "path": "src/quota.py",
+                    "status": "completed",
+                    "returned_bytes": 51,
+                    "content_sha256": "ef792cfdfa91ee5d3d28c66f5f8c814b1010bc4b85d2061e560f0658751ee36f"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

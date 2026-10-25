@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0001",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "src/quota.py",
+          "sha256": "64cb71271fae4e158dc52229e2d5e892196af1e3f68695458eab4a419b74ad4d"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "src/quota.py",
+          "sha256": "ef792cfdfa91ee5d3d28c66f5f8c814b1010bc4b85d2061e560f0658751ee36f"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Update quota handling. used counts completed operations; limit is the maximum permitted. allowed decides whether one more operation may start. Review for actionable defects.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/quota.py\n+++ b/src/quota.py\n@@ -1,2 +1,2 @@\n def allowed(used, limit):\n-    return used < limit\n+    return used <= limit\n",
+        "sha256": "8b995025822bc0125fd003c3b588c87510f45eab35867350e2c1993d476b3818"
+      }
+    }
+  },
+  "context_manifest": [],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}
