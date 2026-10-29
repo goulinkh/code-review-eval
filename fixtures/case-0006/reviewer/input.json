@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0006",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "c58504b8f8bb20dfac06bbb7ab1e37cbe6ca42bdcebc4f8e400c107f14d75d0e"
+        },
+        {
+          "path": "src/claims.py",
+          "sha256": "108d08da5dc18900bfb62f020ed2ad52c18758324fc79d0306a79c9cf17eb57d"
+        },
+        {
+          "path": "src/commands.py",
+          "sha256": "72a2d7237277898c05d59dcc0547fa416858cc41af7410182d0bb305159aaf44"
+        },
+        {
+          "path": "src/payload_codec.py",
+          "sha256": "bfd6fcac8ebb17d65d4fdcc5d8901d92a394a708fc0e36fa81920fba08289f75"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "c58504b8f8bb20dfac06bbb7ab1e37cbe6ca42bdcebc4f8e400c107f14d75d0e"
+        },
+        {
+          "path": "src/claims.py",
+          "sha256": "108d08da5dc18900bfb62f020ed2ad52c18758324fc79d0306a79c9cf17eb57d"
+        },
+        {
+          "path": "src/commands.py",
+          "sha256": "bd059529930517ee193965e2acafa6703902b471e6c6af202fd83064bc703b7f"
+        },
+        {
+          "path": "src/payload_codec.py",
+          "sha256": "bfd6fcac8ebb17d65d4fdcc5d8901d92a394a708fc0e36fa81920fba08289f75"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add boolean expiry metadata to scheduler command batches while retaining the existing inbox handoff. Review the producer and its supplied decoding boundary for actionable defects. See PROJECT.md for the wire contract.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/commands.py\n+++ b/src/commands.py\n@@ -3,6 +3,10 @@\n \n def enumerate_commands(records, reference_time):\n     return json.dumps([\n-        {\"id\": row[\"id\"], \"command\": row[\"command\"]}\n+        {\n+            \"id\": row[\"id\"],\n+            \"command\": row[\"command\"],\n+            \"expired\": reference_time - row[\"created_at\"] > 900,\n+        }\n         for row in records\n     ])\n",
+        "sha256": "ed1ea3b0cbff4dde833f1000a91f4e6b25ee32911ce636be32787481e0a3c37a"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Command handoff\n\nThe scheduler serializes enumerate_commands output and sends those exact bytes\nthrough claim_commands to an inbox. The codec is invoked before the inbox is\nchanged. It enforces the supplied exact value types; annotations alone are not\nruntime validation. There is no alternate decoder or intervening coercion.\n\nRecords have string id/command and integer created_at (epoch seconds).\nreference_time is an integer at or after created_at. The new expired metadata\nmust be a JSON boolean, including false for work at most 900 seconds old.\nBoth flags must reach the inbox unchanged. Legacy string-only maps and empty\nbatches remain accepted. Numeric, null, list and object field values must still\nbe rejected. The codec's map contract permits any string keys; field-specific\nvalidation is outside this handoff. Everything runs locally with Python's\nstandard library; no activity framework or service is required.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/claims.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "from payload_codec import decode_commands\n\n\nCOMMAND_VALUE_TYPES = (str,)\n\n\ndef claim_commands(payload, inbox):\n    commands = decode_commands(payload, COMMAND_VALUE_TYPES)\n    inbox.extend(commands)\n    return len(commands)\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/commands.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "import json\n\n\ndef enumerate_commands(records, reference_time):\n    return json.dumps([\n        {\n            \"id\": row[\"id\"],\n            \"command\": row[\"command\"],\n            \"expired\": reference_time - row[\"created_at\"] > 900,\n        }\n        for row in records\n    ])\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/payload_codec.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "import json\n\n\nclass PayloadTypeError(ValueError):\n    pass\n\n\ndef decode_commands(payload, value_types):\n    \"\"\"Decode a JSON list of string-keyed maps using exact value types.\"\"\"\n    rows = json.loads(payload)\n    if type(rows) is not list:\n        raise PayloadTypeError(\"expected a list\")\n    for row in rows:\n        if type(row) is not dict:\n            raise PayloadTypeError(\"expected a map\")\n        for key, value in row.items():\n            if type(key) is not str or type(value) not in value_types:\n                raise PayloadTypeError(f\"field {key!r} has unsupported type {type(value).__name__}\")\n    return rows\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

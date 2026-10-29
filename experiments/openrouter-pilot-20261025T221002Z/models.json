@@ -1,0 +1,80 @@
+{
+  "providers": {
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "apiKey": "$OPENROUTER_API_KEY",
+      "models": [
+        {
+          "id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.09,
+            "output": 0.3,
+            "cacheRead": 0.0,
+            "cacheWrite": 0.0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-3.2-24b-instruct",
+          "name": "Mistral: Mistral Small 3.2 24B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.075,
+            "output": 0.19999999999999998,
+            "cacheRead": 0.0,
+            "cacheWrite": 0.0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "openai/gpt-4o-mini-2024-07-18",
+          "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.15,
+            "output": 0.6,
+            "cacheRead": 0.075,
+            "cacheWrite": 0.0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        }
+      ]
+    }
+  }
+}

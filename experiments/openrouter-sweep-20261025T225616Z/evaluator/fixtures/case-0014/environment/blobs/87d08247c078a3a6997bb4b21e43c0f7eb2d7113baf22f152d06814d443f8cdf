@@ -1,0 +1,3 @@
+def is_admin(user, configured_admin):
+    name = (configured_admin or "").strip()
+    return bool(name) and user is not None and user["username"] == name

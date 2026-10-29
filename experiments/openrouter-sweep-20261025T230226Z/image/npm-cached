@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$#" -eq 4 ] && [ "$1" = "install" ] && { [ "$2" = "-g" ] || [ "$2" = "--global" ]; } && [ "$3" = "--ignore-scripts" ] && [ "$4" = "@earendil-works/pi-coding-agent@1.1.0" ]; then
+    package="$(dirname "$0")/../lib/node_modules/@earendil-works/pi-coding-agent/package.json"
+    if node -e 'if(require(process.argv[1]).version !== "1.1.0") process.exit(1)' "$package"; then
+        echo "Using the preinstalled, version-verified Pi 1.1.0 package"
+        exit 0
+    fi
+fi
+exec "$(dirname "$0")/npm-real" "$@"

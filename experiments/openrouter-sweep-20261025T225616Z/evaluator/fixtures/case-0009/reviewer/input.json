@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0009",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "7b0dc9f62be03380defe8f301f8664cd02059a766fe469c4278d36443031d4db"
+        },
+        {
+          "path": "src/access.py",
+          "sha256": "87d08247c078a3a6997bb4b21e43c0f7eb2d7113baf22f152d06814d443f8cdf"
+        },
+        {
+          "path": "src/admin.py",
+          "sha256": "72a7eaac9b152a70e6494d9624525bcd454d8bb8b763a8be8aa66f11a1fb7fd9"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "7b0dc9f62be03380defe8f301f8664cd02059a766fe469c4278d36443031d4db"
+        },
+        {
+          "path": "src/access.py",
+          "sha256": "87d08247c078a3a6997bb4b21e43c0f7eb2d7113baf22f152d06814d443f8cdf"
+        },
+        {
+          "path": "src/admin.py",
+          "sha256": "95fddafeaf76bbfefb58c4a5a42f16be75a5a3a3888883b7ea286413cec9b1cf"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add set_enabled alongside the project listing entry point. Review the administrative operation against the supplied access and state contracts in PROJECT.md.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/admin.py\n+++ b/src/admin.py\n@@ -5,3 +5,12 @@\n     if not is_admin(user, configured_admin):\n         return 403, None\n     return 200, sorted(projects)\n+\n+\n+def set_enabled(user, configured_admin, projects, project_id, enabled):\n+    if not is_admin(user, configured_admin):\n+        return 403, None\n+    if project_id not in projects:\n+        return 404, None\n+    projects[project_id] = enabled\n+    return 200, {\"id\": project_id, \"enabled\": enabled}\n",
+        "sha256": "ba1c103e89f6878822cc21e4873db7ad477dc15ab58b37666b5758dca3ae58dc"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Project administration\n\nlist_projects and the new set_enabled are direct server-side entry points.\nThere is no enclosing authorization middleware. user is a trusted, resolved\nsession identity ({\"username\": string}) or None, never request-supplied identity.\nThe deployment's configured_admin is a string or None. Only that exact username\n(after trimming configuration whitespace) may list or change projects. Missing,\nempty or whitespace-only configuration must deny everyone, including signed-in\nusers. A denial returns (403, None) before any state change, including for an\nunknown project. An authorized unknown project returns (404, None).\n\nprojects is a local dict from project id to bool. project_id is a validated\nstring and enabled a validated bool; calls are serial. Successful updates return\n(200, {\"id\": project_id, \"enabled\": enabled}) and affect only that project.\nThese are functions, not HTTP handlers: session resolution, input parsing and\nCSRF protections are outside this miniature. No remote identity service exists.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/access.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "def is_admin(user, configured_admin):\n    name = (configured_admin or \"\").strip()\n    return bool(name) and user is not None and user[\"username\"] == name\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/admin.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "from access import is_admin\n\n\ndef list_projects(user, configured_admin, projects):\n    if not is_admin(user, configured_admin):\n        return 403, None\n    return 200, sorted(projects)\n\n\ndef set_enabled(user, configured_admin, projects, project_id, enabled):\n    if not is_admin(user, configured_admin):\n        return 403, None\n    if project_id not in projects:\n        return 404, None\n    projects[project_id] = enabled\n    return 200, {\"id\": project_id, \"enabled\": enabled}\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

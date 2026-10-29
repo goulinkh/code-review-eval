@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0012",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "9ea0abf13b2c19ba158be31d119a30c3a7129ced018d854267322e24d7676528"
+        },
+        {
+          "path": "src/commands.py",
+          "sha256": "72a2d7237277898c05d59dcc0547fa416858cc41af7410182d0bb305159aaf44"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "9ea0abf13b2c19ba158be31d119a30c3a7129ced018d854267322e24d7676528"
+        },
+        {
+          "path": "src/commands.py",
+          "sha256": "bd059529930517ee193965e2acafa6703902b471e6c6af202fd83064bc703b7f"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add expiry metadata to serialized scheduler commands. Review the interface change using the supplied producer package.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/commands.py\n+++ b/src/commands.py\n@@ -3,6 +3,10 @@\n \n def enumerate_commands(records, reference_time):\n     return json.dumps([\n-        {\"id\": row[\"id\"], \"command\": row[\"command\"]}\n+        {\n+            \"id\": row[\"id\"],\n+            \"command\": row[\"command\"],\n+            \"expired\": reference_time - row[\"created_at\"] > 900,\n+        }\n         for row in records\n     ])\n",
+        "sha256": "ed1ea3b0cbff4dde833f1000a91f4e6b25ee32911ce636be32787481e0a3c37a"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Scheduler package\n\nRecords have string id/command and integer created_at. reference_time is an\ninteger at or after creation; older than 900 seconds means expired. The new\nfield is JSON bool, not a string. This package serializes batches for a separate\nworker. Only the producer is supplied here; the worker decoder, accepted value\ntypes and inbox implementation are not part of this package. No worker\ncontract or version is available in this review. This does not establish what\nany deployed worker accepts. No additional code can be fetched in this review.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/commands.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "import json\n\n\ndef enumerate_commands(records, reference_time):\n    return json.dumps([\n        {\n            \"id\": row[\"id\"],\n            \"command\": row[\"command\"],\n            \"expired\": reference_time - row[\"created_at\"] > 900,\n        }\n        for row in records\n    ])\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/claims.py",
+      "delivery": "initial",
+      "availability": "missing",
+      "error_message": "Not supplied in this fixed-context review package.",
+      "exit_code": 1
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

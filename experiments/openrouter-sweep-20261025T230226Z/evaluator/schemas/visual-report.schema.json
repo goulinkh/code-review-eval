@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:code-review-eval:visual-report:1.0.0",
+  "title": "Evaluator-only visualization tables (derived, not new judgments)",
+  "type": "object", "additionalProperties": false,
+  "required": ["format", "schema_version", "grading_version", "evaluator_only", "ranking", "notes", "runs", "cases", "metrics"],
+  "properties": {
+    "format": {"const": "code-review-eval.visuals"},
+    "schema_version": {"const": "1.0.0"},
+    "grading_version": {"type": "string", "minLength": 1},
+    "evaluator_only": {"const": true},
+    "ranking": {"const": null},
+    "notes": {"type": "string"},
+    "runs": {"type": "array", "items": {"$ref": "#/$defs/run"}},
+    "cases": {"type": "array", "items": {"$ref": "#/$defs/case"}},
+    "metrics": {"type": "array", "items": {"$ref": "#/$defs/metric"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "number": {"type": ["number", "null"], "minimum": 0},
+    "count": {"type": ["integer", "null"], "minimum": 0},
+    "run": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_key", "name", "agent", "model", "mlflow_run_id", "quality_basis", "pending_cases", "expected_cases", "reported_cases", "complete", "report_uri"],
+      "properties": {
+        "run_key": {"$ref": "#/$defs/text"}, "name": {"$ref": "#/$defs/text"},
+        "agent": {"$ref": "#/$defs/text"}, "model": {"$ref": "#/$defs/text"},
+        "mlflow_run_id": {"$ref": "#/$defs/text"}, "quality_basis": {"$ref": "#/$defs/text"},
+        "pending_cases": {"type": "integer", "minimum": 0},
+        "expected_cases": {"type": "integer", "minimum": 0},
+        "reported_cases": {"type": "integer", "minimum": 0},
+        "complete": {"type": "boolean"}, "report_uri": {"$ref": "#/$defs/text"}
+      }
+    },
+    "case": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_key", "case_id", "revision", "execution_status", "adjudication_status", "approval_source", "annotation_status", "input_sha256", "reference_sha256", "review_sha256", "adjudication_sha256", "trace_id", "report_uri", "review_uri", "raw_review_uri", "request_uri", "reference_uri", "trace_uri", "adjudication_uri"],
+      "properties": {
+        "run_key": {"$ref": "#/$defs/text"}, "case_id": {"type": "string", "pattern": "^case-[0-9]{4,}$"},
+        "revision": {"$ref": "#/$defs/text"},
+        "execution_status": {"enum": ["completed", "failed", "timed_out", "invalid_output"]},
+        "adjudication_status": {"enum": ["pending", "adjudicated", "not_applicable"]},
+        "approval_source": {"enum": ["human", "simulation", null]},
+        "annotation_status": {"$ref": "#/$defs/text"},
+        "input_sha256": {"$ref": "#/$defs/hash"}, "reference_sha256": {"$ref": "#/$defs/hash"},
+        "review_sha256": {"$ref": "#/$defs/hash"}, "adjudication_sha256": {"$ref": "#/$defs/hash"},
+        "trace_id": {"$ref": "#/$defs/text"},
+        "report_uri": {"$ref": "#/$defs/text"},
+        "review_uri": {"type": ["string", "null"]}, "raw_review_uri": {"type": ["string", "null"]},
+        "request_uri": {"$ref": "#/$defs/text"}, "reference_uri": {"$ref": "#/$defs/text"},
+        "trace_uri": {"$ref": "#/$defs/text"}, "adjudication_uri": {"$ref": "#/$defs/text"}
+      }
+    },
+    "metric": {
+      "type": "object", "additionalProperties": false,
+      "required": ["run_key", "case_id", "domain", "metric", "unit", "value", "numerator", "denominator", "lower", "upper", "known_count", "total_count"],
+      "properties": {
+        "run_key": {"$ref": "#/$defs/text"}, "case_id": {"type": ["string", "null"]},
+        "domain": {"enum": ["quality", "execution", "latency", "cost"]},
+        "metric": {"$ref": "#/$defs/text"}, "unit": {"enum": ["count", "ratio", "ms", "USD"]},
+        "value": {"$ref": "#/$defs/number"},
+        "numerator": {"$ref": "#/$defs/count"}, "denominator": {"$ref": "#/$defs/count"},
+        "lower": {"$ref": "#/$defs/number"}, "upper": {"$ref": "#/$defs/number"},
+        "known_count": {"$ref": "#/$defs/count"}, "total_count": {"$ref": "#/$defs/count"}
+      }
+    }
+  }
+}

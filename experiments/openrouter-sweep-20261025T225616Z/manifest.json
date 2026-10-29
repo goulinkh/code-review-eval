@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-10-25T22:58:35.378924+00:00",
+  "models": [
+    "qwen/qwen3-30b-a3b-instruct-2507",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-4-maverick",
+    "deepseek/deepseek-chat-v3-0324"
+  ],
+  "cases": [
+    "case-0004",
+    "case-0005",
+    "case-0006",
+    "case-0007",
+    "case-0008",
+    "case-0009",
+    "case-0010",
+    "case-0011",
+    "case-0012",
+    "case-0013",
+    "case-0014",
+    "case-0015",
+    "case-0016",
+    "case-0017"
+  ],
+  "repetitions": 1,
+  "agent": "pi",
+  "pi_version": "1.1.0",
+  "harbor_version": "0.25.0",
+  "image": {
+    "tag": "code-review-sweep:20261025t225616z",
+    "id": "sha256:44d4f393b7b0dd411a848d0e3138742ed466e6835a65e995ccbac7aa7222189b"
+  },
+  "workers": 8,
+  "spending_ceiling_usd": null,
+  "output_root": "runs/openrouter-sweep-20261025T225616Z",
+  "source_sha256": {
+    "validate_fixtures.py": "df1f200aaaba465526a22f0780517b23e7e2e11c6ca0f6245a4ba95fdb5215fc",
+    "review_reporting.py": "d98bc7402a17e9d71eaf84cde4d0b5fe6eccb88592595a665925acbf415a792d",
+    "run_eval.py": "5b6d9e2e70e411170c7976c75611ac3a9eae66e2f34161f8d2f605126d79b8cb",
+    "harbor_agents.py": "d600c28c43df5d8f6405fe67b5bb85e15617c1446c3c6b4cef9691c67eb235d8",
+    "adjudication_cli.py": "82b6a05bab471ac6b30ad6bfad02e6a16d522bc28abee333085a02deb88d8976",
+    "visual_reporting.py": "32099f3ff2768fe028400e5808b98fbc9696a3c50bd25845f374b9ea941ccef7"
+  },
+  "input_sha256": {
+    "case-0004": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb",
+    "case-0005": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2",
+    "case-0006": "afbb932c269dc36c4e019f4a8606a138e588347a43d9b709cdaa596b3f608641",
+    "case-0007": "5af2aa0af5a098f4aa5afc2a5cd4e736e35dbc850f156ef2ebeae7392365449b",
+    "case-0008": "3173abf6924bf86744db394d7fd3fc2e4b03f40274e9a8ae5a8bfe2f9c31c23c",
+    "case-0009": "142d2fe003596770bfaa1a625c74f6dd8c630b7883c0395e5397b9721d4d9da0",
+    "case-0010": "885173d7b5a4d135c41738b32dee26f8557d167c602d47f54ac12c023fe32bea",
+    "case-0011": "ff04d1a5c4b8c878d5701149078bec218651e65b8aafa5cbd755e7884997a703",
+    "case-0012": "b83052c889063128816b13164f228edce7e538fa566505aa4d7504ebb33eea77",
+    "case-0013": "ec35b00c62cad6ed0fd9211fc7fd4447a62f4a8fa70cdeaa62a62d2315d76790",
+    "case-0014": "3c66006d764f751985a14dff5086dee6aa79044853f395b814985adcdfcf11d9",
+    "case-0015": "de8791a38705913843709be67930bad921626425cc6e527d510cb34c9926fe51",
+    "case-0016": "02530251bc2a3db3278a2dd1da5bd73f5b0884936a669afea766016b3b8eb87c",
+    "case-0017": "24888065d269a09ebf03c645217cb93b6b21da80d5b1e9cf8bee33d475bff1be"
+  },
+  "quality": "pending human adjudication",
+  "no_retries": true,
+  "superseded_by": "experiments/openrouter-sweep-20261025T230226Z",
+  "infrastructure_note": "Repeated npm global installation stalled before reviewer startup. Interrupted setup attempts are retained; the replacement uses the same verified Pi 1.1.0 installation with an idempotent cached-install fast path."
+}

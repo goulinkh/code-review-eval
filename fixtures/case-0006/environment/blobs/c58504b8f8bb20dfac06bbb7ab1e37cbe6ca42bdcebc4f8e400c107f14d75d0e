@@ -1,0 +1,15 @@
+# Command handoff
+
+The scheduler serializes enumerate_commands output and sends those exact bytes
+through claim_commands to an inbox. The codec is invoked before the inbox is
+changed. It enforces the supplied exact value types; annotations alone are not
+runtime validation. There is no alternate decoder or intervening coercion.
+
+Records have string id/command and integer created_at (epoch seconds).
+reference_time is an integer at or after created_at. The new expired metadata
+must be a JSON boolean, including false for work at most 900 seconds old.
+Both flags must reach the inbox unchanged. Legacy string-only maps and empty
+batches remain accepted. Numeric, null, list and object field values must still
+be rejected. The codec's map contract permits any string keys; field-specific
+validation is outside this handoff. Everything runs locally with Python's
+standard library; no activity framework or service is required.

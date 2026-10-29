@@ -1,0 +1,1360 @@
+{
+  "models": [
+    {
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "attempted": 14,
+      "finished": 14,
+      "execution_counts": {
+        "invalid_output": 14
+      },
+      "failure_reasons": {
+        "review_artifact_missing": 14
+      },
+      "latency_ms": {
+        "min": 5227,
+        "median": 12667.0,
+        "max": 21757,
+        "population_stdev": 3973.9888824397963
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 34921,
+          "unknown_invocations": 0
+        },
+        "cached_input_tokens": {
+          "known_total": 7168,
+          "unknown_invocations": 0
+        },
+        "output_tokens": {
+          "known_total": 2667,
+          "unknown_invocations": 0
+        },
+        "cost_usd": {
+          "known_total": 0.00329787,
+          "unknown_invocations": 0
+        }
+      },
+      "known_billed_cost_usd": 0.00394299,
+      "unknown_billed_cost_invocations": 0,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 10013,
+            "median": 10013,
+            "max": 10013,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 12714,
+            "median": 12714,
+            "max": 12714,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 12892,
+            "median": 12892,
+            "max": 12892,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 14754,
+            "median": 14754,
+            "max": 14754,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 21757,
+            "median": 21757,
+            "max": 21757,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 15905,
+            "median": 15905,
+            "max": 15905,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 12620,
+            "median": 12620,
+            "max": 12620,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 9649,
+            "median": 9649,
+            "max": 9649,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 8686,
+            "median": 8686,
+            "max": 8686,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 9331,
+            "median": 9331,
+            "max": 9331,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 5227,
+            "median": 5227,
+            "max": 5227,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 12424,
+            "median": 12424,
+            "max": 12424,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 13481,
+            "median": 13481,
+            "max": 13481,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 17604,
+            "median": 17604,
+            "max": 17604,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "attempted": 14,
+      "finished": 14,
+      "execution_counts": {
+        "completed": 13,
+        "invalid_output": 1
+      },
+      "failure_reasons": {
+        "invalid_review_contract": 1
+      },
+      "latency_ms": {
+        "min": 4289,
+        "median": 10978.0,
+        "max": 21451,
+        "population_stdev": 4646.111268950561
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 34801,
+          "unknown_invocations": 0
+        },
+        "cached_input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 0
+        },
+        "output_tokens": {
+          "known_total": 3598,
+          "unknown_invocations": 0
+        },
+        "cost_usd": {
+          "known_total": 0.003329675,
+          "unknown_invocations": 0
+        }
+      },
+      "known_billed_cost_usd": 0.003617273,
+      "unknown_billed_cost_invocations": 0,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 9856,
+            "median": 9856,
+            "max": 9856,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            3
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 11029,
+            "median": 11029,
+            "max": 11029,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 8462,
+            "median": 8462,
+            "max": 8462,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            3
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 21451,
+            "median": 21451,
+            "max": 21451,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 11070,
+            "median": 11070,
+            "max": 11070,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 10927,
+            "median": 10927,
+            "max": 10927,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 13726,
+            "median": 13726,
+            "max": 13726,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 15706,
+            "median": 15706,
+            "max": 15706,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 12805,
+            "median": 12805,
+            "max": 12805,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 5798,
+            "median": 5798,
+            "max": 5798,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4289,
+            "median": 4289,
+            "max": 4289,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 4912,
+            "median": 4912,
+            "max": 4912,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4405,
+            "median": 4405,
+            "max": 4405,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 12747,
+            "median": 12747,
+            "max": 12747,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "attempted": 14,
+      "finished": 14,
+      "execution_counts": {
+        "completed": 14
+      },
+      "failure_reasons": {},
+      "latency_ms": {
+        "min": 3508,
+        "median": 4164.5,
+        "max": 10207,
+        "population_stdev": 1674.3639669670245
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 33114,
+          "unknown_invocations": 0
+        },
+        "cached_input_tokens": {
+          "known_total": 2032,
+          "unknown_invocations": 0
+        },
+        "output_tokens": {
+          "known_total": 793,
+          "unknown_invocations": 0
+        },
+        "cost_usd": {
+          "known_total": 0.0033619599999999998,
+          "unknown_invocations": 0
+        }
+      },
+      "known_billed_cost_usd": 0.006034765,
+      "unknown_billed_cost_invocations": 0,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            3
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4779,
+            "median": 4779,
+            "max": 4779,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3508,
+            "median": 3508,
+            "max": 3508,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 10207,
+            "median": 10207,
+            "max": 10207,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4734,
+            "median": 4734,
+            "max": 4734,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 5261,
+            "median": 5261,
+            "max": 5261,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3718,
+            "median": 3718,
+            "max": 3718,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 6145,
+            "median": 6145,
+            "max": 6145,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3806,
+            "median": 3806,
+            "max": 3806,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3686,
+            "median": 3686,
+            "max": 3686,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4332,
+            "median": 4332,
+            "max": 4332,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3997,
+            "median": 3997,
+            "max": 3997,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 4465,
+            "median": 4465,
+            "max": 4465,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3753,
+            "median": 3753,
+            "max": 3753,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 3845,
+            "median": 3845,
+            "max": 3845,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "meta-llama/llama-4-maverick",
+      "attempted": 14,
+      "finished": 14,
+      "execution_counts": {
+        "timed_out": 13,
+        "failed": 1
+      },
+      "failure_reasons": {
+        "harbor_trial_error": 13,
+        "TimeoutExpired": 1
+      },
+      "latency_ms": {
+        "min": 30029,
+        "median": 30030,
+        "max": 30032,
+        "population_stdev": 0.7216024245882199
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 1
+        },
+        "cached_input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 1
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 1
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 14
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 14,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30031,
+            "median": 30031,
+            "max": 30031,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30031,
+            "median": 30031,
+            "max": 30031,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30032,
+            "median": 30032,
+            "max": 30032,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30029,
+            "median": 30029,
+            "max": 30029,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30031,
+            "median": 30031,
+            "max": 30031,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {
+            "1": "timed_out"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 30030,
+            "median": 30030,
+            "max": 30030,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "deepseek/deepseek-chat-v3-0324",
+      "attempted": 14,
+      "finished": 14,
+      "execution_counts": {
+        "invalid_output": 4,
+        "completed": 9,
+        "failed": 1
+      },
+      "failure_reasons": {
+        "invalid_review_contract": 4,
+        "TimeoutExpired": 1
+      },
+      "latency_ms": {
+        "min": 5737,
+        "median": 9421.0,
+        "max": 14370,
+        "population_stdev": 2554.554599941374
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 33187,
+          "unknown_invocations": 0
+        },
+        "cached_input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 0
+        },
+        "output_tokens": {
+          "known_total": 2533,
+          "unknown_invocations": 0
+        },
+        "cost_usd": {
+          "known_total": 0.010829749999999999,
+          "unknown_invocations": 0
+        }
+      },
+      "known_billed_cost_usd": 0.01006675,
+      "unknown_billed_cost_invocations": 1,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 14370,
+            "median": 14370,
+            "max": 14370,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 5737,
+            "median": 5737,
+            "max": 5737,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 13894,
+            "median": 13894,
+            "max": 13894,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 11788,
+            "median": 11788,
+            "max": 11788,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 10527,
+            "median": 10527,
+            "max": 10527,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 7155,
+            "median": 7155,
+            "max": 7155,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 9436,
+            "median": 9436,
+            "max": 9436,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 12501,
+            "median": 12501,
+            "max": 12501,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 9406,
+            "median": 9406,
+            "max": 9406,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            2
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 11982,
+            "median": 11982,
+            "max": 11982,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            0
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 6342,
+            "median": 6342,
+            "max": 6342,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {
+            "1": "completed"
+          },
+          "finding_counts": [
+            1
+          ],
+          "distinct_normalized_review_hashes": 1,
+          "latency_ms": {
+            "min": 8854,
+            "median": 8854,
+            "max": 8854,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {
+            "1": "invalid_output"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 9166,
+            "median": 9166,
+            "max": 9166,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 8944,
+            "median": 8944,
+            "max": 8944,
+            "population_stdev": 0.0
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    }
+  ],
+  "ranking": null,
+  "ranking_status": "pending human adjudication",
+  "planned_invocations": 70,
+  "ledger_entries": 70,
+  "updated_at": "2026-10-25T23:17:40.166680+00:00",
+  "fixture_count": 14,
+  "repetitions": 1
+}

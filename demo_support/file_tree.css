@@ -1,0 +1,42 @@
+/* Loaded at app startup so marimo adopts these rules inside widget shadow DOM. */
+button[data-testid="marimo-plugin-button"]:has(.file-label) {
+  background: transparent !important;
+  color: inherit !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  justify-content: flex-start;
+}
+button[data-testid="marimo-plugin-button"]:has(.file-label) :is(.markdown, .paragraph, .file-label, code) {
+  background: transparent !important;
+  color: inherit !important;
+}
+button[data-testid="marimo-plugin-button"] .file-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+button[data-testid="marimo-plugin-button"] .file-label code {
+  font: 13px/1.5 ui-monospace, monospace;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button[data-testid="marimo-plugin-button"] .file-status {
+  margin-left: auto;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.dark button[data-testid="marimo-plugin-button"]:has(.file-label) {
+  background: #161b22 !important;
+  color: #e6edf3 !important;
+}
+.dark button[data-testid="marimo-plugin-button"]:has(.file-label):hover {
+  background: #30363d !important;
+}
+.dark button[data-testid="marimo-plugin-button"]:has(.file-label) .file-status {
+  background: #30363d !important;
+  color: #b1bac4 !important;
+  border: 1px solid #484f58 !important;
+}

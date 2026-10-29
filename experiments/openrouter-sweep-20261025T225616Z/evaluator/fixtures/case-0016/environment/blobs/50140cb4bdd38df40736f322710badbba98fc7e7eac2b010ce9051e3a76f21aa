@@ -1,0 +1,15 @@
+# Issue link import
+
+parse_issue_url is a pure parser; it never follows a link. Inputs are URL
+strings without control characters. The supported hosts are exactly
+forge.example.test and code.example.test, using http or https. Supported paths
+are /OWNER/REPOSITORY/issues/NUMBER with either no trailing slash or exactly one
+trailing slash. OWNER and REPOSITORY are nonempty single path components;
+NUMBER contains ASCII digits only. Preserve the number as a string, including
+leading zeroes. Return (tracker_base_url, number), where tracker_base_url ends
+in /issues without a trailing slash. Ignore a query string and fragment.
+
+Unsupported hosts, schemes and path shapes return None, not a partial match.
+Multiple trailing slashes, missing/non-numeric ids and suffixes such as /comments
+are not supported. This is not a browser, URL security filter or network client.
+Both spellings of a supported issue link must continue to import successfully.

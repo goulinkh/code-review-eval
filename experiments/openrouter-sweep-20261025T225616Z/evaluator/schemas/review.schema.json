@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:code-review-eval:review:1.0.0",
+  "title": "Adapter review output (not a quality judgment)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "findings"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "path": {"type": ["string", "null"], "minLength": 1},
+          "side": {"enum": ["base", "head", null]},
+          "lines": {
+            "oneOf": [
+              {"type": "null"},
+              {
+                "type": "object", "additionalProperties": false,
+                "required": ["start", "end"],
+                "properties": {
+                  "start": {"type": "integer", "minimum": 1},
+                  "end": {"type": "integer", "minimum": 1}
+                }
+              }
+            ]
+          },
+          "severity": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "summary": {"type": ["string", "null"]},
+    "recommendation": {"enum": ["approve", "request_changes", "abstain", "not_provided"]},
+    "usage": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "input_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "output_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "cost_usd": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "normalization_notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

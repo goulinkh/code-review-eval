@@ -1,0 +1,13 @@
+def list_projects(user, projects, authorize):
+    if not authorize(user):
+        return 403, None
+    return 200, sorted(projects)
+
+
+def set_enabled(user, projects, project_id, enabled, authorize):
+    if not authorize(user):
+        return 403, None
+    if project_id not in projects:
+        return 404, None
+    projects[project_id] = enabled
+    return 200, {"id": project_id, "enabled": enabled}

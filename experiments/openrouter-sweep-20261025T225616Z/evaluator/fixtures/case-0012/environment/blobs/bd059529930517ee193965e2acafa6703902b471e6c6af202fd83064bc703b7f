@@ -1,0 +1,12 @@
+import json
+
+
+def enumerate_commands(records, reference_time):
+    return json.dumps([
+        {
+            "id": row["id"],
+            "command": row["command"],
+            "expired": reference_time - row["created_at"] > 900,
+        }
+        for row in records
+    ])

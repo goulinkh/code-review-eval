@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0016",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "50140cb4bdd38df40736f322710badbba98fc7e7eac2b010ce9051e3a76f21aa"
+        },
+        {
+          "path": "src/issue_links.py",
+          "sha256": "c803fd7b99f98b4e38b88cb5939af2139d7198ab853e75a20ead1ac53e4635a2"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "50140cb4bdd38df40736f322710badbba98fc7e7eac2b010ce9051e3a76f21aa"
+        },
+        {
+          "path": "src/issue_links.py",
+          "sha256": "638f97be96bff3bd011f4bece9a85b3d515b8be3e2d930695b4d1ed34acad825"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Simplify issue-link path matching while retaining the supported import interface in PROJECT.md. Review the proposed change for actionable regressions.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/issue_links.py\n+++ b/src/issue_links.py\n@@ -8,7 +8,7 @@\n         \"forge.example.test\", \"code.example.test\",\n     ):\n         return None\n-    match = re.fullmatch(r\"(/[^/]+/[^/]+/issues)/([0-9]+)/?\", parts.path)\n+    match = re.fullmatch(r\"(/[^/]+/[^/]+/issues)/([0-9]+)\", parts.path)\n     if match is None:\n         return None\n     tracker = urlunsplit((parts.scheme, parts.netloc, match[1], \"\", \"\"))\n",
+        "sha256": "a5d24ecdcd9a4199785fc3d5edb4922aa9f0cde92e10502cb460b81d3151590a"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Issue link import\n\nparse_issue_url is a pure parser; it never follows a link. Inputs are URL\nstrings without control characters. The supported hosts are exactly\nforge.example.test and code.example.test, using http or https. Supported paths\nare /OWNER/REPOSITORY/issues/NUMBER with either no trailing slash or exactly one\ntrailing slash. OWNER and REPOSITORY are nonempty single path components;\nNUMBER contains ASCII digits only. Preserve the number as a string, including\nleading zeroes. Return (tracker_base_url, number), where tracker_base_url ends\nin /issues without a trailing slash. Ignore a query string and fragment.\n\nUnsupported hosts, schemes and path shapes return None, not a partial match.\nMultiple trailing slashes, missing/non-numeric ids and suffixes such as /comments\nare not supported. This is not a browser, URL security filter or network client.\nBoth spellings of a supported issue link must continue to import successfully.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/issue_links.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "import re\nfrom urllib.parse import urlsplit, urlunsplit\n\n\ndef parse_issue_url(link):\n    parts = urlsplit(link)\n    if parts.scheme not in (\"http\", \"https\") or parts.netloc not in (\n        \"forge.example.test\", \"code.example.test\",\n    ):\n        return None\n    match = re.fullmatch(r\"(/[^/]+/[^/]+/issues)/([0-9]+)\", parts.path)\n    if match is None:\n        return None\n    tracker = urlunsplit((parts.scheme, parts.netloc, match[1], \"\", \"\"))\n    return tracker, match[2]\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

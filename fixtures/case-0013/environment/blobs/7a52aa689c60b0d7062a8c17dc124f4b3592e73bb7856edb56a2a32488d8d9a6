@@ -1,0 +1,4 @@
+def list_projects(user, projects, authorize):
+    if not authorize(user):
+        return 403, None
+    return 200, sorted(projects)

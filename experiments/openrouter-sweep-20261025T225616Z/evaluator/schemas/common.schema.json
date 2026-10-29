@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:code-review-eval:schema:common:1.0.0",
+  "$defs": {
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*//)(?!.*[\\\\\\r\\n\\u0000])[^/]+(?:/[^/]+)*$"
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^case-[0-9]{4,}$"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/path"
+        }
+      },
+      "required": [
+        "repository",
+        "snapshot_id",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "tool_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shell_invocations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "repository_read_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "returned_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "wall_time_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "model_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "tool_calls",
+        "shell_invocations",
+        "repository_read_attempts",
+        "returned_bytes",
+        "wall_time_ms",
+        "model_tokens"
+      ],
+      "additionalProperties": false
+    },
+    "inline_text": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "content",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/path"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "files"
+      ],
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "cwd": {
+          "const": "."
+        },
+        "variables": {
+          "type": "object",
+          "properties": {
+            "LANG": {
+              "type": "string",
+              "minLength": 1
+            },
+            "LC_ALL": {
+              "type": "string",
+              "minLength": 1
+            },
+            "TZ": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "runtime_state": {
+          "const": null
+        }
+      },
+      "required": [
+        "cwd",
+        "variables",
+        "runtime_state"
+      ],
+      "additionalProperties": false
+    },
+    "repository_read": {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "const": "repository.read"
+        },
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requested_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolved_snapshot_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "path": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/path"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "missing",
+            "error",
+            "incomplete",
+            "blocked"
+          ]
+        },
+        "returned_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "content_sha256": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "operation",
+        "repository",
+        "requested_revision",
+        "resolved_snapshot_id",
+        "path",
+        "status",
+        "returned_bytes",
+        "content_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "tool_result": {
+      "type": "object",
+      "properties": {
+        "source_call_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object",
+          "properties": {
+            "code_review_eval": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "enum": [
+                    "completed",
+                    "failed",
+                    "timed-out",
+                    "blocked"
+                  ]
+                },
+                "exit_code": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "stderr": {
+                  "type": "string"
+                },
+                "duration_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "repository_reads": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/repository_read"
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "status",
+                "exit_code",
+                "stderr",
+                "duration_ms",
+                "repository_reads"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "code_review_eval"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_call_id",
+        "content",
+        "extra"
+      ],
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "$ref": "urn:code-review-eval:schema:common:1.0.0#/$defs/path"
+        },
+        "side": {
+          "enum": [
+            "base",
+            "head"
+          ]
+        },
+        "lines": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "side",
+        "lines"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

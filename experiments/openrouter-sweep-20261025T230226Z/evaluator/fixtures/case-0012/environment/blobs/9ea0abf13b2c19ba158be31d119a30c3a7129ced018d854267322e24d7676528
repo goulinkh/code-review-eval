@@ -1,0 +1,9 @@
+# Scheduler package
+
+Records have string id/command and integer created_at. reference_time is an
+integer at or after creation; older than 900 seconds means expired. The new
+field is JSON bool, not a string. This package serializes batches for a separate
+worker. Only the producer is supplied here; the worker decoder, accepted value
+types and inbox implementation are not part of this package. No worker
+contract or version is available in this review. This does not establish what
+any deployed worker accepts. No additional code can be fetched in this review.

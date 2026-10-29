@@ -1,0 +1,348 @@
+{
+  "models": [
+    {
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "attempted": 6,
+      "finished": 6,
+      "execution_counts": {
+        "invalid_output": 5,
+        "timed_out": 1
+      },
+      "failure_reasons": {
+        "review_artifact_missing": 5,
+        "harbor_trial_error": 1
+      },
+      "latency_ms": {
+        "min": 8461,
+        "median": 10804.0,
+        "max": 30030,
+        "population_stdev": 7490.430939983805
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 10949,
+          "unknown_invocations": 1,
+          "runtime_zero_without_provider_response": 1
+        },
+        "cached_input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 1,
+          "runtime_zero_without_provider_response": 1
+        },
+        "output_tokens": {
+          "known_total": 966,
+          "unknown_invocations": 1,
+          "runtime_zero_without_provider_response": 1
+        },
+        "cost_usd": {
+          "known_total": 0.00127521,
+          "unknown_invocations": 1
+        }
+      },
+      "known_billed_cost_usd": 0.00127521,
+      "missing_generation_billing_invocations": 1,
+      "abort_marker_invocations": 1,
+      "unknown_billed_cost_invocations": 2,
+      "billed_cost_usd_total": null,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "invalid_output",
+            "2": "timed_out",
+            "3": "invalid_output"
+          },
+          "finding_counts": [
+            null,
+            null,
+            null
+          ],
+          "token_usage": {
+            "input_tokens": {
+              "min": 2167,
+              "median": 2167.0,
+              "max": 2167,
+              "population_stdev": 0.0
+            },
+            "output_tokens": {
+              "min": 135,
+              "median": 218.0,
+              "max": 301,
+              "population_stdev": 83.0
+            }
+          },
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 10910,
+            "median": 14593,
+            "max": 30030,
+            "population_stdev": 8282.77904248729
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "invalid_output",
+            "2": "invalid_output",
+            "3": "invalid_output"
+          },
+          "finding_counts": [
+            null,
+            null,
+            null
+          ],
+          "token_usage": {
+            "input_tokens": {
+              "min": 2205,
+              "median": 2205,
+              "max": 2205,
+              "population_stdev": 0.0
+            },
+            "output_tokens": {
+              "min": 165,
+              "median": 179,
+              "max": 186,
+              "population_stdev": 8.73053390247253
+            }
+          },
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 8461,
+            "median": 8684,
+            "max": 10698,
+            "population_stdev": 1006.0977421039502
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "attempted": 6,
+      "finished": 6,
+      "execution_counts": {
+        "completed": 6
+      },
+      "failure_reasons": {},
+      "latency_ms": {
+        "min": 6004,
+        "median": 10201.0,
+        "max": 12422,
+        "population_stdev": 2093.9026295943713
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": 13017,
+          "unknown_invocations": 0,
+          "runtime_zero_without_provider_response": 0
+        },
+        "cached_input_tokens": {
+          "known_total": 0,
+          "unknown_invocations": 0,
+          "runtime_zero_without_provider_response": 0
+        },
+        "output_tokens": {
+          "known_total": 1913,
+          "unknown_invocations": 0,
+          "runtime_zero_without_provider_response": 0
+        },
+        "cost_usd": {
+          "known_total": 0.001358875,
+          "unknown_invocations": 0
+        }
+      },
+      "known_billed_cost_usd": 0.0014688309999999999,
+      "missing_generation_billing_invocations": 0,
+      "abort_marker_invocations": 6,
+      "unknown_billed_cost_invocations": 6,
+      "billed_cost_usd_total": null,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "completed",
+            "2": "completed",
+            "3": "completed"
+          },
+          "finding_counts": [
+            2,
+            2,
+            1
+          ],
+          "token_usage": {
+            "input_tokens": {
+              "min": 2151,
+              "median": 2151,
+              "max": 2151,
+              "population_stdev": 0.0
+            },
+            "output_tokens": {
+              "min": 224,
+              "median": 253,
+              "max": 339,
+              "population_stdev": 48.83304891839815
+            }
+          },
+          "distinct_normalized_review_hashes": 3,
+          "latency_ms": {
+            "min": 6004,
+            "median": 8557,
+            "max": 9566,
+            "population_stdev": 1499.026869524211
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "completed",
+            "2": "completed",
+            "3": "completed"
+          },
+          "finding_counts": [
+            2,
+            2,
+            2
+          ],
+          "token_usage": {
+            "input_tokens": {
+              "min": 2188,
+              "median": 2188,
+              "max": 2188,
+              "population_stdev": 0.0
+            },
+            "output_tokens": {
+              "min": 337,
+              "median": 348,
+              "max": 412,
+              "population_stdev": 33.06895153396242
+            }
+          },
+          "distinct_normalized_review_hashes": 3,
+          "latency_ms": {
+            "min": 10836,
+            "median": 11333,
+            "max": 12422,
+            "population_stdev": 662.3465021338068
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "attempted": 6,
+      "finished": 6,
+      "execution_counts": {
+        "invalid_output": 6
+      },
+      "failure_reasons": {
+        "review_artifact_missing": 6
+      },
+      "latency_ms": {
+        "min": 2506,
+        "median": 2618.5,
+        "max": 2781,
+        "population_stdev": 93.55746896961247
+      },
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 6,
+          "runtime_zero_without_provider_response": 6
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 6,
+          "runtime_zero_without_provider_response": 6
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 6,
+          "runtime_zero_without_provider_response": 6
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 6
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "missing_generation_billing_invocations": 6,
+      "abort_marker_invocations": 0,
+      "unknown_billed_cost_invocations": 6,
+      "billed_cost_usd_total": null,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "invalid_output",
+            "2": "invalid_output",
+            "3": "invalid_output"
+          },
+          "finding_counts": [
+            null,
+            null,
+            null
+          ],
+          "token_usage": {
+            "input_tokens": null,
+            "output_tokens": null
+          },
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 2506,
+            "median": 2523,
+            "max": 2587,
+            "population_stdev": 34.874377732401506
+          },
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "invalid_output",
+            "2": "invalid_output",
+            "3": "invalid_output"
+          },
+          "finding_counts": [
+            null,
+            null,
+            null
+          ],
+          "token_usage": {
+            "input_tokens": null,
+            "output_tokens": null
+          },
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": {
+            "min": 2650,
+            "median": 2667,
+            "max": 2781,
+            "population_stdev": 58.16260730820867
+          },
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    }
+  ],
+  "ranking": null,
+  "ranking_status": "pending human adjudication; no artifact_present ranking",
+  "planned_invocations": 18,
+  "ledger_entries": 18
+}

@@ -1,0 +1,7 @@
+from access import is_admin
+
+
+def list_projects(user, configured_admin, projects):
+    if not is_admin(user, configured_admin):
+        return 403, None
+    return 200, sorted(projects)

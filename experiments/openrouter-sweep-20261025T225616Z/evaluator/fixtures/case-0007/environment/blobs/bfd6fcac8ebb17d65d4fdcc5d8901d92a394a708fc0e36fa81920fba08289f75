@@ -1,0 +1,19 @@
+import json
+
+
+class PayloadTypeError(ValueError):
+    pass
+
+
+def decode_commands(payload, value_types):
+    """Decode a JSON list of string-keyed maps using exact value types."""
+    rows = json.loads(payload)
+    if type(rows) is not list:
+        raise PayloadTypeError("expected a list")
+    for row in rows:
+        if type(row) is not dict:
+            raise PayloadTypeError("expected a map")
+        for key, value in row.items():
+            if type(key) is not str or type(value) not in value_types:
+                raise PayloadTypeError(f"field {key!r} has unsupported type {type(value).__name__}")
+    return rows

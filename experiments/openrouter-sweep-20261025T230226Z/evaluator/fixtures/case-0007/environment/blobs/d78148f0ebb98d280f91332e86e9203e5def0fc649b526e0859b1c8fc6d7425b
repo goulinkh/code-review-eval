@@ -1,0 +1,10 @@
+from payload_codec import decode_commands
+
+
+COMMAND_VALUE_TYPES = (str, bool)
+
+
+def claim_commands(payload, inbox):
+    commands = decode_commands(payload, COMMAND_VALUE_TYPES)
+    inbox.extend(commands)
+    return len(commands)

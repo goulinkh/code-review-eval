@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-10-25T22:48:57.047500+00:00",
+  "case_invocations": 18,
+  "observed_native_model_responses_or_errors": 17,
+  "request_outcome_unobserved_invocations": [
+    "09-qwen-r2-case-0004"
+  ],
+  "zero_usage_no_response_id_abort_markers": [
+    "02-mistral-r1-case-0004",
+    "05-mistral-r1-case-0005",
+    "07-mistral-r2-case-0004",
+    "10-mistral-r2-case-0005",
+    "15-mistral-r3-case-0004",
+    "17-qwen-r3-case-0005",
+    "18-mistral-r3-case-0005"
+  ],
+  "billing_scope": "Known response IDs only; no claim that abort markers prove zero additional billing.",
+  "unique_sessions": 18,
+  "unique_traces": 18,
+  "common_system_and_tool_sha256": "be21ee4769314fa77e8772fbf46160c82f4d80b235fe51b4cf82bb2dfa723c11",
+  "execution_counts": {
+    "invalid_output": 11,
+    "completed": 6,
+    "timed_out": 1
+  },
+  "native_error_counts": {
+    "account_zdr_guardrail_rejection": 6
+  },
+  "native_tool_calls": {
+    "write": 7
+  },
+  "secret_scan_files": 709,
+  "secret_scan": "passed; no credential values retained",
+  "human_approvals": 0,
+  "frozen_core_source_verified": true,
+  "concurrent_checkout_drift": [
+    "run_eval.py",
+    "review_reporting.py",
+    "uv.lock"
+  ],
+  "known_billed_cost_usd": 0.002744041,
+  "unknown_billed_invocations": 14,
+  "missing_generation_billing_invocations": 7,
+  "conservative_booked_usd": 1.402744041,
+  "budget_is_guaranteed_cap": false,
+  "quality": "pending human adjudication",
+  "ranking": null
+}

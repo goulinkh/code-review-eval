@@ -1,0 +1,13 @@
+# Administrative entry points
+
+The caller supplies a trusted resolved session user and an authorize(user)
+callback returning bool. Both entry points use the same callback. The deployment
+requires only its configured administrator to list or change projects and must
+deny everyone when configuration is absent. The callback implementation and its
+binding to deployment configuration are not supplied. No other authorization
+layer or policy implementation is visible, and no additional files can be
+fetched here. Do not assume a particular implementation from the callback name.
+
+projects maps ids to bool; project_id and enabled are validated string/bool.
+Calls are serial. The functions' 403/404/200 behavior is visible in source;
+what the deployed authorization callback accepts cannot be established here.

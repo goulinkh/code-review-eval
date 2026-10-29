@@ -1,0 +1,8 @@
+from records import BuildUpload
+
+
+def record_duration(upload, seconds, sink):
+    kind = "manual"
+    if isinstance(upload, BuildUpload):
+        kind = upload.build.kind
+    sink.timing("upload_duration", seconds * 1000, {"type": kind})

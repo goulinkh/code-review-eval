@@ -1,0 +1,738 @@
+{
+  "models": [
+    {
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "attempted": 2,
+      "finished": 2,
+      "execution_counts": {
+        "failed": 2
+      },
+      "failure_reasons": {
+        "infrastructure_setup_interrupted": 2
+      },
+      "latency_ms": null,
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 2
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 2,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "attempted": 2,
+      "finished": 2,
+      "execution_counts": {
+        "failed": 2
+      },
+      "failure_reasons": {
+        "infrastructure_setup_interrupted": 2
+      },
+      "latency_ms": null,
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 2
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 2,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "attempted": 2,
+      "finished": 2,
+      "execution_counts": {
+        "failed": 2
+      },
+      "failure_reasons": {
+        "infrastructure_setup_interrupted": 2
+      },
+      "latency_ms": null,
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 2
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 2
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 2,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "meta-llama/llama-4-maverick",
+      "attempted": 1,
+      "finished": 1,
+      "execution_counts": {
+        "failed": 1
+      },
+      "failure_reasons": {
+        "infrastructure_setup_interrupted": 1
+      },
+      "latency_ms": null,
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 1
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 1,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    },
+    {
+      "model_id": "deepseek/deepseek-chat-v3-0324",
+      "attempted": 1,
+      "finished": 1,
+      "execution_counts": {
+        "failed": 1
+      },
+      "failure_reasons": {
+        "infrastructure_setup_interrupted": 1
+      },
+      "latency_ms": null,
+      "usage": {
+        "input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "cached_input_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "output_tokens": {
+          "known_total": null,
+          "unknown_invocations": 1
+        },
+        "cost_usd": {
+          "known_total": null,
+          "unknown_invocations": 1
+        }
+      },
+      "known_billed_cost_usd": 0,
+      "unknown_billed_cost_invocations": 1,
+      "quality": {
+        "status": "pending",
+        "recall": null,
+        "precision": null,
+        "corrected_case_false_alarm_cases": null,
+        "ranking": null
+      },
+      "variation_by_case": {
+        "case-0004": {
+          "status_by_repetition": {
+            "1": "failed"
+          },
+          "finding_counts": [
+            null
+          ],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0005": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0006": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0007": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0008": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0009": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0010": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0011": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0012": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0013": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0014": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0015": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0016": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        },
+        "case-0017": {
+          "status_by_repetition": {},
+          "finding_counts": [],
+          "distinct_normalized_review_hashes": 0,
+          "latency_ms": null,
+          "quality_variation": "pending human adjudication"
+        }
+      }
+    }
+  ],
+  "ranking": null,
+  "ranking_status": "pending human adjudication",
+  "planned_invocations": 70,
+  "ledger_entries": 8,
+  "updated_at": "2026-10-25T23:03:10.510192+00:00",
+  "fixture_count": 14,
+  "repetitions": 1
+}

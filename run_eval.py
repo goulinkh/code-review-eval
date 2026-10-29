@@ -19,7 +19,7 @@ from harbor.models.trial.config import AgentConfig, TaskConfig
 
 from harbor_agents import REQUEST_MARKER
 from review_reporting import (
-    VERSION, adjudicate, export_trace, human_template, load_json, location_checks,
+    GRADING_VERSION, VERSION, adjudicate, compare, export_trace, export_visuals, human_template, load_json, location_checks,
     normalize, quality, save_json, write_reports,
 )
 from validate_fixtures import FixtureError, sha256, strict_json, validate_dataset, validate_fixture
@@ -150,7 +150,8 @@ def collect_case(output: Path, case_id: str, fixture: Path, public: dict, privat
             span.set_status("ERROR")
     finally:
         span.end()
-    human = human_template(case_id, review, report["review_sha256"])
+    human = human_template(case_id, review, report["review_sha256"],
+                           report["input_sha256"], report["reference_sha256"])
     save_json(directory / "adjudication.json", human)
     report["quality"] = quality(report, private, human)
     return report
@@ -175,7 +176,7 @@ async def run(fixtures: list[Path], output: Path, *, agent: str, model: str | No
     with mlflow.start_run(run_name=agent) as live_run:
         manifest = {
             "schema_version": VERSION, "runner": "harbor", "harbor_version": version("harbor"),
-            "layer_version": VERSION, "grading_version": "human-1.0.0", "repetitions": 1,
+            "layer_version": VERSION, "grading_version": GRADING_VERSION, "repetitions": 1,
             "created_at": datetime.now(timezone.utc).isoformat(),
             "reviewer": {"agent": agent, "model": model or "unknown"},
             "instruction_sha256": sha256(INSTRUCTION.encode()),
@@ -254,10 +255,33 @@ def main() -> int:
     execute.add_argument("--tracking-uri", help="default: local SQLite MLflow store")
     judge = sub.add_parser("adjudicate")
     judge.add_argument("output", type=Path)
+    grading = sub.add_parser("grade", help="interactive, resumable human grading (private evaluator view)")
+    grading.add_argument("output", type=Path)
+    grading.add_argument("--case", dest="case_id", help="grade only this case")
+    grading.add_argument("--practice", action="store_true", help="simulation only; NEVER creates HUMAN assessments")
+    comparison = sub.add_parser("compare", help="aggregate comparable reviewer/model runs; no overall ranking")
+    comparison.add_argument("runs", type=Path, nargs="+")
+    comparison.add_argument("--output", type=Path, required=True)
+    visuals = sub.add_parser("export-visuals", help="export chart tables from retained runs; no execution or assessments")
+    visuals.add_argument("runs", type=Path, nargs="+")
+    visuals.add_argument("--output", type=Path, required=True, help="directory receiving visuals.json (may already exist)")
     args = parser.parse_args()
     try:
+        if args.operation == "grade":
+            from adjudication_cli import grade
+            grade(args.output.resolve(), case_id=args.case_id, practice=args.practice)
+            return 0
         if args.operation == "adjudicate":
             adjudicate(args.output.resolve())
+            print(f"Wrote {args.output / 'report.md'}")
+            return 0
+        if args.operation == "export-visuals":
+            export_visuals(args.runs, args.output)
+            print(f"Wrote {args.output / 'visuals.json'}")
+            return 0
+        if args.operation == "compare":
+            compare(args.runs, args.output)
+            print(f"Wrote {args.output / 'report.md'}")
             return 0
         kwargs = load_json(args.agent_kwargs) if args.agent_kwargs else {}
         if not isinstance(kwargs, dict):
@@ -271,6 +295,9 @@ def main() -> int:
                                   agent_kwargs=kwargs, tracking_uri=uri, image=args.image))
         print(f"Wrote {args.output / 'report.md'}")
         return int(any(r["status"] != "completed" for r in reports))
+    except FixtureError as exc:
+        print(f"Evaluation: {exc}", file=sys.stderr)
+        return 2
     except Exception as exc:
         # No raw transport exceptions, headers, command args or credentials in traces/CLI.
         print(f"Evaluation could not finish ({type(exc).__name__}); inspect evaluator-only Harbor logs.", file=sys.stderr)

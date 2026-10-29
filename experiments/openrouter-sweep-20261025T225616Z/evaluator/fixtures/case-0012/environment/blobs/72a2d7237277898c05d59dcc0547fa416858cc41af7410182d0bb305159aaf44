@@ -1,0 +1,8 @@
+import json
+
+
+def enumerate_commands(records, reference_time):
+    return json.dumps([
+        {"id": row["id"], "command": row["command"]}
+        for row in records
+    ])

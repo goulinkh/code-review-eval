@@ -37,17 +37,33 @@ environment and run the same Python commands without `uv run`.
 ## Run an evaluation
 
 ```sh
-uv run python run_eval.py run fixtures/* \
+uv run python run_eval.py run fixtures/case-0004 fixtures/case-0005 \
   --recorded recorded_reviews/smoke --output runs/recorded-smoke
 ```
 
-Open `runs/recorded-smoke/report.md`; quality remains pending until a human edits
-its per-case `adjudication.json` forms and runs:
+Open `runs/recorded-smoke/report.md`; quality remains pending until a person
+grades and explicitly confirms the reviews. The CLI shows findings, private
+references, and code, saves each decision, and resumes without JSON editing:
 
 ```sh
+uv run python run_eval.py grade runs/recorded-smoke
 uv run python run_eval.py adjudicate runs/recorded-smoke
+# Compare runs on the same cases/rubric; pending is not a confirmed miss.
+uv run python run_eval.py compare runs/recorded-smoke runs/another-run --output runs/comparison
 uv run mlflow ui --backend-store-uri "sqlite:///$(pwd)/mlflow.db"
 ```
+
+Recall, precision, corrected-case false alarms and annotation coverage remain
+separate from execution reliability, latency and cost. No confident ranking is
+produced from unresolved results. Only explicitly human-confirmed forms create
+HUMAN assessments; scripted `grade --practice` demonstrations are simulations.
+See the [end-to-end recorded Docker demonstration](docs/adjudication-demo.md).
+Runs and comparisons also emit a versioned [`visuals.json`](docs/visual-reports.md)
+sidecar. The notebook's top **Model comparison** section lists real pilot
+`experiments/*/comparison.json` reports before demonstration runs. Choose a report
+and enable **Load selected report** to see the per-model summary, repetition
+results, and main Markdown report. Generic sidecars retain quality, execution,
+latency, and cost charts. Pending quality is not a score or a winner.
 
 Use `--agent pi --model provider/model` or `--agent opencode --model provider/model`
 for Harbor's built-in integrations, or `--agent my_module:MyAgent` for a custom
@@ -59,8 +75,10 @@ no-tools baseline.
 ## Team demo (marimo)
 
 The evaluator-only [`demo.py`](demo.py) notebook provides an interactive,
-offline walkthrough and visual fixture explorer. Choose a case and file to
-browse line-numbered **side-by-side or unified diffs**, with additions,
+offline model-comparison viewer and visual fixture explorer. Select the saved
+pilot report at the top and enable loading; no models are run. Then choose a case and a file in
+the collapsible tree beside the viewer to browse line-numbered **side-by-side
+or unified diffs**, with additions,
 deletions, and character-level changes highlighted. Toggle full context, inspect
 the base/head source, or switch tabs to the supplied patch, initial reviewer
 context, access manifest, and raw request. The reconstructed snapshot view is
@@ -89,15 +107,18 @@ Suggested five-minute presentation:
    for `case-0005`. These are contract probes, not reviewer/model scores.
 4. Select `examples/case-0003` and inspect the historical ATIF prefix and
    inherited/remaining budgets. Historical commands are displayed, never replayed.
-5. Validate all five artifacts together and close with the pending work:
+5. Validate all 17 artifacts (14 authored cases and three format examples) and
+   consult the [coverage table](docs/corpus.md). Close with the pending work:
    independent annotation/licensing review, a frozen corpus, an isolated
    tool-enabled runner, and broader evaluation coverage.
 
-Snapshot execution is opt-in and restricted to the existing two trusted authored
-cases; it is not sandboxed. Structural validation does not execute snapshots.
+The notebook's opt-in execution button still runs only the query-override pair;
+other trusted author checks are explicit commands documented in the coverage
+page. Neither path is sandboxed. Structural validation does not execute snapshots.
 The notebook and any exports are evaluator-only presentation material, **never
-reviewer context**. Labels remain provisional; this is one authored pair, not
-broad corpus coverage or an independently verified clean dataset.
+reviewer context**. The 14-case corpus covers four initial concerns and two
+behavioral controls; labels remain provisional, not independent verification
+or evidence of broad reviewer quality.
 
 Notebook checks and a static export of the default view:
 
@@ -142,6 +163,23 @@ Run `uv run python -m reference_checks.query_overrides <case-id>`: `case-0004`
 exits 1 (six failing probes); `case-0005` exits 0 (14/14 pass).
 [Raw blinded preflight records](reviews/query-overrides/round-01/manifest.json)
 remain evaluator-only; independent annotation and licensing approval are pending.
+
+The additional ten cases are `case-0006`–`case-0015`: three more defect/correction
+pairs, two context-limitation cases, and two adversarial variants. See the
+[evaluator-only coverage, checks and walkthrough](docs/corpus.md). Run
+`uv run python -m reference_checks.corpus <case-id>` for a named trusted
+executable case; context cases intentionally have no executable defect oracle.
+Author checks use only standard-library Python, local state and fake providers.
+Private provenance records full source/parent hashes, paths, adaptations and
+unresolved licensing. The original pair is unchanged; this is not a frozen or
+independently approved dataset.
+
+Two further Launchpad-history cases, `case-0016`/`case-0017`, cover issue-link
+trailing slashes and metrics for deleted builds. See the
+[analysis, provenance notes and verification](docs/launchpad-history.md). Run
+`uv run python -m reference_checks.launchpad_history <case-id>` for the
+intentional head regression (exit 1), or add `--side base` for its corrected
+control (exit 0). These are two review cases, not two additional review pairs.
 
 The design follows the parent project's
 [`code-review-eval-scope.md`](../code-review-eval-scope.md) and

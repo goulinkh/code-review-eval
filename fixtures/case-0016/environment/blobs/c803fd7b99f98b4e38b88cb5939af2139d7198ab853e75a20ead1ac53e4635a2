@@ -1,0 +1,15 @@
+import re
+from urllib.parse import urlsplit, urlunsplit
+
+
+def parse_issue_url(link):
+    parts = urlsplit(link)
+    if parts.scheme not in ("http", "https") or parts.netloc not in (
+        "forge.example.test", "code.example.test",
+    ):
+        return None
+    match = re.fullmatch(r"(/[^/]+/[^/]+/issues)/([0-9]+)/?", parts.path)
+    if match is None:
+        return None
+    tracker = urlunsplit((parts.scheme, parts.netloc, match[1], "", ""))
+    return tracker, match[2]

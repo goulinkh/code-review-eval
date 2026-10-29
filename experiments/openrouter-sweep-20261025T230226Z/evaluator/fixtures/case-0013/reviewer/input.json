@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0013",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "9edd043ac2c95c618f8953f3df593caee3bc95fb21dee49043aee054cff12ace"
+        },
+        {
+          "path": "src/admin.py",
+          "sha256": "7a52aa689c60b0d7062a8c17dc124f4b3592e73bb7856edb56a2a32488d8d9a6"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "9edd043ac2c95c618f8953f3df593caee3bc95fb21dee49043aee054cff12ace"
+        },
+        {
+          "path": "src/admin.py",
+          "sha256": "a1865dd347f293cc96f159726ea18e06eaa41ed1449a8c12029997c4396b1e5d"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add an enablement operation using the same authorization callback as the project listing. Review the supplied administrative package.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/admin.py\n+++ b/src/admin.py\n@@ -2,3 +2,12 @@\n     if not authorize(user):\n         return 403, None\n     return 200, sorted(projects)\n+\n+\n+def set_enabled(user, projects, project_id, enabled, authorize):\n+    if not authorize(user):\n+        return 403, None\n+    if project_id not in projects:\n+        return 404, None\n+    projects[project_id] = enabled\n+    return 200, {\"id\": project_id, \"enabled\": enabled}\n",
+        "sha256": "5ab5ee3386d27b878b6574eb87e25238f6e1d0bb83322b0c09157a69392cf1a6"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Administrative entry points\n\nThe caller supplies a trusted resolved session user and an authorize(user)\ncallback returning bool. Both entry points use the same callback. The deployment\nrequires only its configured administrator to list or change projects and must\ndeny everyone when configuration is absent. The callback implementation and its\nbinding to deployment configuration are not supplied. No other authorization\nlayer or policy implementation is visible, and no additional files can be\nfetched here. Do not assume a particular implementation from the callback name.\n\nprojects maps ids to bool; project_id and enabled are validated string/bool.\nCalls are serial. The functions' 403/404/200 behavior is visible in source;\nwhat the deployed authorization callback accepts cannot be established here.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/admin.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "def list_projects(user, projects, authorize):\n    if not authorize(user):\n        return 403, None\n    return 200, sorted(projects)\n\n\ndef set_enabled(user, projects, project_id, enabled, authorize):\n    if not authorize(user):\n        return 403, None\n    if project_id not in projects:\n        return 404, None\n    projects[project_id] = enabled\n    return 200, {\"id\": project_id, \"enabled\": enabled}\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "deployment/policy.py",
+      "delivery": "initial",
+      "availability": "missing",
+      "error_message": "Not supplied in this fixed-context review package.",
+      "exit_code": 1
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

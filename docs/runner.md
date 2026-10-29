@@ -20,7 +20,7 @@ From `code-review-eval/`:
 uv sync --locked
 
 # Real Harbor/Docker run, synthetic recordings, no model credentials/spend.
-uv run python run_eval.py run fixtures/* \
+uv run python run_eval.py run fixtures/case-0004 fixtures/case-0005 \
   --recorded recorded_reviews/smoke --output runs/recorded-smoke
 
 # Harbor's existing agent integrations; real model access can incur charges.
@@ -121,47 +121,119 @@ Harbor timing measures their import/submission, not historical inference.
 ## Human adjudication
 
 Open `runs/recorded-smoke/report.md`. Quality is initially **pending**, including
-for empty reviews. For each completed case, inspect `review.json`, `request.json`,
-and private `reference.json`, applying the same written rubric across reviewers.
-Edit `adjudication.json`:
-
-- Set `adjudicator` to the human identifier.
-- Classify each finding as `valid`, `invalid`, `duplicate`, or `unresolved`.
-- For a reference match, set `reference_id` to a required-finding ID. A valid
-  novel issue has no reference ID; unmatched does not mean false.
-- Duplicates identify a distinct resolved finding with `duplicate_of`. One
-  reference can be matched only once. Resolved judgments require reasons.
-- Enter context/instruction-handling verdicts (`pass`, `fail`, `not_applicable`,
-  or `unresolved`), with reasons for resolved decisions.
-
-Then:
+for empty reviews. Grade in an interactive terminal; no JSON editing is needed:
 
 ```sh
+uv run python run_eval.py grade runs/recorded-smoke
+# Optional: --case case-0004
 uv run python run_eval.py adjudicate runs/recorded-smoke
 ```
 
-Signed forms attach as HUMAN MLflow feedback assessments. Re-importing the
-same form is idempotent; changed forms create assessment revisions. Reports use
-the latest local form. Hashes bind judgments to the retained review and rubric.
-Label corrections require a new dataset revision and rescoring all reviewers.
+`grade` displays the exact finding text, summary/recommendation, supplied diff,
+line-numbered initial code, private reference (including non-findings and the
+behavior rubric), and trace path. Apply the same rubric across reviewers:
 
-Per-case recall includes required defects on failed cases as missed. Pending
-recall is only a lower bound. Precision counts valid distinct findings over
-valid + invalid distinct findings; duplicates and unresolved findings remain
-visible separately. Zero denominators are N/A, never perfect scores. Explicit
-human sign-off is required for an empty clean review. Annotation verification
-remains provisional independently of adjudicating a particular review.
+- Enter your operator identifier. Classify each finding as `valid`, `invalid`,
+  `duplicate`, or `unresolved`; there are no generated grading suggestions.
+- Valid findings can match a required reference ID or be `novel`. Unmatched does
+  not mean false. Match by defect mechanism/evidence, never exact wording or
+  keywords. Each reference can be matched only once.
+- Duplicates name another distinct valid/invalid finding, not another duplicate.
+  They count toward annotation coverage but not distinct-finding precision.
+- Resolved decisions require reasons. Context/instruction verdicts are `pass`,
+  `fail`, `not_applicable`, or `unresolved`, with reasons when resolved.
+- An empty review needs an explicit `approved` inspection acknowledgment and
+  reason, even on a defective case. This acknowledges inspection, not that the
+  reviewer was correct: an approved empty defective review has confirmed misses.
+- Blank keeps the displayed value. `q`, EOF, or Ctrl-C stops safely; rerun the
+  same command to resume. Each complete decision is saved atomically. Incomplete
+  edits never replace prior judgments. Other-session changes are detected before
+  saving; do not grade/import the same form concurrently.
+- Type `HUMAN` only if these are your own human-reviewed judgments. An identifier
+  alone is not approval. Approval binds the entire current form, including any
+  unresolved entries; changing it requires confirmation again.
 
-The supplied recordings contain an intended match plus an intentionally
+`adjudicate` checks every retained input/reference/raw/normalized-review hash and
+all forms before logging feedback. Only explicitly human-confirmed forms attach
+as HUMAN MLflow assessments. Re-importing semantically unchanged forms is
+idempotent, including JSON reformatting; changed approved forms create revisions.
+Report quality follows the latest imported local form; historical assessments
+remain in MLflow. A form's approval digest is an integrity/attestation record, not
+cryptographic proof of a person's identity. The operator must not impersonate a
+human. Labels are never edited by grading; corrections require a dataset revision
+and rescoring every reviewer.
+
+Pre-approval forms are upgraded as **drafts**, retaining their decisions but not
+inventing human approval. Reopen and confirm them through `grade`. For automated
+walkthroughs, `grade --practice` accepts scripted input and requires `PRACTICE`;
+it records source `simulation`, labels all scores as practice, and **never logs
+HUMAN feedback**. It must not be presented as actual adjudication. See the
+[recorded Docker demonstration](adjudication-demo.md).
+
+### Compare reviewer/model runs
+
+```sh
+uv run python run_eval.py compare runs/pi runs/opencode --output runs/comparison
+```
+
+Open `runs/comparison/report.md` (also `report.json`). Input runs must have the
+same selected cases, revisions, exact public/private hashes and common review
+instruction. Different subsets or changed rubrics fail rather than silently
+pooling incomparable results. Runs need not all be adjudicated: pending runs
+remain explicitly pending. Import changed forms first. Comparison outputs use
+fresh directories, never overwrite an earlier report, and work offline without
+an MLflow connection. Evidence links lead to each retained review, request,
+private reference, form, and trace. All output remains evaluator-only.
+
+The report uses micro-aggregated counts per run, not a weighted overall score:
+
+- **Defect recall:** matched required references / required references on
+  completed executions. Unmatched references stay pending until all findings (or
+  the empty review) are explicitly inspected; only then are they confirmed misses.
+  Bounds show pending uncertainty rather than treating it as a confident miss.
+- **Finding precision:** valid distinct / (valid + invalid distinct). Novel valid
+  findings count as valid; duplicates are excluded. Unresolved findings are
+  excluded from this point estimate but shown in coverage and precision bounds.
+- **Corrected-case false alarms:** invalid distinct findings on provisionally
+  clean/corrected cases, affected-case count/rate, pending cases, valid novel
+  findings, and unavailable executions. Unmatched does not imply a false alarm.
+  The affected-case rate is a lower bound while cases are pending.
+- **Adjudication coverage:** resolved findings (including duplicates) / all
+  submitted findings, plus fully adjudicated cases / completed cases. The latter
+  includes explicit empty-review acknowledgment and behavior verdicts. Empty
+  finding denominators are N/A, not perfect coverage or precision.
+- **Execution reliability:** statuses and completion rate, with required defects
+  on failed/timed-out/invalid-output cases marked execution-unavailable, **not
+  human-confirmed misses**. Delivery recall is separately shown as a lower bound
+  across all required references, including execution-unavailable ones.
+- **Latency and cost:** independent fields with known/total case counts. Partial
+  known cost is not the total cost; missing telemetry is unknown, never zero.
+  Recorded latency measures artifact submission, not original model inference.
+
+No confident ranking is produced from unresolved judgments, simulations, or this
+provisional corpus. Even complete case grading does not constitute independent
+fixture annotation verification. Reference contract probes are not reviewer scores.
+
+The supplied recordings cover only `case-0004` and `case-0005`, not all 12
+authored cases. They contain an intended match plus an intentionally
 unsupported allegation in `case-0004`, and an empty review in `case-0005`.
 They are harness controls, not real model results. Tests also cover empty
 missed-defect controls, invalid artifacts and failed/timed-out Harbor trials.
 
 ## Artifacts and MLflow
 
+Runs, imports and comparisons also emit [`visuals.json`](visual-reports.md) for
+the notebook's opt-in **Evaluation results** panel. Backfill retained runs without
+execution or assessments:
+
+```sh
+uv run python run_eval.py export-visuals runs/pi runs/opencode --output runs/comparison
+```
+
 ```text
 manifest.json                    # hashes, versions, budgets, capability/enforcement gaps
 report.md / report.json          # per-case quality + execution counts, no overall score
+visuals.json                    # versioned flat run/case/metric tables for charts
 tasks/<case-id>/                 # exported native Harbor task; no private labels
 harbor/                         # Harbor job: config/lock/results and native trial directories
 <case-id>/

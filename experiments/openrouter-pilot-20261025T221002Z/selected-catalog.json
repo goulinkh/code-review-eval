@@ -1,0 +1,667 @@
+{
+  "retrieval": {
+    "url": "https://openrouter.ai/api/v1/models",
+    "retrieved_at": "2026-10-25T22:10:02.854982+00:00",
+    "headers": {
+      "Date": "Sun, 25 Oct 2026 22:10:02 GMT",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "CF-Cache-Status": "HIT",
+      "Access-Control-Allow-Origin": "*",
+      "Age": "13",
+      "Cache-Control": "public, max-age=120, stale-while-revalidate=3600, stale-if-error=3600",
+      "Vary": "Host, User-Agent, Originator, Anthropic-Version",
+      "Access-Control-Expose-Headers": "X-Generation-Id,X-Provider-Name,request-id,cf-ray",
+      "set-cookie": "__cf_bm=zHt1xzPtTjXUdMqE6.yquGz1sTf91vQjUqR.S3ErLRI-1792966202.630324-1.0.1.1-n.rrltBpiMzRaBvfGZJuE.8FCKd8s_EB04hYek86lmcxVTlDA6qUdlvJtDHXW7t7hyJwegfv7mCjZ9wgyaSX.lg.Iu.MuOiE2VGqnl_YTsxsdoKMcN10IbR9qxEvHlud; HttpOnly; SameSite=None; Secure; Path=/; Domain=openrouter.ai; Expires=Sun, 25 Oct 2026 22:40:02 GMT",
+      "Server-Timing": "cfCacheStatus;desc=\"HIT\"",
+      "Permissions-Policy": "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")",
+      "Referrer-Policy": "no-referrer, strict-origin-when-cross-origin",
+      "X-Content-Type-Options": "nosniff",
+      "Server": "cloudflare",
+      "CF-RAY": "a5048c8e69b87441-MIA"
+    }
+  },
+  "models": [
+    {
+      "catalog": {
+        "id": "qwen/qwen3-30b-a3b-instruct-2507",
+        "canonical_slug": "qwen/qwen3-30b-a3b-instruct-2507",
+        "hugging_face_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+        "created": 1753806965,
+        "description": "Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts language model from Qwen, with 3.3B active parameters per inference. It operates in non-thinking mode and is designed for high-quality instruction following, multilingual understanding, and...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Qwen3",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.00000009",
+          "completion": "0.0000003"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 235929,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "logit_bias",
+          "logprobs",
+          "max_tokens",
+          "presence_penalty",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": "2025-06-30",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/qwen/qwen3-30b-a3b-instruct-2507/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [],
+          "artificial_analysis": {
+            "intelligence_index": 7.5,
+            "coding_index": null,
+            "agentic_index": null
+          }
+        }
+      },
+      "endpoints": [
+        {
+          "name": "DekaLLM | qwen/qwen3-30b-a3b-instruct-2507",
+          "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "model_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "context_length": 262144,
+          "pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.0000003",
+            "discount": 0
+          },
+          "provider_name": "DekaLLM",
+          "tag": "dekallm",
+          "service_tier": null,
+          "quantization": "unknown",
+          "max_completion_tokens": 235929,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "max_tokens",
+            "presence_penalty",
+            "seed",
+            "stop",
+            "temperature",
+            "top_p",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_tool_choice": {
+            "none": false,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 100,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "SiliconFlow | qwen/qwen3-30b-a3b-instruct-2507",
+          "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "model_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "context_length": 262144,
+          "pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.0000003",
+            "discount": 0
+          },
+          "provider_name": "SiliconFlow",
+          "tag": "siliconflow/fp8",
+          "service_tier": null,
+          "quantization": "fp8",
+          "max_completion_tokens": 235929,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "structured_outputs",
+            "response_format",
+            "temperature",
+            "top_p",
+            "top_k",
+            "frequency_penalty",
+            "tools",
+            "tool_choice",
+            "max_tokens"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 98.26388888888889,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "Nebius | qwen/qwen3-30b-a3b-instruct-2507",
+          "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "model_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "context_length": 262144,
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "discount": 0
+          },
+          "provider_name": "Nebius",
+          "tag": "nebius/fp8",
+          "service_tier": null,
+          "quantization": "fp8",
+          "max_completion_tokens": 235929,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "logit_bias",
+            "tools",
+            "tool_choice",
+            "response_format",
+            "structured_outputs",
+            "repetition_penalty"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 100,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        }
+      ],
+      "price_units": "USD per token; Pi cost fields use USD per 1,000,000 tokens",
+      "conservative_full_context_estimate_usd": 0.007168
+    },
+    {
+      "catalog": {
+        "id": "mistralai/mistral-small-3.2-24b-instruct",
+        "canonical_slug": "mistralai/mistral-small-3.2-24b-instruct-2506",
+        "hugging_face_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "name": "Mistral: Mistral Small 3.2 24B",
+        "created": 1750443016,
+        "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on...",
+        "context_length": 256000,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "image",
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Mistral",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.000000075",
+          "completion": "0.0000002"
+        },
+        "top_provider": {
+          "context_length": 128000,
+          "max_completion_tokens": 16384,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "logit_bias",
+          "logprobs",
+          "max_tokens",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 0.3
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": "2023-10-31",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/mistralai/mistral-small-3.2-24b-instruct-2506/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [
+            {
+              "arena": "models",
+              "category": "codecategories",
+              "elo": 905,
+              "win_rate": 39.8,
+              "rank": 136
+            },
+            {
+              "arena": "models",
+              "category": "dataviz",
+              "elo": 929,
+              "win_rate": 43.3,
+              "rank": 125
+            },
+            {
+              "arena": "models",
+              "category": "gamedev",
+              "elo": 889,
+              "win_rate": 39.4,
+              "rank": 138
+            },
+            {
+              "arena": "models",
+              "category": "uicomponent",
+              "elo": 902,
+              "win_rate": 40.5,
+              "rank": 129
+            },
+            {
+              "arena": "models",
+              "category": "website",
+              "elo": 894,
+              "win_rate": 38.3,
+              "rank": 141
+            }
+          ]
+        }
+      },
+      "endpoints": [
+        {
+          "name": "DeepInfra | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+          "model_name": "Mistral: Mistral Small 3.2 24B",
+          "context_length": 128000,
+          "pricing": {
+            "prompt": "0.000000075",
+            "completion": "0.0000002",
+            "discount": 0
+          },
+          "provider_name": "DeepInfra",
+          "tag": "deepinfra/fp8",
+          "service_tier": null,
+          "quantization": "fp8",
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "logit_bias",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "response_format"
+          ],
+          "supports_tool_choice": {
+            "none": false,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 99.20863309352518,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "Parasail | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+          "model_name": "Mistral: Mistral Small 3.2 24B",
+          "context_length": 131072,
+          "pricing": {
+            "prompt": "0.00000009",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000005",
+            "discount": 0
+          },
+          "provider_name": "Parasail",
+          "tag": "parasail/bf16",
+          "service_tier": null,
+          "quantization": "bf16",
+          "max_completion_tokens": 32768,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "top_k",
+            "logit_bias",
+            "structured_outputs",
+            "response_format",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 100,
+          "supports_implicit_caching": true,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "Venice | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+          "model_name": "Mistral: Mistral Small 3.2 24B",
+          "context_length": 256000,
+          "pricing": {
+            "prompt": "0.00000009375",
+            "completion": "0.00000025",
+            "discount": 0
+          },
+          "provider_name": "Venice",
+          "tag": "venice/fp8",
+          "service_tier": null,
+          "quantization": "fp8",
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 98.55595667870037,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        },
+        {
+          "name": "Mistral | mistralai/mistral-small-3.2-24b-instruct-2506",
+          "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+          "model_name": "Mistral: Mistral Small 3.2 24B",
+          "context_length": 32768,
+          "pricing": {
+            "prompt": "0.0000001",
+            "completion": "0.0000003",
+            "input_cache_read": "0.00000001",
+            "discount": 0
+          },
+          "provider_name": "Mistral",
+          "tag": "mistral/eu",
+          "service_tier": null,
+          "quantization": "unknown",
+          "max_completion_tokens": 26214,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": null,
+          "uptime_last_5m": null,
+          "uptime_last_1d": 100,
+          "supports_implicit_caching": true,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        }
+      ],
+      "price_units": "USD per token; Pi cost fields use USD per 1,000,000 tokens",
+      "conservative_full_context_estimate_usd": 0.007168
+    },
+    {
+      "catalog": {
+        "id": "openai/gpt-4o-mini-2024-07-18",
+        "canonical_slug": "openai/gpt-4o-mini-2024-07-18",
+        "hugging_face_id": null,
+        "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+        "created": 1721260800,
+        "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...",
+        "context_length": 128000,
+        "architecture": {
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "file"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "GPT",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000006",
+          "input_cache_read": "0.000000075"
+        },
+        "top_provider": {
+          "context_length": 128000,
+          "max_completion_tokens": 16384,
+          "is_moderated": true
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "logit_bias",
+          "logprobs",
+          "max_tokens",
+          "prediction",
+          "presence_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p",
+          "web_search_options"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": "2023-10-31",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/openai/gpt-4o-mini-2024-07-18/endpoints"
+        }
+      },
+      "endpoints": [
+        {
+          "name": "OpenAI | openai/gpt-4o-mini-2024-07-18",
+          "model_id": "openai/gpt-4o-mini-2024-07-18",
+          "model_name": "OpenAI: GPT-4o-mini (2024-07-18)",
+          "context_length": 128000,
+          "pricing": {
+            "prompt": "0.00000015",
+            "completion": "0.0000006",
+            "input_cache_read": "0.000000075",
+            "discount": 0
+          },
+          "provider_name": "OpenAI",
+          "tag": "openai",
+          "service_tier": null,
+          "quantization": "unknown",
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "seed",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "prediction",
+            "presence_penalty",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p",
+            "web_search_options"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": true,
+            "function": true
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 100,
+          "supports_implicit_caching": true,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "supports_diarization": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        }
+      ],
+      "price_units": "USD per token; Pi cost fields use USD per 1,000,000 tokens",
+      "conservative_full_context_estimate_usd": 0.0110592
+    }
+  ]
+}

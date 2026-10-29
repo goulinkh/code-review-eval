@@ -16,7 +16,7 @@ from harbor.models.trial.config import AgentConfig
 from harbor.models.trial.result import AgentInfo, TimingInfo
 
 from harbor_agents import RecordedReviewer
-from review_reporting import adjudicate, load_json, normalize, save_json, validate_human
+from review_reporting import adjudicate, approve_form, load_json, normalize, save_json, validate_human
 from run_eval import REQUEST_MARKER, prepare, run
 from validate_fixtures import FixtureError
 
@@ -26,6 +26,14 @@ CASES = [ROOT / "fixtures" / name for name in ("case-0004", "case-0005")]
 
 def review(*texts):
     return {"schema_version": "1.0.0", "findings": [{"text": text} for text in texts]}
+
+
+def save_confirmed(path, human):
+    """Synthetic human confirmation ONLY for isolated unit-test traces."""
+    if not human["findings"]:
+        human["empty_review"] = {"verdict": "approved", "reason": "Test-only empty-review confirmation."}
+    approve_form(human, "human")
+    save_json(path, human)
 
 
 class HarborJobStub:
@@ -171,7 +179,9 @@ class HarborLayerTests(unittest.IsolatedAsyncioTestCase):
         reports = await self.execute(outcomes={"case-0004": (b'{"partial":', timeout),
                                                "case-0005": (None, None)})
         self.assertEqual([r["status"] for r in reports], ["timed_out", "invalid_output"])
-        self.assertEqual(reports[0]["quality"]["defect_recall"]["value"], 0)
+        self.assertIsNone(reports[0]["quality"]["defect_recall"]["value"])
+        self.assertEqual(reports[0]["quality"]["missed_reference_ids"], [])
+        self.assertEqual(reports[0]["quality"]["execution_unavailable_reference_ids"], ["finding-01"])
         self.assertEqual(reports[1]["error"], "review_artifact_missing")
         self.assertNotIn("SECRET", (self.output / "case-0004/trace.json").read_text())
         self.assertEqual((self.output / "case-0004/review-output.bin").read_bytes(), b'{"partial":')
@@ -197,9 +207,9 @@ class HarborLayerTests(unittest.IsolatedAsyncioTestCase):
         path, human = self.signed_form("case-0004")
         human["findings"][0].update(verdict="valid", reference_id="finding-01", reason="Same underlying defect.")
         human["findings"][1].update(verdict="invalid", reason="Unsupported allegation.")
-        save_json(path, human)
+        save_confirmed(path, human)
         clean_path, clean = self.signed_form("case-0005")
-        save_json(clean_path, clean)
+        save_confirmed(clean_path, clean)
         reports = adjudicate(self.output)
         self.assertEqual(reports[0]["quality"]["defect_recall"]["value"], 1)
         self.assertEqual(reports[0]["quality"]["finding_precision"]["value"], 0.5)
@@ -209,8 +219,11 @@ class HarborLayerTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(mlflow.get_trace(trace_id).info.assessments[0].source.source_type, "HUMAN")
         adjudicate(self.output)
         self.assertEqual(len(mlflow.get_trace(trace_id).info.assessments), 1)
+        path.write_text(json.dumps(human, sort_keys=True, indent=4) + "\n")
+        adjudicate(self.output)  # Formatting alone is not a new judgment revision.
+        self.assertEqual(len(mlflow.get_trace(trace_id).info.assessments), 1)
         human["findings"][0]["reference_id"] = None  # A valid novel issue is not automatically false.
-        save_json(path, human)
+        save_confirmed(path, human)
         reports = adjudicate(self.output)
         self.assertEqual(reports[0]["quality"]["defect_recall"]["value"], 0)
         self.assertEqual(reports[0]["quality"]["finding_precision"]["value"], 0.5)
@@ -232,7 +245,7 @@ class HarborLayerTests(unittest.IsolatedAsyncioTestCase):
                 validate_human(bad, template, private)
         human["findings"][0].update(verdict="valid", reference_id="finding-01", reason="Manual match.")
         human["findings"][1].update(verdict="duplicate", duplicate_of="f-001", reason="Same defect.")
-        save_json(self.output / "case-0004/adjudication.json", human)
+        save_confirmed(self.output / "case-0004/adjudication.json", human)
         q = adjudicate(self.output)[0]["quality"]
         self.assertEqual(q["finding_counts"]["duplicate"], 1)
         self.assertEqual(q["finding_precision"]["denominator"], 1)

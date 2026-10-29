@@ -1,0 +1,16 @@
+from access import is_admin
+
+
+def list_projects(user, configured_admin, projects):
+    if not is_admin(user, configured_admin):
+        return 403, None
+    return 200, sorted(projects)
+
+
+def set_enabled(user, configured_admin, projects, project_id, enabled):
+    if user is None:
+        return 403, None
+    if project_id not in projects:
+        return 404, None
+    projects[project_id] = enabled
+    return 200, {"id": project_id, "enabled": enabled}

@@ -1,0 +1,126 @@
+{
+  "providers": {
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "apiKey": "$OPENROUTER_API_KEY",
+      "models": [
+        {
+          "id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.09,
+            "output": 0.3,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-3.2-24b-instruct",
+          "name": "Mistral: Mistral Small 3.2 24B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.075,
+            "output": 0.19999999999999998,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.3-70b-instruct",
+          "name": "Meta: Llama 3.3 70B Instruct",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.09999999999999999,
+            "output": 0.32,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "meta-llama/llama-4-maverick",
+          "name": "Meta: Llama 4 Maverick",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.1875,
+            "output": 0.6525,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        },
+        {
+          "id": "deepseek/deepseek-chat-v3-0324",
+          "name": "DeepSeek: DeepSeek V3 0324",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.25,
+            "output": 1.0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 1024,
+          "samplingParams": {
+            "temperature": 0,
+            "top_p": 1
+          },
+          "compat": {
+            "maxTokensField": "max_tokens"
+          }
+        }
+      ]
+    }
+  }
+}

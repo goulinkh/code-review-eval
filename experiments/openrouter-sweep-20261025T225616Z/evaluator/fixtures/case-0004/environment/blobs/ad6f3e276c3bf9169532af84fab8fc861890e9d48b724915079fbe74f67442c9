@@ -1,0 +1,8 @@
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+
+def request_url(link: str) -> str:
+    """Normalize the query of an absolute catalogue link."""
+    parts = urlsplit(link)
+    fields = parse_qsl(parts.query, keep_blank_values=True)
+    return urlunsplit(parts._replace(query=urlencode(fields)))

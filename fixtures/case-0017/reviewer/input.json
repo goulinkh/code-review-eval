@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0017",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "e8d72e8b63ac7d95a73d98eab3a2c5740635adbe96da1f618a0298d772bc226d"
+        },
+        {
+          "path": "src/metrics.py",
+          "sha256": "6013cedc25580d02d575b7b8717bbe16f4cf8bbc0e2ea699d8bcee888b0fdbd0"
+        },
+        {
+          "path": "src/records.py",
+          "sha256": "d7080c49ef4673d4c7fe813a97e5ddf9c44547ba9155b02ed0d30b0975157547"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "e8d72e8b63ac7d95a73d98eab3a2c5740635adbe96da1f618a0298d772bc226d"
+        },
+        {
+          "path": "src/metrics.py",
+          "sha256": "39190be9b0344b6eeb0e83c3a1f7859fb31aa1d699586591562585bd5500dddb"
+        },
+        {
+          "path": "src/records.py",
+          "sha256": "d7080c49ef4673d4c7fe813a97e5ddf9c44547ba9155b02ed0d30b0975157547"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Use the resolved build record when labelling upload duration metrics. Preserve the reporting interface and lifecycle guarantees in PROJECT.md. Review the proposed change.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/metrics.py\n+++ b/src/metrics.py\n@@ -4,5 +4,5 @@\n def record_duration(upload, seconds, sink):\n     kind = \"manual\"\n     if isinstance(upload, BuildUpload):\n-        kind = upload.leaf.rsplit(\"-\", 2)[-2]\n+        kind = upload.build.kind\n     sink.timing(\"upload_duration\", seconds * 1000, {\"type\": kind})\n",
+        "sha256": "2b8f1eed0009549019cc1c8b615dd4cce09ad937753e7fc867bfa53969bb0a1e"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Upload duration reporting\n\nrecord_duration runs after an upload attempt and must emit exactly one timing\nsample, even if the originating build was deleted while the upload was queued.\nThe injected sink implements timing(name, milliseconds, labels). Durations are\nnonnegative finite seconds; preserve zero and convert seconds to milliseconds.\nThe metric name is upload_duration and the only label is type.\n\nInputs are one of the two supplied upload record classes. BuildUpload.leaf has\nalready been validated as PREFIX-KIND-ID, where PREFIX may contain hyphens,\nKIND is PACKAGE, BUNDLE or IMAGE, and ID is positive decimal. That immutable\nleaf remains available after deletion. BuildUpload.build is either a Build\nwhose kind agrees with the leaf, or None when the build has been deleted.\nA deleted build must still report its original KIND, not manual or unknown.\nUserUpload has no build attribute and always reports type manual; its leaf is\nnot parsed. Reporting must not mutate records, query a database or recreate a\nbuild. Author checks inject a local event-recording sink, not a metrics service.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/metrics.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "from records import BuildUpload\n\n\ndef record_duration(upload, seconds, sink):\n    kind = \"manual\"\n    if isinstance(upload, BuildUpload):\n        kind = upload.build.kind\n    sink.timing(\"upload_duration\", seconds * 1000, {\"type\": kind})\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/records.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "from dataclasses import dataclass\n\n\n@dataclass(frozen=True)\nclass Build:\n    kind: str\n\n\n@dataclass(frozen=True)\nclass BuildUpload:\n    leaf: str\n    build: Build | None\n\n\n@dataclass(frozen=True)\nclass UserUpload:\n    leaf: str\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

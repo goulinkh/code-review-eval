@@ -1,0 +1,17 @@
+# Upload duration reporting
+
+record_duration runs after an upload attempt and must emit exactly one timing
+sample, even if the originating build was deleted while the upload was queued.
+The injected sink implements timing(name, milliseconds, labels). Durations are
+nonnegative finite seconds; preserve zero and convert seconds to milliseconds.
+The metric name is upload_duration and the only label is type.
+
+Inputs are one of the two supplied upload record classes. BuildUpload.leaf has
+already been validated as PREFIX-KIND-ID, where PREFIX may contain hyphens,
+KIND is PACKAGE, BUNDLE or IMAGE, and ID is positive decimal. That immutable
+leaf remains available after deletion. BuildUpload.build is either a Build
+whose kind agrees with the leaf, or None when the build has been deleted.
+A deleted build must still report its original KIND, not manual or unknown.
+UserUpload has no build attribute and always reports type manual; its leaf is
+not parsed. Reporting must not mutate records, query a database or recreate a
+build. Author checks inject a local event-recording sink, not a metrics service.

@@ -1,0 +1,16 @@
+# Project administration
+
+list_projects and the new set_enabled are direct server-side entry points.
+There is no enclosing authorization middleware. user is a trusted, resolved
+session identity ({"username": string}) or None, never request-supplied identity.
+The deployment's configured_admin is a string or None. Only that exact username
+(after trimming configuration whitespace) may list or change projects. Missing,
+empty or whitespace-only configuration must deny everyone, including signed-in
+users. A denial returns (403, None) before any state change, including for an
+unknown project. An authorized unknown project returns (404, None).
+
+projects is a local dict from project id to bool. project_id is a validated
+string and enabled a validated bool; calls are serial. Successful updates return
+(200, {"id": project_id, "enabled": enabled}) and affect only that project.
+These are functions, not HTTP handlers: session resolution, input parsing and
+CSRF protections are outside this miniature. No remote identity service exists.

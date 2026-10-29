@@ -1,0 +1,2022 @@
+[
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/case-0004/report.json",
+    "sha256": "d3cb50625f070254c1539adce5dff158ba885fa9b80c7f8469c6e1286759a3df"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/case-0004/trace.json",
+    "sha256": "2565c03d0d929142a6cddabc3d3c15852fa29e15341e937208458175a89c3fff"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/agent/pi/sessions/2026-10-25T22-13-40-650Z_01a17520-68a7-77a4-8edf-e030d4fcf6bf.jsonl",
+    "sha256": "49f83d899a194325aeedad0ed2907d0f8528d6b30bb92c706b8df5f550c0fb23"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/agent/pi.txt",
+    "sha256": "57b46642df3f53f8e23067f8b4b3bf58b02ce87b16f08cb280898343235ededb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/agent/trajectory.json",
+    "sha256": "b13fd3487ff15a956ba39143ed9fa3065b9faae5d178a1076758c99f3f8b1e24"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/config.json",
+    "sha256": "54aa7b1800228f0327d10bab0ad934964d542664a0d779eb9e35958639592192"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/lock.json",
+    "sha256": "127726d7c277333da3a10a0e1478ee4f7c3cb30350dd414707960d7f6c597eab"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/result.json",
+    "sha256": "eab9c7f0f56f42b1e15e8d6b1740c5c96d755e057132bf35cf0108ec2beef603"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/trial.log",
+    "sha256": "55eeda6c8a67d374243b03b2fd8244ced6bdb5ec0a51880cf1eecd80010b0b98"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/case-0004__edtz4v5/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/config.json",
+    "sha256": "6bcd3289e78988d511d1bd0496c231f9db31b3721415aaf35cccfce8d985c94e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/job.log",
+    "sha256": "55eeda6c8a67d374243b03b2fd8244ced6bdb5ec0a51880cf1eecd80010b0b98"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/lock.json",
+    "sha256": "6e10511fd66cb8e347b88f54bb1ba94ea13d6920031835563f73172d815348e5"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/harbor/result.json",
+    "sha256": "117730aabb116ecc5074daedfa668260720bc34bd87fa79bb9174977734df836"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/manifest.json",
+    "sha256": "2bee3a817c09ba43efe33a00185fce4dd5fe673efcb12efde5a057bb02f2f7b8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/report.json",
+    "sha256": "22e35ff876a397079badb434565e673a841ab2ec32601aaacadf6b089c0e8e11"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/report.md",
+    "sha256": "34b8512ef9f1c6aaee89f4d492a8938a10e42df3829c1becd566cc7bd2dfefdf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/01-qwen-r1-case-0004/visuals.json",
+    "sha256": "bcbb84604d3ea59d04c8d9b3e6ce590ba22dce7f770e7033c621c357b4a64cea"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/adjudication.json",
+    "sha256": "ab967c920f311fa559622558dd9eb93503258c9af41a528741aad8b1bf6aaae5"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/report.json",
+    "sha256": "03b94c1540c155499248e50a265198f74c056e40ccedb97cf4f4807c11a7f048"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/review-output.bin",
+    "sha256": "c0de5a772c9e30931f373f5f1086679e5cced759629a57d3399c80780e328b8e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/review.json",
+    "sha256": "9bc12a2ab8aade1858b330d1b5a12dd7f4f8bfab4c899b992f9ec5c8f21f5045"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/trace.json",
+    "sha256": "029d972201607c64621685fb55824cca3275948176c1a079269c7c05c78f1d2e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/agent/pi/sessions/2026-10-25T22-16-28-386Z_01a17522-f7e0-75f2-94ea-c565bb300eff.jsonl",
+    "sha256": "e5db6563b20b79bd2ba9df681b4cf871b600e57b2fd7131d3f5bba81e0172a26"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/agent/pi.txt",
+    "sha256": "2d2208f71082fc859a3e79221b7a4cd400e062eda910ab918d61df57443bfc03"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/agent/trajectory.json",
+    "sha256": "e66da920c69d25c0f286b8dd5b24a9708345a84118348ba44b767e7cdc51f882"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/artifacts/review.json",
+    "sha256": "c0de5a772c9e30931f373f5f1086679e5cced759629a57d3399c80780e328b8e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/config.json",
+    "sha256": "9c6a60313d6ced1a9a8b509ddeaeafe4cdacc11fb05eb7a8bbc16f569ac7a02f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/lock.json",
+    "sha256": "58b57605868b7d263eb18b4e9aa60244df9b31479a6fc9b66c41fb89f635b20b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/result.json",
+    "sha256": "c2b3e04af6229b70c38dd88c90d9df878462c5ee59bda5e538f0402beb9b554f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/trial.log",
+    "sha256": "6eea9f508290dc1a16a28e9902293bbf829729c5705b51587602031df146a738"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/case-0004__KAzSR3c/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/config.json",
+    "sha256": "d7c78e57e7b49fd92eb9fb7aeb02e390eb600294af36b9cb71889ae11bed2fa9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/job.log",
+    "sha256": "6eea9f508290dc1a16a28e9902293bbf829729c5705b51587602031df146a738"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/lock.json",
+    "sha256": "ac87731bebb02ee1b2009ec4dcd0314eee153fc9deefb71720b368e5cebe220f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/harbor/result.json",
+    "sha256": "6878eb7fab74ac5a87ef3a42468327570c3799ba116bcffa1317527535ad1ece"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/manifest.json",
+    "sha256": "95917ea2778ae1446c872b5ff4b039dd644633134f2e3ba2f7aaccc8ef36ef35"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/report.json",
+    "sha256": "e382323a9fa9cd12eba4b1ad500af807d138c84efa50aceba157aa433e2128f7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/report.md",
+    "sha256": "e8c64208b051320ef41bda42d049a9ff9ae25c4dc17ed0cffc4273708e04efcc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/visuals.json",
+    "sha256": "87f3022f2e397bc6e19583e41e7009ac09995c8871cfda6c84bc351617c12a8b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/case-0004/report.json",
+    "sha256": "de7153a0d40534c1c373a205e70ca194166a1fe46a078c9a393efd30e1dcb06d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/case-0004/trace.json",
+    "sha256": "f5d88e0ca5fabd43c82cd960add23772246aaa83c9cd04791bd4f5409d1322c9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/agent/pi/sessions/2026-10-25T22-18-33-675Z_01a17524-e149-728b-a2f8-1d645c321cf2.jsonl",
+    "sha256": "6a908262a8e04e85ae85d6fe1051189eb98eb4a8ede6b2c60e9cdcdde5294b5e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/agent/pi.txt",
+    "sha256": "bd1915b8f757865944a53211028547863762fb95de8e67aad070f25f77de3803"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/agent/trajectory.json",
+    "sha256": "a863e4508ae53e9e16da24c3cc69e3fa938072b8fba16ef284e55547caa59fa8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/config.json",
+    "sha256": "359295efd748e6def6a45a8007f879f61ebbea04f378a03f94c46409d75940a0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/lock.json",
+    "sha256": "8aac9495f8ac90f0a0ac5f9db39886e52566934f2546d6c9f4e3222c56c3fa95"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/result.json",
+    "sha256": "d84de074feadc581c850e4c2f5735994e4208696646706acd5a94e7791a12c42"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/trial.log",
+    "sha256": "33e6ed86379f141d24ad025d3f223464570236f09e9fd7c06aeec3f61fbc5449"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/case-0004__EDavJJu/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/config.json",
+    "sha256": "8020d4671a9c5357a00afaa77a0b6863a1e28f5d6595dcd2fa5c70575c8c781a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/job.log",
+    "sha256": "33e6ed86379f141d24ad025d3f223464570236f09e9fd7c06aeec3f61fbc5449"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/lock.json",
+    "sha256": "9cee830e3c24ae7b667601ebc693f5657cb72e3a86812982adf9c1474df75b42"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/harbor/result.json",
+    "sha256": "f5869342c9e05a922dbb76641b03d69332eb2447ceabb9a1400581faf0e990d2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/manifest.json",
+    "sha256": "df4210945f7f3e55e3c5f14f27d05cb3e6f8437dea13bf3bddb27ead8adadfbb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/report.json",
+    "sha256": "fae0079e51aa6c043765d6631d5854dd0e8e5e68c61418dc4fe6e1e4610c5e34"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/report.md",
+    "sha256": "30e5dbbb8d46ad73e5eec10313035efebf21f811763ea642e3304a562c2e160f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/03-gpt4o-r1-case-0004/visuals.json",
+    "sha256": "5eab90560c3c4fb091227e2c35713fdf7cbf6d8338ff3a2216808c2e07098a5a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/case-0005/report.json",
+    "sha256": "863c2995b27c5cf1506419104c39da6c15b6653b7d42ecc9903ff4d42a3d7531"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/case-0005/trace.json",
+    "sha256": "3fb7249300c2ca57f18a9835aaf46cb0fc0bd0bb33428863638bb6e2af410ce7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/agent/pi/sessions/2026-10-25T22-20-00-977Z_01a17526-3650-7699-8e71-f6feec2def5e.jsonl",
+    "sha256": "e731d84a0e1e89b71afd29d33659450d45cc1bc8f49627bf4162540594b0f7fa"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/agent/pi.txt",
+    "sha256": "4f277f42461a61d99cd53b2a2ac74663231d9b63d38a2374645636056177a39d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/agent/trajectory.json",
+    "sha256": "640170b4d79ccda69a8b3b5a5ca671f74a2f980fca461c4c92470ac2b4b4423c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/config.json",
+    "sha256": "4b9664d99b176b9bd10ea054093b908e72cf1b9177bb81776360d10df3a45153"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/lock.json",
+    "sha256": "0cb6ee41ef4569e217ac1bdfdd7926c4a2fff9800f7c426be09f48ae365bf83f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/result.json",
+    "sha256": "deb9113046ac4bf1a6adf16c9df929fe37d15a98778f7157167d7385a9d69d9c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/trial.log",
+    "sha256": "305d7c870da168d8b69d6930132ed9befc8528d51d361d44d32001455d1cc197"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/case-0005__NgAa3Px/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/config.json",
+    "sha256": "183ce587570c00020b65d4d20f19b1631b351e7c49e255531808856ff4ee0185"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/job.log",
+    "sha256": "305d7c870da168d8b69d6930132ed9befc8528d51d361d44d32001455d1cc197"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/lock.json",
+    "sha256": "8185c25457e158d9d40dfb42df55ca3cd74447669ba2184fabf96dab93bb3aa2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/harbor/result.json",
+    "sha256": "1a250a7720291bd4dd5d89360e416c8b9c4c709347034bc143d1f3b392a9e622"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/manifest.json",
+    "sha256": "7bf88ca1af0e43cb23d23de30c04ed177d4bf3920d158505ce03dbc5a17a49ca"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/report.json",
+    "sha256": "50d78836863af07452c0db86397684fd56b1d239a4e03b881e71c71b1fc19d58"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/report.md",
+    "sha256": "7f1a1640cad27ab28c0a00601ee00e5574b5c6bed70de5f7088bcd1fc5aafd5b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/04-qwen-r1-case-0005/visuals.json",
+    "sha256": "443136255df0d2b25630c2d36f82474ae54e0e7cdb9c23eff6ae3e519faceebf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/adjudication.json",
+    "sha256": "43a21aa2e6b38aac2034e6c8f45a7a679c2029fa013d932d09bb0c09f211bdd5"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/report.json",
+    "sha256": "ea30a24df1bb9abc080b83f03eab37b9192f1dda3579e315dc16522828766a39"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/review-output.bin",
+    "sha256": "e5a63eac1a3581cdb85e528bae03c515451fced6e8d406750bc9978c7974b8a8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/review.json",
+    "sha256": "7716df3f191c9201c8dd8b95bb0d0ca4edb5e7baac90541f954c007992325ce7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/case-0005/trace.json",
+    "sha256": "19fb7697d923bff8f1cf91c141a8290a493068183adf8671defa34517d014919"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/agent/pi/sessions/2026-10-25T22-23-25-822Z_01a17529-567d-7378-bb37-5d5025911760.jsonl",
+    "sha256": "226b1c5306247abfbbe4430b0173f07c1747d1e31cc217454308b9505132c347"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/agent/pi.txt",
+    "sha256": "9cadd4774744b31fcc8ddb4ba83c361c5290df238b61e7aae872e2ac342ce2f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/agent/trajectory.json",
+    "sha256": "4fcd94128795d1e4ff4c886711f0fee226fd3e6ee7581c9e2b4c3411b44ae4cd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/artifacts/review.json",
+    "sha256": "e5a63eac1a3581cdb85e528bae03c515451fced6e8d406750bc9978c7974b8a8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/config.json",
+    "sha256": "afda0ae05ba73e05889057b50010db19d75edb93ebe24ef08da58940db682164"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/lock.json",
+    "sha256": "71adceac45ce31b9cd088cbd217d389ca81af19e422f7d681fead14b8301d39c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/result.json",
+    "sha256": "eb948c80d95c206e834e9b5b6b1d9e6eb335b84c56ae20730fb8496401646ac2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/trial.log",
+    "sha256": "a5fcf238d71771fcda177b9438733729b63aa3711dd1202b2c7cb93e20d2eebf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/case-0005__BftcLUz/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/config.json",
+    "sha256": "9b12f45302332cfeb97304ad0841b7bbbd3e8fbaa65643649b7c5a720eb21096"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/job.log",
+    "sha256": "a5fcf238d71771fcda177b9438733729b63aa3711dd1202b2c7cb93e20d2eebf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/lock.json",
+    "sha256": "259024a54cd3ebfbf24b7ae13c1bc98b8210807fb9f900821783752cdb5471b4"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/harbor/result.json",
+    "sha256": "d850b77e106cd35589cd7634ce57069423704ba19805253fbccb83d7299f85ec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/manifest.json",
+    "sha256": "ab9b9cb188ce478ee068217848b26e950b0a80e679ec23ad10a78870636092e1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/report.json",
+    "sha256": "c46c832b46889d99a32ed1b5f349a833cd881f794f47a0f245985c2e8d0b5625"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/report.md",
+    "sha256": "cca07cfb22b9c14eae90cd27838905490beeb3469bbade9001b038243db10925"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/05-mistral-r1-case-0005/visuals.json",
+    "sha256": "e9f7947e88d282eb02936da6d5513b5f93c69ea310e030d87ff82881c00c1059"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/case-0005/report.json",
+    "sha256": "dd0dcce978da6613e1a7c5641fc23c4d023a05be8592b92b6c54dcddf740912c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/case-0005/trace.json",
+    "sha256": "d23faab63c6a26124120630f693905ed29505b2f4ccfb328302e844dba9d44a3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/agent/pi/sessions/2026-10-25T22-25-04-109Z_01a1752a-d66b-7147-bb2c-82efd33e6978.jsonl",
+    "sha256": "225116041ee0f220fc4b63daf31b8dcb845c5b9d348fe969325dfa89d9a7369b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/agent/pi.txt",
+    "sha256": "e31ac64304a93a456ee5e338bec2943f69c8208a3890ca93a1fe957427d656fe"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/agent/trajectory.json",
+    "sha256": "ae2c45dc7af1caa2091a3e195485c2bbed661f2b2d68784f0cbc9d29a434fbe7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/config.json",
+    "sha256": "00d35d135fbbeff24355b15494b2d13af90ad8e85500b6baea29540dacb4c7cf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/lock.json",
+    "sha256": "0dc3b26122b3d8f93fb950b3d85122e58379e3144c5adece4892b741e64f3152"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/result.json",
+    "sha256": "a4e3d4b51b00d28e5fb68286d053c9b423be10f2a0ecc489db29be9d6b24af1f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/trial.log",
+    "sha256": "b87eacb9e837b7e30b2edc03033458ac15e6bb7193f0a7f53c4b01fbc46f6e67"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/case-0005__T8xoqHY/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/config.json",
+    "sha256": "d88042a6055dfac7db67cb3f83523e2acef74efd760cbb459d4d6e8fd5866d30"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/job.log",
+    "sha256": "b87eacb9e837b7e30b2edc03033458ac15e6bb7193f0a7f53c4b01fbc46f6e67"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/lock.json",
+    "sha256": "84f3ee7307e5e540cd7d39011fa026348e312d4428f5373d112c16efd41ca442"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/harbor/result.json",
+    "sha256": "78412de2400cc527278a22d21f1606ae97a9a8073078f72a5e1e5efcef411b83"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/manifest.json",
+    "sha256": "4111e75d9fc046a713cdfea63f43b7da1d96edf3dbee3d68c16ccead3b4d7f0c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/report.json",
+    "sha256": "9f3248e1d9134bd334dafe07c944f33c66c72e38d0ca088e4e2beda502925279"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/report.md",
+    "sha256": "a32b96336b44aea0c84ec1387e7bc5f3e5bba237ad398f21bbd11ae485b24502"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/06-gpt4o-r1-case-0005/visuals.json",
+    "sha256": "6120028ff99b7bc605a77cfb50e37539c8b73b7b90718896f433e3d84f71043f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/adjudication.json",
+    "sha256": "7e2b8defc72e3b250695db96a6861dddf89a8327c557ebc24c7d981992ded185"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/report.json",
+    "sha256": "c13bb816cd509df21c090d1d19968ddb51a949707640cc00173473fc648d4e40"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/review-output.bin",
+    "sha256": "cfb4e7e2fb2f09fe3059d35d74b97fb42cab87980122f5d0b2ee4ba01360e81e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/review.json",
+    "sha256": "ae8101eb6113e36c87864213058701cd14628cd18ddb471f98ffad901a7a3bcf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/case-0004/trace.json",
+    "sha256": "bb9b614858fb2bc437a03f06ebf3aa6ce60760f3075310eb26e6eb4a03db6ca1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/agent/pi/sessions/2026-10-25T22-26-26-622Z_01a1752c-18bd-726d-84bb-7ce6ea9ddb29.jsonl",
+    "sha256": "fad8221f666cf9ac94e58c6dbd3d19856472966bf2bdc1daba565532356d0242"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/agent/pi.txt",
+    "sha256": "d563db2c4ba36c4374b957b1d95b42a96fa39c6d401aa6cb5bc967d782ba69c3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/agent/trajectory.json",
+    "sha256": "2a51876c9860c29193e4bf9fceb6a2e6a63e8fdf303de6e225c11f8bf8fcacac"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/artifacts/review.json",
+    "sha256": "cfb4e7e2fb2f09fe3059d35d74b97fb42cab87980122f5d0b2ee4ba01360e81e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/config.json",
+    "sha256": "9f08129a885e94d123376a1051f2fff0032474d29810250f4d5f70fee49a8a12"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/lock.json",
+    "sha256": "8d91eb308bbc931e2893a249f51a2241f92ab4a3048d3d22935945c4a232f3ef"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/result.json",
+    "sha256": "0b8f76ff2f37cdca28cd65e58fe59d3e20d510e391e1df3eef0c237273898f11"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/trial.log",
+    "sha256": "4b6959a9b0733b7444203765f3a46215d303a1f690fa6de6da50832d650b5b01"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/case-0004__9AjZ427/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/config.json",
+    "sha256": "4424b177ada452db8e4bea30f8e76dbf7b5a161a8b0c64924c5f7711dc0b7de4"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/job.log",
+    "sha256": "4b6959a9b0733b7444203765f3a46215d303a1f690fa6de6da50832d650b5b01"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/lock.json",
+    "sha256": "a89e38a75d72158fd0bfdda86d86f753b76ec3606b329715d16e41b006f6dc81"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/harbor/result.json",
+    "sha256": "f27afcadcb9adf80a4c095752e5a4a809f2b2691a3a2d7e1ea29b2ae70da40ec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/manifest.json",
+    "sha256": "26143876e64606e375270f2dc41efb0f2597fbec20e2ce55a4e1d6a5cd0b2ad8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/report.json",
+    "sha256": "21b3ef5890c593c77817627ed357daae56b869c542bef03ea0bd462506da7842"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/report.md",
+    "sha256": "6b3f444caa254f6f9283f58006630feea844a0c2e9c9ff2fe258e147ebe8331b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/07-mistral-r2-case-0004/visuals.json",
+    "sha256": "29c7f30e2bbbdb433d7e5e71ca41dbc4265d39e05f7063042a63d42f4c3e57eb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/case-0004/report.json",
+    "sha256": "46a59163c8c5f7f56a7d9a632ab174acb5186718af690256811e60c73fe3c4ab"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/case-0004/trace.json",
+    "sha256": "31e7b1c2824e11197561d304c770f01d50b64c210cbd75700bb709610d3b994e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/agent/pi/sessions/2026-10-25T22-28-01-769Z_01a1752d-8c68-7720-97cd-f4242190fd78.jsonl",
+    "sha256": "9e4c0548d367f6175ba89cd2c4c9c902a84db4a044940b7b5dfdedf4ee1dcd54"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/agent/pi.txt",
+    "sha256": "45b45005ec84e0e11a75a49e29f809c8da6f6cc56d61ba3973ff9dab658f3fe0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/agent/trajectory.json",
+    "sha256": "6f9ec2e7928d087e06e34faa29a959b861df2fc15789c28fc2c808acb0e86910"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/config.json",
+    "sha256": "744dc035d43715bf5f39bbfe6d2b220b333c0e1c8dec319b850a9ac4f574f5e8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/lock.json",
+    "sha256": "7c4575f7107d17b4e64474b1b59f158ec67bb34c1a26a79ffd4dbec338fbf894"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/result.json",
+    "sha256": "2f7e8bfab1678610d19c300b374495e9e535de922290f8a5ae8a2c536470f387"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/trial.log",
+    "sha256": "5652e940e5393096f0198038761d0617220c5e575f62477799b04862df981234"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/case-0004__pvURPfx/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/config.json",
+    "sha256": "db4b3ef92f8f5ea541c87ca81f1eb0b84f1c13fb7e77feb452e6f1fd902b42a1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/job.log",
+    "sha256": "5652e940e5393096f0198038761d0617220c5e575f62477799b04862df981234"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/lock.json",
+    "sha256": "a1a7564639c05bea012079f930c9a3fde78f7f02cc33662b4b643383dd2cfe47"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/harbor/result.json",
+    "sha256": "f15246c73dc24db2d94b246f932b2826645df181e4ae45406716a2cc1ac78900"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/manifest.json",
+    "sha256": "abf6577bb8eb72ca3f3e220526bcdf75c0bea09a02a5c982bb3e3581b5254bb8"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/report.json",
+    "sha256": "c308a95af9fabb065f0f7283ff1dffb8a325234e960f21bbe27fe7139f4c6c92"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/report.md",
+    "sha256": "d2de354c43a0d7e300efa127864beb5cef02780531f9d1f07a868f5520af3be7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/08-gpt4o-r2-case-0004/visuals.json",
+    "sha256": "5d0c0c384cdbdaa4bf59687dac8e94b2f1fe443a4a9da878be914ba1d66e375f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/case-0004/report.json",
+    "sha256": "5452c01309a632aadb117d6e8aa53a9bf8db8c3f6036043d86b442c8e0929b93"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/case-0004/trace.json",
+    "sha256": "64dbf4e693586bfefc56d4d2b722d55f4d9c105882d3a35123c6a5fe787d4bea"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/agent/pi/sessions/2026-10-25T22-29-44-450Z_01a1752f-1d80-74e2-b682-215d81367eb2.jsonl",
+    "sha256": "0d499caf11e0c0f8fbcc8dedb386dfaa65f1baaee101baa5d32f7d80fd33cb41"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/agent/pi.txt",
+    "sha256": "efe4163031000541901b8ebdb358075900593883fa4d5f8726166e5509bfab22"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/agent/trajectory.json",
+    "sha256": "0ed12ae7147f537a09af4ce0284222e725125eec9f26ca4a04a6004d8109ca2a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/config.json",
+    "sha256": "d7942b84ade1d46581fd44d5d41b9862ca2cbf8cb60909f1e8bf35b939fb828d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/exception.txt",
+    "sha256": "7d5fd26eacaefed319b27b2a2e32d50047e7d8802ec0ebe12f9358a565edd4ab"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/lock.json",
+    "sha256": "b82760c9a6183d767f1c2bd4f99f385db1b1e106d275e82eaa011c0b59cdb258"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/result.json",
+    "sha256": "a036517379a0e02df8a7bf9e02fbe1a77a4e99969f2b92cf4c8342e62b5f6b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/trial.log",
+    "sha256": "06433daf9acfc2a6a6dcf12fc0ad98c4aff408de787047505dfc07afeeead6fd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/case-0004__uKaFsmF/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/config.json",
+    "sha256": "26f16c7979c1a276a229bda107ea69ba0a75fdcd140b8f84ff7a22c56944c6ba"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/job.log",
+    "sha256": "6b3e25f35836ecb28133165bea698eb9d99031f6b8d968c6f2a3033238182e60"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/lock.json",
+    "sha256": "4c88842da4f7f101ca71ef3ba91824148b6403aed39507df794b6e04eb00fafe"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/harbor/result.json",
+    "sha256": "a5d48821aca4024265b694ae619b72bbd118caffc6fcc67be2d42c40d41e8d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/manifest.json",
+    "sha256": "6ec294bfd3bbca90970ee07336084d2aa5313f8bd664021203a0c0e8f05d8f4e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/report.json",
+    "sha256": "582f7a419d8fb7a3664e195514b7b175777324826179b426e53e185666421fed"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/report.md",
+    "sha256": "2c2e056deb2c6d04c1d66a36fcaf0df0750b565d32aade15afb0efb8b1fca6f9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/09-qwen-r2-case-0004/visuals.json",
+    "sha256": "88ecf95a473bae2c6ce7a0a9c38424cb18a7ff3f32db3f38b9ebd45f9939a3a1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/adjudication.json",
+    "sha256": "12828df9589b5422bb42eabc66e91435c47c1bdeb1c6005b17e0616d7992984c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/report.json",
+    "sha256": "61efb3f2d95bf020d469c9a703c68c5a78c7bd41c53827b60a501cf79beea68b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/review-output.bin",
+    "sha256": "284e573fa577ae1528dec1574840fcc071d572e2f26a1de999f31d369da25f55"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/review.json",
+    "sha256": "e84b0f306891bb89e895d8e7438bbffa04118ad424ff3524b678a30ed523c5c3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/case-0005/trace.json",
+    "sha256": "e7d679d4186870c98422f75a4c65cd6ba815d35f7dd592d336a864e91615b474"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/agent/pi/sessions/2026-10-25T22-31-42-369Z_01a17530-ea20-712b-9081-178d87e454f1.jsonl",
+    "sha256": "5730095f6b691695fbdb031a982f67c132353015d1e388af01a4e7a8f67dc79c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/agent/pi.txt",
+    "sha256": "aa59680dd1f1c4d43b5eeee95347e8e8c0ef98864dfe5220209465a2d8262879"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/agent/trajectory.json",
+    "sha256": "18b3f11f49c77e79e2209ec980a1477ce85469a6ff3b8dea280a9873e3203d50"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/artifacts/review.json",
+    "sha256": "284e573fa577ae1528dec1574840fcc071d572e2f26a1de999f31d369da25f55"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/config.json",
+    "sha256": "6b6065cca5165cb3296bf8952d9536f7c3121ffc236f092ca8a3815cf81214a0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/lock.json",
+    "sha256": "213def068fde52c69b5fcd048465036ba7266b280a37b2ed9c1001d7a996428b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/result.json",
+    "sha256": "da393edcfb2338020a7c067e92e2cd2ea8296b8d155cb7cc99010b1711cf2ce9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/trial.log",
+    "sha256": "84f605ed24c1a34d02be73c189baa54e3c951f0cefeae12595c475f8e6c39d4b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/case-0005__78vXTvz/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/config.json",
+    "sha256": "9ff6e6ce33fefe64a3413cc3e6857875313423970df64aca8a89091919b12895"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/job.log",
+    "sha256": "84f605ed24c1a34d02be73c189baa54e3c951f0cefeae12595c475f8e6c39d4b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/lock.json",
+    "sha256": "d700c4ae05606b603319a8b327e3e2713e780420998970115eb453405eb6d534"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/harbor/result.json",
+    "sha256": "1b0aa16f0fd2cdc439b4291cebc5685731540ddb27b24f93c177fa3e4f1b02e6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/manifest.json",
+    "sha256": "c26c9e4421c154dbbfce0bb412875970313a760ef6946333fe3f3d7f96e2d032"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/report.json",
+    "sha256": "1602be83ad1d70b62e500af890dbcbf3ca53611139e443ba32abb14e93f23e02"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/report.md",
+    "sha256": "b7c1b4bd1baff1b762ede311278648a2972c8148b76978430bc15ef975924c09"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/10-mistral-r2-case-0005/visuals.json",
+    "sha256": "9c977c4c327563bb892b30ec5f26a058d3497225f005ab9eeea2477aa25c2efd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/case-0005/report.json",
+    "sha256": "5f648ee46e4f9c0820165dfd32f32fa0192364a07702a071d5904a923b30f67c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/case-0005/trace.json",
+    "sha256": "fd14aefab68f859918b7b4848b1cab5d5229e22618aae113be3b80a5f166e4cf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/agent/pi/sessions/2026-10-25T22-33-15-125Z_01a17532-5474-73fb-9dec-903ec8dd7a8f.jsonl",
+    "sha256": "6167ba8fda0850de9bacbebfc54422aaeacf461812abf7964dec3f21e979b5ec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/agent/pi.txt",
+    "sha256": "b6ddce52eeb4d06062c929dacca6064180038cc32aac3821954effbdbef95049"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/agent/trajectory.json",
+    "sha256": "bbfea909351b4e59e5db861bc9e1d288ec645217a06e197c8f91f31f28f1a98b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/config.json",
+    "sha256": "ffe1f1a5a929caf61c169a4149c07a13cc3a4b98cc3058991b269aafcfeb3785"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/lock.json",
+    "sha256": "7fb9be7e6d3e6d5ed58e372eeb61390be02a0e36142f297de9b538846aa64e65"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/result.json",
+    "sha256": "3c8d272a7090983c8061cc6cb69b4aeb7ceb5029d1dd31ee39facac63296e15d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/trial.log",
+    "sha256": "07722eec7d197b1b75594e0c6eddaf6dac80dfa8d6eaccfe1d43b89311d2ef16"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/case-0005__LEsrDcp/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/config.json",
+    "sha256": "e6a04f280a69f993356937e6d92c0c18e8dc39921b65a9b0ed96223062a97809"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/job.log",
+    "sha256": "07722eec7d197b1b75594e0c6eddaf6dac80dfa8d6eaccfe1d43b89311d2ef16"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/lock.json",
+    "sha256": "6a24ef8dc733e9ce3d7b1b3a837a892bca92424f4916eacb92cb381c97f02e3b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/harbor/result.json",
+    "sha256": "149c3fc6d1c5434849974553e77ec1e0fdf3c5437836ffe8c6940c85aa84c67a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/manifest.json",
+    "sha256": "9d54a98c0597e3e7d8121ce999b05cd7cff468769a35f40165f46d7432989f73"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/report.json",
+    "sha256": "756ac1f163b0527bcc2cd2801f7f59718fbe86d48269d859a3f97d771d099b43"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/report.md",
+    "sha256": "0dc14bda2ec9e5b81fddc4d7221356cb8c9187b7b4eeb98609fdc7308f082f41"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/11-gpt4o-r2-case-0005/visuals.json",
+    "sha256": "98e7f40dfda848e738ade62dfaf1bb5939c0a1ed687a6f54ec036c9eeb5a3d6d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/case-0005/report.json",
+    "sha256": "3d7f2eedf6dd9a4a9d7f1066cfe5d7514b1bc533b1d4be86c83d595c288e9ae3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/case-0005/trace.json",
+    "sha256": "a82869047cda57beb85c8d6fb34ca495410af02246005a582a51d3086875c77f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/agent/pi/sessions/2026-10-25T22-34-36-225Z_01a17533-913f-77d5-a073-db2d850cc1ff.jsonl",
+    "sha256": "72972ae0e89339d0474424bdfce8fee296e71a4e38b72e1d53fefd88e08f6d54"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/agent/pi.txt",
+    "sha256": "73d728239e93748b4771e454104fe8e8efddd2e4bd7358e50277489fff1a8810"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/agent/trajectory.json",
+    "sha256": "74a075259057fea8b19c6c3a965a3a029cb2db57c03298318ee8ee54db1a157f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/config.json",
+    "sha256": "aa2b660bfa0eb05fc4b34f146a9dc8f0efa64924816993c20ae396af1d687ce5"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/lock.json",
+    "sha256": "97348924917f9c7123b33f910c40f19d0c7acba2cfe3e6ee79f9835da9317dc9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/result.json",
+    "sha256": "44e3150de3fbe6c3d4176bdb2bbdce587e2013987887c7bda56b0a140fae5b7e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/trial.log",
+    "sha256": "4da7ada4ccb454e4b46fba8839eb12001ad4f5add8ff7e97a4b7fd94230f4b6b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/case-0005__FpZVugq/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/config.json",
+    "sha256": "7ef92f93007a09059f4e599d74d3e9b53d94056a21385b8adce82ce9b5b74923"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/job.log",
+    "sha256": "4da7ada4ccb454e4b46fba8839eb12001ad4f5add8ff7e97a4b7fd94230f4b6b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/lock.json",
+    "sha256": "8221cdf83f63e6a1fb97971d3bc0b9051bd07a9078b65b72244757317d8d25cc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/harbor/result.json",
+    "sha256": "0f4801f491e4753014a322107965fe7cb2841549c45b62513db68453ee5f583d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/manifest.json",
+    "sha256": "9090e3314f247520a16cfc0839208a6e43f90b1d0c4881ce99e940a602aa8abf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/report.json",
+    "sha256": "1eb3247102143e3d04213155e57b7e2f50ec0b1990c0511f40015ec02a360de6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/report.md",
+    "sha256": "542ccd71402851c2bcd4871c3f7b62eb833bba55faf54febf2c0efe248e35167"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/12-qwen-r2-case-0005/visuals.json",
+    "sha256": "508f8bd474c56fa1e0359c8d0b9c6d2a53f2591ce175cd50d13a6086d4ed83df"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/case-0004/report.json",
+    "sha256": "3f9250283075c625aea2564ec636050d9eb20c4acc76e3e46028a867fa4d9f9a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/case-0004/trace.json",
+    "sha256": "f38104bcb2debadf13044c3d2f5bf3970055dbd04361e4401fb266fe019f92ad"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/agent/pi/sessions/2026-10-25T22-36-03-028Z_01a17534-e452-7115-a5e5-717d9720fb9d.jsonl",
+    "sha256": "25fdf8a1a284266e6a8ccd697a9c82e51b20409204249f138809e4ef974def9e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/agent/pi.txt",
+    "sha256": "76be14218bc172b083489633b13828c8574ac8060274aac2965927089f71751d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/agent/trajectory.json",
+    "sha256": "e21686905a9f983436b3a9836c944afc13fcd05b9e5cfc5fb326b5cc98d655c2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/config.json",
+    "sha256": "8beb5f15c2cf15226c1282ab0b7336a61ea349b3f8ecbe87eb384fe83c8dc4b6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/lock.json",
+    "sha256": "417f1d48626d2102c9b17ca9c2597436b3153c4ca773272a27f91c1132179ae2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/result.json",
+    "sha256": "5f2ca8f4138231d0d3a2c0e214ff20a4bf7c60d7693a152d5c5d1c1cb38f673f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/trial.log",
+    "sha256": "e186204ed20ea8ddd24d58c61d5f8c0287720cffe5335bff8080f1bf1043601a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/case-0004__N2ySb5x/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/config.json",
+    "sha256": "2b347efa869606909d44190b13bcd02fe3efb5ec7154f36129950eef36958bb9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/job.log",
+    "sha256": "e186204ed20ea8ddd24d58c61d5f8c0287720cffe5335bff8080f1bf1043601a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/lock.json",
+    "sha256": "161cc00b01e9347d482d9827d6761c7ece2eab575bf24713a3793557d55c015f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/harbor/result.json",
+    "sha256": "1a358797dd3e4790bc67e5adb43577da840267d97d28b0cc57bcb2c3d9be2c87"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/manifest.json",
+    "sha256": "d11ae618ce3ddac08eec2b6845850bc8148e2aceb153346e138d76f53e62ff5a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/report.json",
+    "sha256": "efb7c8ecc23136d9146ebf737d7eca31894473126710c58b9dce3b02706bf35a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/report.md",
+    "sha256": "6f2ce7d9e15afd24f16087aede0c4068f04ab73a68300a1ad95571111665eff0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/13-gpt4o-r3-case-0004/visuals.json",
+    "sha256": "e1066fbd80a010ed03a12f0ec3f751282e3c3179a35b22a0e97bf7820f492011"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/case-0004/adjudication.json",
+    "sha256": "1dd0d32134185f9851f86ac82bc65af5895b5a86c62896928ae92896a8b98837"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/case-0004/report.json",
+    "sha256": "430d34620a2b4718c6028613a2e702b242fbd872fea6bf9fa76649ccd19fb594"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/case-0004/trace.json",
+    "sha256": "39eca0e663c5e47d0eca89c6f832e9ff920a2bcd05043fa73dd77141c6b032aa"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/agent/pi/sessions/2026-10-25T22-37-21-322Z_01a17536-1628-7620-9dd3-a86e89c0aebe.jsonl",
+    "sha256": "f16da8a4253e5e90afb32470992a1cf3e693d6e520f1798c7fddbffbc81641cf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/agent/pi.txt",
+    "sha256": "d160c35ceeeb3c414a6459cd3ac8c6b0c514c8e2022269d1bac1d2595c86a8b1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/agent/trajectory.json",
+    "sha256": "a7fe63f16105cbc2e5e92e2062270277b00377d9727d4adceff0b38be8ac08e2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/config.json",
+    "sha256": "7126d981841ec8212bbf1ce73ebe96d12f35530873a6cbb4d8fdebc1a66afa44"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/lock.json",
+    "sha256": "65684f7bf18b9b55f38ef4456982205f4ba1388a27b3a5e099c0d1a925340b99"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/result.json",
+    "sha256": "1f1ca25e73f224c3934be98ade0d156b87f51bf04c9a5cc457fe9f5009699d61"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/trial.log",
+    "sha256": "7a4f348528cfd8241deb677575095530805e483698a42e8fb5b141aae5248bec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/case-0004__G9cPXgA/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/config.json",
+    "sha256": "29d826667e45bf59f94955c5f734f48f104301ab3225de8118f4eeaf09c89d3d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/job.log",
+    "sha256": "7a4f348528cfd8241deb677575095530805e483698a42e8fb5b141aae5248bec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/lock.json",
+    "sha256": "5734bfb3021f1466908e3bc5f4286acaf4f3d424e4944c063d1af3f1b9b5bec6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/harbor/result.json",
+    "sha256": "650d5b4fd84efb6de3bdd7d385f062b5fbbc31b1801709f5c31dd1a7d390ee49"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/manifest.json",
+    "sha256": "c49ca801863049aa0a82411b87742cffe8d201e0db9a4025c1049b43f94bd1cd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/report.json",
+    "sha256": "7d7cc4091f5977bf78f78271d194d0d1e05bf3c6611b80df73cd4b4ec5818de9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/report.md",
+    "sha256": "4ace50437fda44de42f55f95fa6c20a62842cb3abb22c5d2cc76957780136b71"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/14-qwen-r3-case-0004/visuals.json",
+    "sha256": "4e0cbdd1687d6711ba9ac63ff5acb46c89e8e6b1594ca8e650f4a391b7932851"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/adjudication.json",
+    "sha256": "6493f03c722a14207a8ab17617dc4e3c4008f2482bed6c583292b2c978e023cd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/reference.json",
+    "sha256": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/report.json",
+    "sha256": "1d3da7bda27fdc7f6ca33c87bf48611dc67e836254159984fd5c44f4b747f049"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/request.json",
+    "sha256": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/review-output.bin",
+    "sha256": "70d683c54c17577c590390b765e458a85c206fb233125f19dec404ea4095a196"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/review.json",
+    "sha256": "1c794a3d41f3a30a91ce64b3058fd157e8f84e8ab9c6bb4a6afd2590eaa9314f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/case-0004/trace.json",
+    "sha256": "16af2a87212da085a26e53a3171906465bbf4a1a0176d637d5be5ec18615b5df"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/agent/pi/sessions/2026-10-25T22-38-47-719Z_01a17537-67a6-77d1-8e8b-c0114fcb5a77.jsonl",
+    "sha256": "e5624f3b812e82452bc5d5080b2730dd2bc816c7d8e3fd0dbc2b7401ffdfaed6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/agent/pi.txt",
+    "sha256": "3cbd058844bee858d775f8a273c04b530ed88920ed1ffccf0f4c03dba9d1159b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/agent/trajectory.json",
+    "sha256": "97f4feb8f9bdc3befffb5ea2c3b401de1574dafeba1494f3a15c094610939b9f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/artifacts/review.json",
+    "sha256": "70d683c54c17577c590390b765e458a85c206fb233125f19dec404ea4095a196"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/config.json",
+    "sha256": "a637768502c3992278e7067aebbafc48d5977be732022ca7ba5bc321014332c9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/lock.json",
+    "sha256": "6d9b6008de0199f9c56606e3949581d9e6350e87c2ee667e426d677d953c3c82"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/result.json",
+    "sha256": "f79fe627b380d1210bf3ac2b79f25648ab1a7bf042e5139adee523f194453843"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/trial.log",
+    "sha256": "bc0cfa08dc2398ddb4a417e686030838d77d5ec743781157c3f15f9a36ce7960"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/case-0004__KpzN2xU/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/config.json",
+    "sha256": "c6aea665ed39bb2eafb1640f6d42b1d6b3ad96130f411ac323c006fd44b34e53"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/job.log",
+    "sha256": "bc0cfa08dc2398ddb4a417e686030838d77d5ec743781157c3f15f9a36ce7960"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/lock.json",
+    "sha256": "b007d95b7f19cd8686d30955b643cdfbec9a885cf6857f04974f15e051edc005"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/harbor/result.json",
+    "sha256": "b53ffe7120b2aab6c84071d355bd100839149a8f5e304b87cac806f6aef6739f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/manifest.json",
+    "sha256": "2b674e4ed6c13b285341e9d7595f96fb6b77b09813a83fa8bde7e46f430c9651"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/report.json",
+    "sha256": "499ea43b44527d543d7b60bdbd5bebfa73d67f6e90d6cac3754bfa0174746481"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/report.md",
+    "sha256": "9b8f06c4c639a8b294599d0f403a84bd356cca99ffe32f8caeb3484a13acfc7d"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/tasks/case-0004/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/tasks/case-0004/instruction.md",
+    "sha256": "1ec70df9b89de11bf911f360af33d6a79b45b55d96280b4f93256a755de29b4f"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/tasks/case-0004/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/tasks/case-0004/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/15-mistral-r3-case-0004/visuals.json",
+    "sha256": "da2f2af3b33b8521684ca0484a4e5e631982c7d0f86e6c6ff44026d559a70fcf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/case-0005/report.json",
+    "sha256": "7b532c175e5b4c89eb06124c87e03d6a7714a7e2761c7985ff954f522be2625e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/case-0005/trace.json",
+    "sha256": "d963a68d94d116290d08c06aa85c0f85bd4dea3decd86a55c081274f004ab8ea"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/agent/pi/sessions/2026-10-25T22-40-11-566Z_01a17538-af2c-74b8-937c-52f458e41b48.jsonl",
+    "sha256": "543e91a02268d64d6a6eb48ca6ed6b87dd1430fafc20eff1c749a75487916a97"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/agent/pi.txt",
+    "sha256": "86026a220036cf9fd1813014ae05a5dc2fe1d417c58c581dce9d983c255e38e3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/agent/trajectory.json",
+    "sha256": "cb0df803c2d774b74d3d2a304d3a6ac76181f29ddf626bd8e888c38b1b04fab2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/config.json",
+    "sha256": "6f3e43eba6932f4e4fb9299f38ad05998f66565607afe4cb74403da0c770ddc5"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/lock.json",
+    "sha256": "140c75f562c563c9ba0ef3baf089acaa7b12f13976b72f64f0ff4b38a1b197ec"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/result.json",
+    "sha256": "4ce4345e035eb90dc6e5f36728ede8a7105471f82ea2e20d824e72fa1f18c092"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/trial.log",
+    "sha256": "469ab920e2efe42eed6e8d278fbc80f2d4f63921579293e3a43d8a84b9a2c5f1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/case-0005__WoH5jGL/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/config.json",
+    "sha256": "4ede43e2c223a6e37a5bfd937554f7966f3cd669b946647198d412f1ff81e336"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/job.log",
+    "sha256": "469ab920e2efe42eed6e8d278fbc80f2d4f63921579293e3a43d8a84b9a2c5f1"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/lock.json",
+    "sha256": "4caafb7b29df048f2a7c78563e9cd775a81e1532ec67d8d77c166026437bbde9"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/harbor/result.json",
+    "sha256": "eee0efcbd3b8d03c36669f053ba6faf4f0e54588443e96bc4d0209178ae77bfd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/manifest.json",
+    "sha256": "7865d58cab5caf623e01b92e9ea9f3d438854d89ec20d1b93bf260df6084d067"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/report.json",
+    "sha256": "d9dd3b8ce888e4961ddd009aba508696c30f08354f05f53432572c9c65dd2e01"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/report.md",
+    "sha256": "8d3dedb78edf1e62475d9eac290c6eade8b5d4ad2c70af469a320145001575dd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/16-gpt4o-r3-case-0005/visuals.json",
+    "sha256": "06900124b63836a4918ab5e68403f1701e8b2693656473660b3701fd01a104b2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/case-0005/adjudication.json",
+    "sha256": "027ad10bbfa53d5472f68c306653f4ed8c0506d524a31e59573c1f79eccb272e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/case-0005/report.json",
+    "sha256": "114075e0c26e5ab419b03a22700d9d629a186e947a92d5859a8a122de98c23b4"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/case-0005/trace.json",
+    "sha256": "3705c547f0742415e39522fdb8444efeff052ee1883de8e2a43cdddc4a2028c7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/agent/pi/sessions/2026-10-25T22-41-30-117Z_01a17539-e203-72bc-972d-bff423533bf1.jsonl",
+    "sha256": "1703a35ec023a965d496188a39e12936854902de26091c987544cb0cac0e6251"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/agent/pi.txt",
+    "sha256": "666670c21ef671f14cb0bcd04941b31ff6f5917308b97b5b7c491dad6fa38938"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/agent/trajectory.json",
+    "sha256": "f932ec2b578ea112479692adb4b8d8f6921c39c377aef45ad4fc65951cca79b0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/artifacts/manifest.json",
+    "sha256": "a0a0d1259904af7166fe4df510b4997448abbe6d8342f4c7325b753ae7ea9ce3"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/config.json",
+    "sha256": "2dae6c7076e635449715fe4fac42765a16c670af01e767e5194593dae260a630"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/lock.json",
+    "sha256": "31f0c0603b3d622e9fec69ab00d412bd5fd0cadb40090e5685b09fc830f0f36c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/result.json",
+    "sha256": "50737af0b6d6faecd4ccbbfad22552af69b49ee0407e3fb18c6a67a5220e55c6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/trial.log",
+    "sha256": "b22a3338b0cc65b5fdb21a77bc19453eb4658df88b0e2d058128a8882129234b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/verifier/reward.json",
+    "sha256": "99d5882ab83e77d82cfef84d7b9b9faeb7bead05801fe0567fc0f6cd6ad3d76a"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/case-0005__eENWKKx/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/config.json",
+    "sha256": "1ac7cd74bf0c90122225c3ca27c8383ea09c6ca2959225dca82533bed91d7e5e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/job.log",
+    "sha256": "b22a3338b0cc65b5fdb21a77bc19453eb4658df88b0e2d058128a8882129234b"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/lock.json",
+    "sha256": "a02ed334f7cee6659e2c23910088de7c059e30edc3d34d0464dc253e4ccc3268"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/harbor/result.json",
+    "sha256": "bb40051d1e55389de4130a0ca8f8e983c8995211b603e93a8cff073bf6bdf0e0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/manifest.json",
+    "sha256": "941bb19e93fc92c1d0e550c08318586004ad6359d21d9a33a56fff6d831ad369"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/report.json",
+    "sha256": "f3e01d6edcac55aab04a60882f9a9421c80f74655524d111186bb0b5b71dfc76"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/report.md",
+    "sha256": "e73ae64bd16818d578fd0fd45862cf8dd137a350b44e32e22b17e718a5cbde28"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/17-qwen-r3-case-0005/visuals.json",
+    "sha256": "8f39a927d68145e7a260dca076762f75c7f1aa432612a602527a9452a8c66b62"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/adjudication.json",
+    "sha256": "b7742c72407165cbd4ee211830d13bec66ee6ede7eb00ea4b493b7bd715dec13"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/reference.json",
+    "sha256": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/report.json",
+    "sha256": "c74743d710d092cd6eeaf84d9bfc842e6a639f13556fa1bc43efe75d568c31d0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/request.json",
+    "sha256": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/review-output.bin",
+    "sha256": "ca85b33a88815af79872a98c05befe38bf0d8ea7736abc88f778d66885dceba0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/review.json",
+    "sha256": "0cef6b3136db9041667ee2826b0817f0f33486a759b231015d66bb7fcfd67059"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/case-0005/trace.json",
+    "sha256": "0bb7b7fddaf67d0f62741cb5403a4aefda8ab79bced1dabd1fab624d7e849bcf"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/agent/pi/sessions/2026-10-25T22-42-57-337Z_01a1753b-36b5-74fd-9420-4931a7807e80.jsonl",
+    "sha256": "36723d80b237a4893a12b1905fca1796f76abaae30622eb9ed8228268ccd8bd6"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/agent/pi.txt",
+    "sha256": "93e0e85c0f55cde2b1b28d59b7c6ece4d78f20b0cacee7b2d6018939840b8617"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/agent/trajectory.json",
+    "sha256": "fb25c92173ed02b5c30d444f629bfd5611242b7fdd18f12ed462d1486befe740"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/artifacts/manifest.json",
+    "sha256": "5fd651f70459c0629cb4c3e55a13ac742ea0cc60eab5b3e0fe335a2928e61d72"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/artifacts/review.json",
+    "sha256": "ca85b33a88815af79872a98c05befe38bf0d8ea7736abc88f778d66885dceba0"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/config.json",
+    "sha256": "29d8391089230802a9a363c04764e2f7a17b70632222e82a24824d53ee2e226e"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/lock.json",
+    "sha256": "399ccc28baf05b5f445315c17e126fd78b88f70cecdf4f56f34761b6d5bd22d7"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/result.json",
+    "sha256": "d924d8d7819a71192612a43566839bcdf10ce77398c81547c11517274e079c59"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/trial.log",
+    "sha256": "b686d6ed91e43db5de2c6820f427c172eed6eeaeacaef8640e10dfc3149b7903"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/verifier/reward.json",
+    "sha256": "a0d34fcb80808692bf45e9d8a4c70f005e9ec7ffacd3f641563586e65a640498"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/case-0005__yh8b7Kf/verifier/test-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/config.json",
+    "sha256": "7d634e54c732ee99d5117cb8e409cb8415e7ffaea80968ef9a0d90901aea354c"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/job.log",
+    "sha256": "b686d6ed91e43db5de2c6820f427c172eed6eeaeacaef8640e10dfc3149b7903"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/lock.json",
+    "sha256": "9952dabd5f6ec250a09dbc65176cedad7cbb5ba4cd39d0ecc2cc9f77caa40d48"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/harbor/result.json",
+    "sha256": "25d2a539cfa8cd8cc6e80271f6d8701cba533cd74784efba5ef6ebb96bee1ced"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/manifest.json",
+    "sha256": "60d7f1439f36ee082e6ad7f9c18eba53c2ffdf16d4b328a3fec0db7bb25e1ca2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/report.json",
+    "sha256": "ae769526a5a168919b82f95194cbdfc18956158cd89cd9d06a747b2f9d13b4cb"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/report.md",
+    "sha256": "7e4ba12fd098da4286f6b3733c57aa4ed79ce1f65e2d96c4e0823881ff62cead"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/tasks/case-0005/environment/Dockerfile",
+    "sha256": "3c302a2b5e25748b58bfbe575c34cc59e4d74e818108c2e7b8c361eb334d5022"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/tasks/case-0005/instruction.md",
+    "sha256": "c2e0a15897fcb3b50ed7c0a6ea1bf3f11b84e6c15918a0d8c7bf2367afd599fc"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/tasks/case-0005/task.toml",
+    "sha256": "8c339a7a334f2f8203da06ed6575fb9b60f42071387f1627e4324df9bbe78cf2"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/tasks/case-0005/tests/test.sh",
+    "sha256": "0b0e474acb5f82f47df22377e45bf580d37ffd16db47e3a1cd07cd09a2a880ce"
+  },
+  {
+    "path": "runs/openrouter-pilot-20261025T221002Z/18-mistral-r3-case-0005/visuals.json",
+    "sha256": "b0ef870ec3d53e7b19d64b8c8f508a3be26dc4f66a8961d7e2a33ae07b9dfc2e"
+  }
+]

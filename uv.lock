@@ -525,6 +525,7 @@ dependencies = [
     { name = "harbor" },
     { name = "jsonschema" },
     { name = "mlflow" },
+    { name = "pygments" },
 ]
 
 [package.dev-dependencies]
@@ -537,6 +538,7 @@ requires-dist = [
     { name = "harbor", specifier = "==0.25.0" },
     { name = "jsonschema", specifier = ">=4.23,<5" },
     { name = "mlflow", specifier = ">=3.1,<4" },
+    { name = "pygments", specifier = ">=2.19,<3" },
 ]
 
 [package.metadata.requires-dev]

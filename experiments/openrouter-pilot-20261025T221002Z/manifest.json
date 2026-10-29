@@ -1,0 +1,299 @@
+{
+  "schema_version": "pilot-1",
+  "created_at": "2026-10-25T22:12:47.419028+00:00",
+  "purpose": "18 actual Harbor -> Pi -> OpenRouter case invocations, human quality pending",
+  "runner": "existing run_eval.py with Harbor built-in pi",
+  "harbor_version": "0.25.0",
+  "pi_package": "@earendil-works/pi-coding-agent",
+  "pi_version": "1.1.0",
+  "checkout_commit": "a8d63c062c38271097a317ae2f954cb0a1b28ee6",
+  "checkout_dirty": true,
+  "image": {
+    "tag": "code-review-pilot:20261025T221002Z",
+    "id": "sha256:c29c6bf6d53355d29d781152b0585232101769384c8c0bb0b0bbd00839816d06",
+    "base": "python@sha256:d98cc29d3266e535dd9da1099688d9cb3ca4753813571e071763d17725460962"
+  },
+  "models": [
+    "qwen/qwen3-30b-a3b-instruct-2507",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "openai/gpt-4o-mini-2024-07-18"
+  ],
+  "catalog": "selected-catalog.json",
+  "catalog_full": "../../runs/openrouter-pilot-20261025T221002Z/openrouter-models.json",
+  "file_sha256": {
+    "run_eval.py": "33d08a3e090bb1a64dd08c9af70772c5af08791e166951dd2af10176a0d6472d",
+    "review_reporting.py": "789758cbd68e7a7af6f0ce8cfd45463d430212b5c2248d1ff539e3dde112a1df",
+    "harbor_agents.py": "d600c28c43df5d8f6405fe67b5bb85e15617c1446c3c6b4cef9691c67eb235d8",
+    "validate_fixtures.py": "df1f200aaaba465526a22f0780517b23e7e2e11c6ca0f6245a4ba95fdb5215fc",
+    "pyproject.toml": "1ae7aaea6efe5516d793aac241b13f12e62b718942e0e3b263fec75cdfca46d0",
+    "uv.lock": "7c0390b5313e3172825a0f7ab371e5296020eaefcd23c55145e0eb328eaf90c4",
+    "experiments/openrouter-pilot-20261025T221002Z/Dockerfile": "78889cc26e687668e5370e05126fa6ec6a721e48107d8df5d4b4dbe3cdfdbad9",
+    "experiments/openrouter-pilot-20261025T221002Z/settings.json": "5f1c98c4f4365f997852b2d49b3ccc97dc1ddac893746a387b25486ed9523d12",
+    "experiments/openrouter-pilot-20261025T221002Z/models.json": "48b5c73d8eb4570f5938071215906362e771930f6de683abfd8983dd639d3b27",
+    "experiments/openrouter-pilot-20261025T221002Z/agent-kwargs.json": "417db9941c9e8f898722bc9b29d8f2c756ebb827b61b3b8e379efe6dbd7d7c63",
+    "experiments/openrouter-pilot-20261025T221002Z/selected-catalog.json": "22363f5e2f804eaea3f59aaa9791d68c40ba1ef789fda0fa47c1931fd280726b",
+    "experiments/openrouter-pilot-20261025T221002Z/replay.py": "a16ae45081877094b268706791a6751b4ade2a1d200af5d4b620ae2655cd5afd",
+    "fixtures/case-0004/environment/blobs/1ee56f6c58b507f8b5a0c079fb8b1ca08547f3cee583c265c9240e2b7e300129": "1ee56f6c58b507f8b5a0c079fb8b1ca08547f3cee583c265c9240e2b7e300129",
+    "fixtures/case-0004/environment/blobs/ad6f3e276c3bf9169532af84fab8fc861890e9d48b724915079fbe74f67442c9": "ad6f3e276c3bf9169532af84fab8fc861890e9d48b724915079fbe74f67442c9",
+    "fixtures/case-0004/private/expectations.json": "3a70b1b4c7e96fd4b0e7be44ac619be112e185f348dbf176ffa59ca0c7a4f333",
+    "fixtures/case-0004/reviewer/input.json": "4f9e739c290d81b6201ab461c0eb202ee8a61fe05b1de7e03356a9a4a6aa46bb",
+    "fixtures/case-0005/environment/blobs/aaca5f2db0cfda95898f3df95a3f213a005efd9167a424f75dd18c8b00139f39": "aaca5f2db0cfda95898f3df95a3f213a005efd9167a424f75dd18c8b00139f39",
+    "fixtures/case-0005/environment/blobs/ad6f3e276c3bf9169532af84fab8fc861890e9d48b724915079fbe74f67442c9": "ad6f3e276c3bf9169532af84fab8fc861890e9d48b724915079fbe74f67442c9",
+    "fixtures/case-0005/private/expectations.json": "2c03b558e6205d6c7a01a9a33de8586cb83df536ac23d345649f7a424af34fdd",
+    "fixtures/case-0005/reviewer/input.json": "608b22b0ec756366f757fc74f1f2f0ade0fbfc2de33355491ccb02df497df3f2",
+    "schemas/atif-prefix.schema.json": "33f4163620c3f44fdf6cb0ef2116327b0098761eda6adb6693ed97d55e54531d",
+    "schemas/common.schema.json": "b019d799e3d092b9b397ff63539acec16ad466ac18a542ecd8a286e4e736a69c",
+    "schemas/expectations.schema.json": "5a2c8395b4cb270a095a4554ffab70d7a45ed97cc88a812e500764d8e8a1e4d1",
+    "schemas/review.schema.json": "201ee6c6634f4a5d6188a92bc3580542a9bc0ba4d5bc39bcca9c82b61b259675",
+    "schemas/reviewer-input.schema.json": "3069411a93344c9b3c85a6c3ece982838c3e8c56d99ad6689bd87247468e3684",
+    "experiments/openrouter-pilot-20261025T221002Z/harness-source.tar.gz": "1c40573984033bf383e1506ccdb3b812e1655678dc5292ef7ba314f3bb322705",
+    "experiments/openrouter-pilot-20261025T221002Z/runtime-versions.json": "f544cf124b9b7c056fe9650bdf1b7780caa018d37e5a37b3c507095061278442",
+    "experiments/openrouter-pilot-20261025T221002Z/summarize.py": "3b125133e7b62c41a25d6362d9e66e84087c61d4229cad0f212e8a96aff4052f",
+    "experiments/openrouter-pilot-20261025T221002Z/verify.py": "20dfa783c6222ddede54511b3e28202c0270047aff5faf3b1713188c83f922f8",
+    "experiments/openrouter-pilot-20261025T221002Z/README.md": "04d4e8d58be71028b3f90a46eadf6a3305bc90f4666df4fec4e3b7a7ad096e1b",
+    "experiments/openrouter-pilot-20261025T221002Z/checks.md": "1ef43714cec7b1dff0e8ff4c3ec006af102fc2e27074cb891f926d6b5dca5438",
+    "experiments/openrouter-pilot-20261025T221002Z/grading-source.tar.gz": "c19aabe640c56561408f324730ed935bb6a8a722687d81f93caf23db550efb2c"
+  },
+  "instruction_sha256": "dc207523004cc8e8d3a59f6d9c0ddd97d3375cca2c2b043e3329d667b7be79b8",
+  "conditions": {
+    "fixtures": [
+      "fixtures/case-0004",
+      "fixtures/case-0005"
+    ],
+    "fresh_sessions": true,
+    "concurrency": 1,
+    "repetitions": 3,
+    "wall_timeout_sec": 30,
+    "max_model_turns": 1,
+    "max_output_tokens_per_request": 1024,
+    "context_window_tokens": 32768,
+    "temperature": 0,
+    "top_p": 1,
+    "reasoning_effort": "off",
+    "declared_tools": [
+      "write"
+    ],
+    "compaction": false,
+    "cache_warming": false,
+    "harbor_retries": 0,
+    "pi_agent_retries": 0,
+    "pi_provider_retries": 0,
+    "prompts": "Existing INSTRUCTION plus exact reviewer/input.json; Harbor max_turns common suffix; unchanged Pi default system prompt.",
+    "artifact": "/workspace/review.json",
+    "fixture_model_token_cap": 4096
+  },
+  "unavoidable_differences": [
+    "Model tokenizers, actual input/output tokens and latency differ.",
+    "OpenRouter may select different available upstream providers; no model substitution. Endpoint prices can differ from headline prices.",
+    "One native write call is necessary for submission despite the fixture declaring zero tool calls. This protocol gap is disclosed, not treated as enforced no-tools.",
+    "Pi system prompt includes runtime date and model metadata; fresh session IDs and paths differ.",
+    "Harbor installs Node major 22 and Pi 1.1.0 in each fresh sandbox; transitive packages and live upstream services are not immutable.",
+    "Mistral catalog ID has explicit 3.2 version; its canonical slug includes 2506, but the API catalog ID omits that date."
+  ],
+  "budget": {
+    "usd": 2.0,
+    "per_invocation_reserve_usd": 0.1,
+    "whole_matrix_reserve_usd": 1.8,
+    "full_context_matrix_estimate_usd_with_2x_contingency": 0.15237119999999998,
+    "estimate_formula": "6 * sum_models(2 * (32768 * max endpoint input USD/token + 1024 * max endpoint output USD/token))",
+    "gate": "Before each case, billed known costs plus $0.10 for each unknown-cost case plus next $0.10 must not exceed $2. Unknown is not zero.",
+    "enforcement": "Launch gate only; no guaranteed billing cap. Native tools, episode tokens/spend and upstream retries/fallback are not fully enforced.",
+    "cost_sources": [
+      "OpenRouter read-only generation metadata total_cost when available",
+      "Harbor/Pi catalog-derived estimate separately; not authoritative billing"
+    ]
+  },
+  "preflight": {
+    "invocation_id": "01-qwen-r1-case-0004",
+    "approved_for_matrix": true,
+    "checks_pending": [],
+    "first_result": "Authentication/usage/tracing passed; response had no text or tool calls and review artifact was missing. Retained as invocation 01; no retry.",
+    "next_action": "Run next already-planned invocation alone to check collection/normalization; do not retry or replace failed Qwen invocation.",
+    "approved_at": "2026-10-25T22:17:29.687529+00:00",
+    "approval_kind": "Evaluator infrastructure checks only; NOT human quality approval",
+    "successful_invocation": "02-mistral-r1-case-0004",
+    "evidence": {
+      "authentication": "OpenRouter generation metadata retained for invocations 01 and 02",
+      "artifact": "../../runs/openrouter-pilot-20261025T221002Z/02-mistral-r1-case-0004/case-0004/review-output.bin",
+      "normalization": "Review schema and location checks passed; completed status",
+      "trace_id": "tr-a0483f5ac7588db966bd0f655bea28e4",
+      "spans": [
+        "harbor_trial",
+        "harbor_agent",
+        "normalize_and_check"
+      ],
+      "native_turns": 1,
+      "native_tools": [
+        "write"
+      ],
+      "secret_scan": "credential absent from retained run files",
+      "human_assessments": 0
+    }
+  },
+  "quality": {
+    "status": "pending",
+    "ranking": "pending",
+    "judge": "human only via existing run_eval.py adjudicate",
+    "no_self_judge": true,
+    "artifact_present_is_quality": false
+  },
+  "output_root": "runs/openrouter-pilot-20261025T221002Z",
+  "invocations": [
+    {
+      "id": "01-qwen-r1-case-0004",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0004",
+      "repetition": 1
+    },
+    {
+      "id": "02-mistral-r1-case-0004",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0004",
+      "repetition": 1
+    },
+    {
+      "id": "03-gpt4o-r1-case-0004",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0004",
+      "repetition": 1
+    },
+    {
+      "id": "04-qwen-r1-case-0005",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0005",
+      "repetition": 1
+    },
+    {
+      "id": "05-mistral-r1-case-0005",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0005",
+      "repetition": 1
+    },
+    {
+      "id": "06-gpt4o-r1-case-0005",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0005",
+      "repetition": 1
+    },
+    {
+      "id": "07-mistral-r2-case-0004",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0004",
+      "repetition": 2
+    },
+    {
+      "id": "08-gpt4o-r2-case-0004",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0004",
+      "repetition": 2
+    },
+    {
+      "id": "09-qwen-r2-case-0004",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0004",
+      "repetition": 2
+    },
+    {
+      "id": "10-mistral-r2-case-0005",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0005",
+      "repetition": 2
+    },
+    {
+      "id": "11-gpt4o-r2-case-0005",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0005",
+      "repetition": 2
+    },
+    {
+      "id": "12-qwen-r2-case-0005",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0005",
+      "repetition": 2
+    },
+    {
+      "id": "13-gpt4o-r3-case-0004",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0004",
+      "repetition": 3
+    },
+    {
+      "id": "14-qwen-r3-case-0004",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0004",
+      "repetition": 3
+    },
+    {
+      "id": "15-mistral-r3-case-0004",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0004",
+      "repetition": 3
+    },
+    {
+      "id": "16-gpt4o-r3-case-0005",
+      "model_id": "openai/gpt-4o-mini-2024-07-18",
+      "case_id": "case-0005",
+      "repetition": 3
+    },
+    {
+      "id": "17-qwen-r3-case-0005",
+      "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "case_id": "case-0005",
+      "repetition": 3
+    },
+    {
+      "id": "18-mistral-r3-case-0005",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "case_id": "case-0005",
+      "repetition": 3
+    }
+  ],
+  "postprocessing_revision": {
+    "initial_reporting_sha256": "d14c463f0468ad89aa826391f6f94b1dc53333165defdc0e178f544dce199897",
+    "reason": "Concurrent checkout edits affected grading/reporting during preflight, not reviewer prompt, fixtures, Pi version, config or execution. Pin current postprocessing for subsequent invocations; use the same final grading workflow for every retained result.",
+    "matrix_pause": {
+      "after_invocation": "04-qwen-r1-case-0005",
+      "reason": "Source hash gate detected a second concurrent reporting/CLI edit and stopped before invocation 05. No paid attempt was repeated.",
+      "resolution": "Pin current source archive and load the existing run_eval.run core once for remaining invocations. No new agent runner, export prompt or Pi configuration. Re-import unsigned forms using one common final grading implementation."
+    },
+    "frozen_source_archive": "experiments/openrouter-pilot-20261025T221002Z/harness-source.tar.gz",
+    "resumed_at": "2026-10-25T22:21:29.218370+00:00",
+    "dependency_metadata_change": "Before invocation 05, a concurrent display-only pygments direct-dependency addition changed pyproject.toml/uv.lock. No call launched under the mismatched hash. Existing installed runtime versions are recorded; remaining calls use .venv/bin/python without automatic sync."
+  },
+  "final_grading": {
+    "version": "human-1.1.0",
+    "source_archive": "grading-source.tar.gz",
+    "source_sha256": {
+      "run_eval.py": "5b6d9e2e70e411170c7976c75611ac3a9eae66e2f34161f8d2f605126d79b8cb",
+      "review_reporting.py": "d98bc7402a17e9d71eaf84cde4d0b5fe6eccb88592595a665925acbf415a792d",
+      "adjudication_cli.py": "82b6a05bab471ac6b30ad6bfad02e6a16d522bc28abee333085a02deb88d8976",
+      "visual_reporting.py": "32099f3ff2768fe028400e5808b98fbc9696a3c50bd25845f374b9ea941ccef7",
+      "schemas/atif-prefix.schema.json": "33f4163620c3f44fdf6cb0ef2116327b0098761eda6adb6693ed97d55e54531d",
+      "schemas/common.schema.json": "b019d799e3d092b9b397ff63539acec16ad466ac18a542ecd8a286e4e736a69c",
+      "schemas/expectations.schema.json": "5a2c8395b4cb270a095a4554ffab70d7a45ed97cc88a812e500764d8e8a1e4d1",
+      "schemas/review.schema.json": "201ee6c6634f4a5d6188a92bc3580542a9bc0ba4d5bc39bcca9c82b61b259675",
+      "schemas/reviewer-input.schema.json": "3069411a93344c9b3c85a6c3ece982838c3e8c56d99ad6689bd87247468e3684",
+      "schemas/visual-report.schema.json": "b96c15d973fb361e08fd795ad213aaaa7396342bd6896524184a4df566a04db1"
+    },
+    "human_approval_count": 0,
+    "quality": "pending",
+    "note": "Common final postprocessing of all retained outputs; raw reviews and native trial artifacts unchanged."
+  },
+  "execution_complete": true,
+  "final_cost_accounting": {
+    "known_identified_generation_cost_usd": 0.002744041,
+    "missing_generation_billing_invocations": 7,
+    "additional_abort_marker_invocations": 7,
+    "full_case_totals_incomplete": 14,
+    "conservative_booked_usd": 1.402744041,
+    "actual_total_cost_usd": null,
+    "reason": "Seven no-response-ID zero-usage abort markers cannot establish zero additional billing. Keep original finish-time ledger and reserve conservatively in final audit. Initial whole-matrix $1.80 reserve already covered all 18 planned case slots.",
+    "guaranteed_billing_cap": false
+  },
+  "checks": {
+    "fixture_validation": "17 shared-checkout fixtures passed; only original pair evaluated",
+    "unit_tests": "172 passed; no model calls",
+    "pilot_audit": "18 sessions/traces, common system/tool prompt hash, retained failures, no HUMAN approvals",
+    "details": "checks.md"
+  }
+}

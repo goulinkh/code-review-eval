@@ -1,0 +1,17 @@
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Build:
+    kind: str
+
+
+@dataclass(frozen=True)
+class BuildUpload:
+    leaf: str
+    build: Build | None
+
+
+@dataclass(frozen=True)
+class UserUpload:
+    leaf: str

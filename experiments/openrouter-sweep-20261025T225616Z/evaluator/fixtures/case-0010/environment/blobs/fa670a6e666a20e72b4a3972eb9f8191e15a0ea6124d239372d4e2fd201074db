@@ -1,0 +1,19 @@
+MAX_AGE = 900
+
+
+def process_command(command, first_seen_at, provider, outcomes):
+    key = command["id"]
+    if key in outcomes:
+        return outcomes[key]
+    expired = first_seen_at - command["created_at"] > MAX_AGE
+    if command["kind"] == "cancel":
+        provider.cancel(key)
+        result = {"status": "cancelled"}
+    else:
+        account = provider.resolve_account(command["owner"])
+        provider.run(account, key)
+        result = {"status": "completed"}
+    if expired:
+        result = {"status": "expired"}
+    outcomes[key] = result
+    return result

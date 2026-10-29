@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case-0010",
+  "revision": "1",
+  "protocol": {
+    "name": "fixed-context",
+    "version": "1.0.0"
+  },
+  "repository": "fixture-project",
+  "snapshots": {
+    "base": {
+      "id": "s-01",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "bafb774d08a847b0b1d9e330405beefc127d7d674bddd5fe26ee5c1db3ecfd4d"
+        },
+        {
+          "path": "src/worker.py",
+          "sha256": "d4c724108f6ee0dd2875213f535786ba6e3fd7f56adb81d496bb4c48ab458204"
+        }
+      ]
+    },
+    "head": {
+      "id": "s-02",
+      "files": [
+        {
+          "path": "PROJECT.md",
+          "sha256": "bafb774d08a847b0b1d9e330405beefc127d7d674bddd5fe26ee5c1db3ecfd4d"
+        },
+        {
+          "path": "src/worker.py",
+          "sha256": "fa670a6e666a20e72b4a3972eb9f8191e15a0ea6124d239372d4e2fd201074db"
+        }
+      ]
+    }
+  },
+  "change": {
+    "description": "Add command expiry to the local worker. Review whether terminal outcomes, execution ordering, and existing eligible/replayed work follow PROJECT.md.",
+    "diff": {
+      "status": "available",
+      "format": "unified",
+      "artifact": {
+        "content": "--- a/src/worker.py\n+++ b/src/worker.py\n@@ -5,6 +5,7 @@\n     key = command[\"id\"]\n     if key in outcomes:\n         return outcomes[key]\n+    expired = first_seen_at - command[\"created_at\"] > MAX_AGE\n     if command[\"kind\"] == \"cancel\":\n         provider.cancel(key)\n         result = {\"status\": \"cancelled\"}\n@@ -12,5 +13,7 @@\n         account = provider.resolve_account(command[\"owner\"])\n         provider.run(account, key)\n         result = {\"status\": \"completed\"}\n+    if expired:\n+        result = {\"status\": \"expired\"}\n     outcomes[key] = result\n     return result\n",
+        "sha256": "cc6b5871635237dfe7c42480b6a8982b41c918b284c0d7f67407960b0cec5ae0"
+      }
+    }
+  },
+  "context_manifest": [
+    {
+      "snapshot_id": "s-02",
+      "path": "PROJECT.md",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "# Local command worker\n\nprocess_command receives a validated command with string id/owner, kind either\nreview or cancel, and integer created_at. first_seen_at is a fixed integer\nreference time at or after creation. Work older than 900 seconds at first sight\nis expired; exactly 900 seconds remains eligible. Later wall-clock time does\nnot change this decision. For a new expired command the worker must store and\nreturn {\"status\": \"expired\"} without calling ANY provider method. This terminal\nrecord is the local stand-in for a reply; it must not run a review, resolve a\nbilling account, or perform cancellation. A late terminal status is not enough.\n\nFor eligible review commands resolve_account(owner) returns an account token,\nthen run(account, id) performs paid work. Eligible cancel commands call only\ncancel(id), a side-effecting operation, and return {\"status\": \"cancelled\"}.\nSuccessful reviews return {\"status\": \"completed\"}. Store the result under the\nid in outcomes. Repeated ids return the stored result without provider calls.\nCommands are processed serially; providers succeed in this contract. Outcomes\nis a local dict retained between calls, not a durable or concurrent queue. Only\nexpiry ordering and replay in this model are in scope, not crash-safe billing\nor production retry guarantees. The supplied provider is injected; author\nchecks use a fake that records events, never a real paid operation.\n"
+    },
+    {
+      "snapshot_id": "s-02",
+      "path": "src/worker.py",
+      "delivery": "initial",
+      "availability": "available",
+      "content": "MAX_AGE = 900\n\n\ndef process_command(command, first_seen_at, provider, outcomes):\n    key = command[\"id\"]\n    if key in outcomes:\n        return outcomes[key]\n    expired = first_seen_at - command[\"created_at\"] > MAX_AGE\n    if command[\"kind\"] == \"cancel\":\n        provider.cancel(key)\n        result = {\"status\": \"cancelled\"}\n    else:\n        account = provider.resolve_account(command[\"owner\"])\n        provider.run(account, key)\n        result = {\"status\": \"completed\"}\n    if expired:\n        result = {\"status\": \"expired\"}\n    outcomes[key] = result\n    return result\n"
+    }
+  ],
+  "tools": [],
+  "environment": {
+    "cwd": ".",
+    "variables": {
+      "LANG": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "runtime_state": null
+  },
+  "start": {
+    "mode": "fresh"
+  },
+  "budgets": {
+    "whole_path": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    },
+    "inherited": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 0,
+      "model_tokens": 0
+    },
+    "remaining": {
+      "tool_calls": 0,
+      "shell_invocations": 0,
+      "repository_read_attempts": 0,
+      "returned_bytes": 0,
+      "wall_time_ms": 30000,
+      "model_tokens": 4096
+    }
+  },
+  "content_capture": "approved-fixture-content"
+}

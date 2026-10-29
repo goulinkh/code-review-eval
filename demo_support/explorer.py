@@ -7,6 +7,7 @@ import re
 from html import escape
 from pathlib import Path
 
+from demo_support.syntax import SYNTAX_STYLE, render_tokens, syntax_lines
 from validate_fixtures import read_artifact, require, sha256
 
 
@@ -56,22 +57,54 @@ def line_counts(before: str | None, after: str | None) -> tuple[int, int]:
 _STYLE = """
 <style>
 .fixture-diff { border: 1px solid #8885; border-radius: 8px; overflow: auto; max-height: 650px; }
-.fixture-diff table { width: 100%; border-collapse: collapse; font: 13px/1.65 ui-monospace, monospace; }
-.fixture-diff th { text-align: left; padding: 8px 12px; background: #8882; }
+.fixture-diff table { width: 100%; table-layout: fixed; border-collapse: collapse; font: 13px/1.65 ui-monospace, monospace; }
+.fixture-diff table.diff colgroup:nth-of-type(3n+1) { width: 1.5rem; }
+.fixture-diff table.diff colgroup:nth-of-type(3n+2) { width: 3.5rem; }
+.fixture-diff table:not(.diff) th:nth-child(-n+2) { width: 3.5rem; }
+.fixture-diff th { text-align: left; padding: 8px 12px; background: #8882; overflow-wrap: anywhere; }
 .fixture-diff td { padding: 0 6px; vertical-align: top; }
 .fixture-diff .diff_header, .fixture-diff .line-number { color: #888; background: #8881; text-align: right; user-select: none; }
+.fixture-diff td.diff_header, .fixture-diff .line-number { white-space: nowrap; }
 .fixture-diff .diff_next { background: #8882; font-size: 11px; }
-.fixture-diff .diff_add, .fixture-diff .added { background: #22c55e30; }
-.fixture-diff .diff_sub, .fixture-diff .removed { background: #ef444430; }
-.fixture-diff .diff_chg { background: #eab30840; }
+.fixture-diff .diff_add, .fixture-diff .added { background: #22c55e20; }
+.fixture-diff .diff_sub, .fixture-diff .removed { background: #ef444420; }
+.fixture-diff .diff_chg { background: #eab30830; }
 .fixture-diff .hunk { color: #60a5fa; background: #3b82f615; }
-.fixture-diff .code { white-space: pre; width: 100%; }
+.fixture-diff .code { white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 4; }
 .fixture-diff .empty-diff { padding: 16px; }
 </style>
 """
 
 
+class _SyntaxHtmlDiff(difflib.HtmlDiff):
+    """Keep HtmlDiff's alignment and character markers, adding whole-file syntax."""
+
+    def __init__(self, before: str | None, after: str | None, path: str):
+        super().__init__(tabsize=4)
+        self._syntax = [syntax_lines((text or "").expandtabs(4), path=path) for text in (before, after)]
+
+    def _format_line(self, side, flag, linenum, text):
+        # HtmlDiff calls this hook before replacing its internal change markers.
+        if not isinstance(linenum, int):
+            return super()._format_line(side, flag, linenum, text)
+        tokens = self._syntax[side][linenum - 1]
+        parts = []
+        offset = 0
+        for fragment in re.split(r"(\x00[+\-^]|\x01)", text):
+            if fragment.startswith("\x00"):
+                kind = {"+": "add", "-": "sub", "^": "chg"}[fragment[1]]
+                parts.append(f'<span class="diff_{kind}">')
+            elif fragment == "\x01":
+                parts.append("</span>")
+            else:
+                parts.append(render_tokens(tokens, offset, offset + len(fragment)))
+                offset += len(fragment)
+        empty_line = super()._format_line(side, flag, linenum, "")
+        return empty_line.replace('<td nowrap="nowrap"></td>', '<td class="code">' + "".join(parts) + "</td>")
+
+
 def _unified_table(before: str | None, after: str | None, path: str, full_context: bool) -> str:
+    base_syntax, head_syntax = (syntax_lines(text or "", path=path) for text in (before, after))
     base_lines, head_lines = (before or "").splitlines(keepends=True), (after or "").splitlines(keepends=True)
     patch = difflib.unified_diff(
         base_lines, head_lines,
@@ -94,9 +127,11 @@ def _unified_table(before: str | None, after: str | None, path: str, full_contex
         old_number = "" if tag == "+" else str(old_line)
         new_number = "" if tag == "-" else str(new_line)
         kind = "added" if tag == "+" else "removed" if tag == "-" else "context"
+        tokens = base_syntax[old_line - 1] if tag == "-" else head_syntax[new_line - 1]
+        code = escape(tag) + render_tokens(tokens)
         rows.append(
             f'<tr class="{kind}"><td class="line-number">{old_number}</td>'
-            f'<td class="line-number">{new_number}</td><td class="code">{escape(line.rstrip(chr(10)))}</td></tr>'
+            f'<td class="line-number">{new_number}</td><td class="code">{code}</td></tr>'
         )
         old_line += tag != "+"
         new_line += tag != "-"
@@ -111,7 +146,7 @@ def render_diff(before: str | None, after: str | None, path: str, *, layout: str
         def heading(side, content):
             return escape(f"{side} · {path}" + (" (absent)" if content is None else " (empty)" if content == "" else ""))
 
-        body = difflib.HtmlDiff(tabsize=4).make_table(
+        body = _SyntaxHtmlDiff(before, after, path).make_table(
             (before or "").splitlines(), (after or "").splitlines(),
             fromdesc=heading("base", before), todesc=heading("head", after),
             context=not full_context, numlines=3,
@@ -120,4 +155,4 @@ def render_diff(before: str | None, after: str | None, path: str, *, layout: str
         body = _unified_table(before, after, path, full_context)
     else:
         raise ValueError(f"Unknown diff layout: {layout}")
-    return _STYLE + f'<div class="fixture-diff">{body}</div>'
+    return SYNTAX_STYLE + _STYLE + f'<div class="fixture-diff fixture-code">{body}</div>'
